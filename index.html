@@ -1332,7 +1332,7 @@
                     <div><p><i class="fas fa-map-pin text-primary"></i> <strong>Address</strong><br/>Chiro, Harargee Lixaa, Oromiyaa</p>
                     <p><i class="fas fa-phone text-primary"></i> <strong>Phone</strong><br/>+251967568888</p>
                     <p><i class="fas fa-envelope text-primary"></i> <strong>Email</strong><br/>bosokadevtassociation@gmail.com</p></div>
-                    <div><p><i class="fas fa-globe text-primary"></i> <strong>Website</strong><br/>bosokadev.org (coming soon)</p>
+                    <div><p><i class="fas fa-globe text-primary"></i> <strong>Website</strong><br/>https://bosoka-development-association.onrender.com</p>
                     <p><i class="fas fa-clock text-primary"></i> <strong>Hours</strong><br/>Mon–Fri 8:00 AM – 5:00 PM</p></div>
                 </div>
             </div>
@@ -2471,15 +2471,16 @@
 
             // Seed demo data if empty
             if (members.length === 0 && donations.length === 0) {
-                addMember('Edris Abdella Nuure', 'edrisabdellan@gmail.com', '0905131051', 'Founding Member', 'Chiro');
+                addMember('Eng. Edris Abdella Nuure', 'edrisabdellan@gmail.com', '0905131051', 'Founding Member', 'Chiro');
                 addMember('Amina Hassan', 'amina@example.com', '0912345678', 'Full Member', 'Harargee');
+                addMember('Eng. Anas Murad Aliyyi', 'anesmurad258@gmail.com', '0924193825', 'Founding Member', 'Chiro');
                 setTimeout(() => {
                     members.forEach(m => { if (m.status === 'pending') m.status = 'approved'; });
                     saveAll();
                     renderAll();
                 }, 100);
-                addDonation('Demo Donor', 'demo@example.com', 5000, 'Bank Transfer', 'Supporting community development!');
-                addDonation('BDA Supporter', 'support@example.com', 2500, 'TeleBirr', 'For education programs.');
+                addDonation('Demo Donor', 'demo@example.com', 1000, 'Bank Transfer', 'Supporting community development!');
+                addDonation('BDA Supporter', 'support@example.com', 500, 'TeleBirr', 'For education programs.');
                 addTraining('Leadership Workshop', '2026-08-15', '3 hours', 'Training on community leadership.');
                 addMeeting('General Assembly', '2026-07-30', '10:00 AM', 'Chiro Hall', 'Annual general meeting.');
                 addNews('New Development Project', 'BDA launched a new water project in Bosoka area.');
@@ -2489,7 +2490,7 @@
                 addVolunteer('Teaching Assistant', 'Chiro', 'Help with adult literacy classes.');
                 addReport('Annual Report 2025');
                 addGallery('Community Event 2025');
-                addCommittee('Dr. Abebe', 'Chairperson');
+                addCommittee('Eng. Anas Murad Aliyyi', 'Chairperson');
                 addMaterial('Community Development Guide', 'Leadership', 'A comprehensive guide for community workers.');
                 toast('Welcome to BDA Platform! Sample data loaded.', 'success');
             }
