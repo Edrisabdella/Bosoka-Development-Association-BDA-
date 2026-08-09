@@ -1133,7 +1133,6 @@
             color: #fff;
         }
 
-        /* Calendar styles */
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
@@ -1921,8 +1920,8 @@
 
     <script>
         // ════════════════════════════════════════════════════════════════
-        // BDA PLATFORM – FULL SINGLE HTML APPLICATION v5.2
-        // Fixed: File upload/download, Admin approval instant, Donation receipt upload
+        // BDA PLATFORM – FULL SINGLE HTML APPLICATION v5.3
+        // FIXED: All ID comparisons now use String() for robust matching
         // ════════════════════════════════════════════════════════════════
 
         (function() {
@@ -1935,7 +1934,7 @@
                 2: 'MUL\'ATA, ERGAMA FI DUUDHAALEE',
                 3: 'KAAYYOO ADDAA',
                 4: 'MISEENSUMMAA',
-                5: 'QAAMA BULCHIINSAA',
+                5: 'QAAMA BULCHIINSA',
                 6: 'GUMII HOGGANSAA',
                 7: 'Itti gaafatamaa',
                 8: 'Gahee hojii koreewwanii',
@@ -2411,7 +2410,7 @@
 
             function deleteMember(id) {
                 if (!confirm('Remove this member?')) return;
-                members = members.filter(m => m.id !== id);
+                members = members.filter(m => String(m.id) !== String(id));
                 saveAll();
                 renderMembers();
                 renderAdmin();
@@ -2453,7 +2452,6 @@
 
             document.getElementById('verifyAdminBtn').addEventListener('click', verifyAdminPassword);
 
-            // Toggle password visibility
             document.getElementById('toggleAdminPass').addEventListener('click', function() {
                 const input = document.getElementById('adminPass');
                 const icon = this.querySelector('i');
@@ -2466,37 +2464,37 @@
                 }
             });
 
+            // ✅ FIXED: Admin approval with String() comparison
             function adminApproveMember(id) {
                 if (!adminVerified) {
                     toast('Please verify admin password first.', 'error');
                     return;
                 }
-                const m = members.find(x => x.id === id);
-                if (m) {
-                    m.status = 'approved';
-                    m.approvedAt = new Date().toISOString();
-                    saveAll();
-                    renderMembers();
-                    renderAdmin();
-                    updateStats();
-                    toast(`Member "${m.name}" approved!`, 'success');
-                }
+                const m = members.find(x => String(x.id) === String(id));
+                if (!m) { toast('Member not found.', 'error'); return; }
+                m.status = 'approved';
+                m.approvedAt = new Date().toISOString();
+                saveAll();
+                renderMembers();
+                renderAdmin();
+                updateStats();
+                toast(`Member "${m.name}" approved!`, 'success');
             }
 
+            // ✅ FIXED: Admin rejection with String() comparison
             function adminRejectMember(id) {
                 if (!adminVerified) {
                     toast('Please verify admin password first.', 'error');
                     return;
                 }
-                const m = members.find(x => x.id === id);
-                if (m) {
-                    m.status = 'rejected';
-                    saveAll();
-                    renderMembers();
-                    renderAdmin();
-                    updateStats();
-                    toast(`Member "${m.name}" rejected.`, 'error');
-                }
+                const m = members.find(x => String(x.id) === String(id));
+                if (!m) { toast('Member not found.', 'error'); return; }
+                m.status = 'rejected';
+                saveAll();
+                renderMembers();
+                renderAdmin();
+                updateStats();
+                toast(`Member "${m.name}" rejected.`, 'error');
             }
 
             // ─── DONATIONS with Receipt ───
@@ -2578,8 +2576,9 @@
                 }
             });
 
+            // ✅ FIXED: viewReceipt with String() comparison
             function viewReceipt(id) {
-                const d = donations.find(x => x.id === id);
+                const d = donations.find(x => String(x.id) === String(id));
                 if (d && d.receipt) {
                     const win = window.open('', '_blank');
                     win.document.write(
@@ -2601,12 +2600,13 @@
                 }
             }
 
+            // ✅ FIXED: verifyReceipt with String() comparison
             function verifyReceipt(id) {
                 if (!adminVerified) {
                     toast('Please verify admin password first.', 'error');
                     return;
                 }
-                const d = donations.find(x => x.id === id);
+                const d = donations.find(x => String(x.id) === String(id));
                 if (d) {
                     d.receiptStatus = 'verified';
                     saveAll();
@@ -2681,13 +2681,14 @@
                 reader.readAsDataURL(fileInput.files[0]);
             });
 
+            // ✅ FIXED: deleteFile with String() comparison
             function deleteFile(id) {
                 if (!adminVerified) {
                     toast('Admin verification required to delete files.', 'error');
                     return;
                 }
                 if (!confirm('Delete this file?')) return;
-                files = files.filter(f => f.id !== id);
+                files = files.filter(f => String(f.id) !== String(id));
                 saveAll();
                 renderFiles();
                 renderDocLib();
@@ -2695,8 +2696,9 @@
                 toast('File deleted.', 'info');
             }
 
+            // ✅ FIXED: downloadFile with String() comparison
             function downloadFile(id) {
-                const f = files.find(x => x.id === id);
+                const f = files.find(x => String(x.id) === String(id));
                 if (f && f.data) {
                     const a = document.createElement('a');
                     a.href = f.data;
@@ -2746,10 +2748,11 @@
                 toast('Training scheduled!', 'success');
             }
 
+            // ✅ FIXED: deleteTraining with String() comparison
             function deleteTraining(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this training?')) return;
-                trainings = trainings.filter(t => t.id !== id);
+                trainings = trainings.filter(t => String(t.id) !== String(id));
                 saveAll();
                 renderTrainings();
                 toast('Training deleted.', 'info');
@@ -2791,10 +2794,11 @@
                 toast('Material uploaded!', 'success');
             }
 
+            // ✅ FIXED: deleteMaterial with String() comparison
             function deleteMaterial(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this material?')) return;
-                materials = materials.filter(m => m.id !== id);
+                materials = materials.filter(m => String(m.id) !== String(id));
                 saveAll();
                 renderMaterials();
                 toast('Material deleted.', 'info');
@@ -2838,10 +2842,11 @@
                 toast('Meeting scheduled!', 'success');
             }
 
+            // ✅ FIXED: deleteMeeting with String() comparison
             function deleteMeeting(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this meeting?')) return;
-                meetings = meetings.filter(m => m.id !== id);
+                meetings = meetings.filter(m => String(m.id) !== String(id));
                 saveAll();
                 renderMeetings();
                 toast('Meeting deleted.', 'info');
@@ -2946,19 +2951,21 @@
                 this.reset();
             });
 
+            // ✅ FIXED: approveNews with String() comparison
             function approveNews(id) {
                 if (!adminVerified) { toast('Admin verification required.', 'error'); return; }
-                const n = newsItems.find(x => x.id === id);
+                const n = newsItems.find(x => String(x.id) === String(id));
                 if (n) { n.status = 'approved';
                     saveAll();
                     renderNews();
                     toast('News approved!', 'success'); }
             }
 
+            // ✅ FIXED: deleteNews with String() comparison
             function deleteNews(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this news?')) return;
-                newsItems = newsItems.filter(n => n.id !== id);
+                newsItems = newsItems.filter(n => String(n.id) !== String(id));
                 saveAll();
                 renderNews();
                 toast('News deleted.', 'info');
@@ -2992,10 +2999,11 @@
                 this.reset();
             });
 
+            // ✅ FIXED: deleteEvent with String() comparison
             function deleteEvent(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this event?')) return;
-                events = events.filter(e => e.id !== id);
+                events = events.filter(e => String(e.id) !== String(id));
                 saveAll();
                 renderEvents();
                 toast('Event deleted.', 'info');
@@ -3029,10 +3037,11 @@
                 this.reset();
             });
 
+            // ✅ FIXED: deleteProject with String() comparison
             function deleteProject(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this project?')) return;
-                projects = projects.filter(p => p.id !== id);
+                projects = projects.filter(p => String(p.id) !== String(id));
                 saveAll();
                 renderProjects();
                 toast('Project deleted.', 'info');
@@ -3064,10 +3073,11 @@
                 this.reset();
             });
 
+            // ✅ FIXED: deletePartner with String() comparison
             function deletePartner(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this partner?')) return;
-                partners = partners.filter(p => p.id !== id);
+                partners = partners.filter(p => String(p.id) !== String(id));
                 saveAll();
                 renderPartners();
                 toast('Partner deleted.', 'info');
@@ -3102,10 +3112,11 @@
                 this.reset();
             });
 
+            // ✅ FIXED: deleteVolunteer with String() comparison
             function deleteVolunteer(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this opportunity?')) return;
-                volunteers = volunteers.filter(v => v.id !== id);
+                volunteers = volunteers.filter(v => String(v.id) !== String(id));
                 saveAll();
                 renderVolunteers();
                 updateStats();
@@ -3137,10 +3148,11 @@
                 this.reset();
             });
 
+            // ✅ FIXED: deleteReport with String() comparison
             function deleteReport(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this report?')) return;
-                reports = reports.filter(r => r.id !== id);
+                reports = reports.filter(r => String(r.id) !== String(id));
                 saveAll();
                 renderReports();
                 toast('Report deleted.', 'info');
@@ -3171,10 +3183,11 @@
                 this.reset();
             });
 
+            // ✅ FIXED: deleteGallery with String() comparison
             function deleteGallery(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this image?')) return;
-                gallery = gallery.filter(g => g.id !== id);
+                gallery = gallery.filter(g => String(g.id) !== String(id));
                 saveAll();
                 renderGallery();
                 toast('Image deleted.', 'info');
@@ -3206,10 +3219,11 @@
                 this.reset();
             });
 
+            // ✅ FIXED: deleteCommittee with String() comparison
             function deleteCommittee(id) {
                 if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this committee member?')) return;
-                committee = committee.filter(c => c.id !== id);
+                committee = committee.filter(c => String(c.id) !== String(id));
                 saveAll();
                 renderCommittee();
                 toast('Committee member deleted.', 'info');
@@ -3271,7 +3285,6 @@
             }
 
             function renderCalendar() {
-                // Gregorian
                 const now = new Date();
                 const year = now.getFullYear();
                 const month = now.getMonth();
@@ -3280,14 +3293,13 @@
                 const firstDay = new Date(year, month, 1).getDay();
                 const daysInMonth = new Date(year, month + 1, 0).getDate();
                 let ghtml =
-                '<div class="day-header">Su</div><div class="day-header">Mo</div><div class="day-header">Tu</div><div class="day-header">We</div><div class="day-header">Th</div><div class="day-header">Fr</div><div class="day-header">Sa</div>';
+                    '<div class="day-header">Su</div><div class="day-header">Mo</div><div class="day-header">Tu</div><div class="day-header">We</div><div class="day-header">Th</div><div class="day-header">Fr</div><div class="day-header">Sa</div>';
                 for (let i = 0; i < firstDay; i++) ghtml += '<div class="day other-month"></div>';
                 for (let d = 1; d <= daysInMonth; d++) {
                     ghtml += `<div class="day ${d === today ? 'today' : ''}">${d}</div>`;
                 }
                 gcal.innerHTML = ghtml;
 
-                // Ethiopian
                 const ethToday = gregorianToEthiopian(now);
                 const ethYear = ethToday.year;
                 const ethMonth = ethToday.month;
@@ -3690,7 +3702,7 @@
                 if (dt) dt.textContent = new Date().toLocaleString();
             }, 10000);
 
-            console.log('🚀 BDA Platform v5.2 loaded successfully!');
+            console.log('🚀 BDA Platform v5.3 loaded successfully!');
             console.log(`📊 ${members.length} members, ${donations.length} donations, ${files.length} files`);
 
         })();
