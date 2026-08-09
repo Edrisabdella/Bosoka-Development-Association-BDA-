@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
-        /* ─── RESET & BASE ─── */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         :root {
             --primary: #0f4c2a;
             --primary-light: #1a6e3e;
@@ -31,7 +34,9 @@
             --sidebar-width: 280px;
             --header-height: 64px;
         }
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
             background: var(--gray);
@@ -41,12 +46,33 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-        a { color: var(--primary); text-decoration: none; }
-        button { cursor: pointer; font-family: inherit; border: none; background: none; }
-        input, select, textarea { font-family: inherit; font-size: inherit; }
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: var(--gray); }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            background: none;
+        }
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: inherit;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--gray);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
 
         .sidebar {
             width: var(--sidebar-width);
@@ -87,7 +113,9 @@
             object-fit: cover;
             border: 2px solid var(--gold);
         }
-        .sidebar-brand .logo span { color: var(--white); }
+        .sidebar-brand .logo span {
+            color: var(--white);
+        }
         .sidebar-brand .sub {
             font-size: 0.55rem;
             color: #8aaa9a;
@@ -121,8 +149,13 @@
             margin-bottom: 1px;
             cursor: pointer;
         }
-        .sidebar-nav a i { width: 18px; text-align: center; font-size: 0.85rem; }
-        .sidebar-nav a:hover, .sidebar-nav a.active {
+        .sidebar-nav a i {
+            width: 18px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
             background: rgba(212, 168, 67, 0.12);
             color: var(--gold);
         }
@@ -230,7 +263,9 @@
             transition: var(--transition);
             background: transparent;
         }
-        .topbar-right .btn-logout:hover { background: #eef3f0; }
+        .topbar-right .btn-logout:hover {
+            background: #eef3f0;
+        }
         .topbar-right .user-avatar {
             width: 32px;
             height: 32px;
@@ -244,12 +279,26 @@
             font-size: 0.75rem;
         }
 
-        .content { padding: 1.2rem 1.5rem 2rem; flex: 1; }
-        .page { display: none; animation: fadeUp 0.35s ease; }
-        .page.active { display: block; }
+        .content {
+            padding: 1.2rem 1.5rem 2rem;
+            flex: 1;
+        }
+        .page {
+            display: none;
+            animation: fadeUp 0.35s ease;
+        }
+        .page.active {
+            display: block;
+        }
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .card {
@@ -260,7 +309,9 @@
             margin-bottom: 1.2rem;
             transition: var(--transition);
         }
-        .card:hover { box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08); }
+        .card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
         .card-header {
             display: flex;
             justify-content: space-between;
@@ -311,7 +362,9 @@
             padding: 2rem;
             text-align: center;
         }
-        .hero-slideshow .slide.active { opacity: 1; }
+        .hero-slideshow .slide.active {
+            opacity: 1;
+        }
         .hero-slideshow .slide::after {
             content: '';
             position: absolute;
@@ -335,7 +388,9 @@
             margin-bottom: 0.4rem;
             line-height: 1.2;
         }
-        .hero-slideshow .slide-content h1 .gold { color: var(--gold); }
+        .hero-slideshow .slide-content h1 .gold {
+            color: var(--gold);
+        }
         .hero-slideshow .slide-content p {
             font-size: 1rem;
             opacity: 0.92;
@@ -401,12 +456,24 @@
             color: #fff;
             flex-shrink: 0;
         }
-        .stat-card .icon.green { background: var(--primary); }
-        .stat-card .icon.gold { background: var(--gold); }
-        .stat-card .icon.teal { background: #1e7e6b; }
-        .stat-card .icon.blue { background: #2a6b9e; }
-        .stat-card .icon.purple { background: #6c3a8a; }
-        .stat-card .icon.orange { background: #d4852a; }
+        .stat-card .icon.green {
+            background: var(--primary);
+        }
+        .stat-card .icon.gold {
+            background: var(--gold);
+        }
+        .stat-card .icon.teal {
+            background: #1e7e6b;
+        }
+        .stat-card .icon.blue {
+            background: #2a6b9e;
+        }
+        .stat-card .icon.purple {
+            background: #6c3a8a;
+        }
+        .stat-card .icon.orange {
+            background: #d4852a;
+        }
         .stat-card .info .num {
             font-size: 1.2rem;
             font-weight: 700;
@@ -420,7 +487,9 @@
             letter-spacing: 0.3px;
         }
 
-        .form-group { margin-bottom: 0.7rem; }
+        .form-group {
+            margin-bottom: 0.7rem;
+        }
         .form-group label {
             display: block;
             font-weight: 600;
@@ -428,8 +497,12 @@
             margin-bottom: 2px;
             color: var(--gray-dark);
         }
-        .form-group label .required { color: #c0392b; }
-        .form-group input, .form-group select, .form-group textarea {
+        .form-group label .required {
+            color: #c0392b;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 0.5rem 0.8rem;
             border: 1.5px solid #dde6e1;
@@ -439,19 +512,28 @@
             transition: var(--transition);
             background: #fafcfb;
         }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(15, 76, 42, 0.10);
             background: #fff;
         }
-        .form-group textarea { min-height: 60px; resize: vertical; }
+        .form-group textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0.7rem;
         }
-        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
 
         .btn {
             display: inline-flex;
@@ -469,28 +551,62 @@
             text-align: center;
             cursor: pointer;
         }
-        .btn-primary { background: var(--primary); color: #fff; }
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
         .btn-primary:hover {
             background: var(--primary-light);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(15, 76, 42, 0.25);
         }
-        .btn-gold { background: var(--gold); color: var(--dark); }
+        .btn-gold {
+            background: var(--gold);
+            color: var(--dark);
+        }
         .btn-gold:hover {
             background: var(--gold-light);
             transform: translateY(-2px);
         }
-        .btn-danger { background: #c0392b; color: #fff; }
-        .btn-danger:hover { background: #a93226; }
-        .btn-success { background: #27ae60; color: #fff; }
-        .btn-success:hover { background: #1e8449; }
-        .btn-sm { padding: 0.2rem 0.7rem; font-size: 0.65rem; }
-        .btn-xs { padding: 0.05rem 0.5rem; font-size: 0.55rem; }
-        .btn-outline { background: transparent; border: 1.5px solid var(--primary); color: var(--primary); }
-        .btn-outline:hover { background: var(--primary); color: #fff; }
-        .btn-block { width: 100%; justify-content: center; }
+        .btn-danger {
+            background: #c0392b;
+            color: #fff;
+        }
+        .btn-danger:hover {
+            background: #a93226;
+        }
+        .btn-success {
+            background: #27ae60;
+            color: #fff;
+        }
+        .btn-success:hover {
+            background: #1e8449;
+        }
+        .btn-sm {
+            padding: 0.2rem 0.7rem;
+            font-size: 0.65rem;
+        }
+        .btn-xs {
+            padding: 0.05rem 0.5rem;
+            font-size: 0.55rem;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+        .btn-block {
+            width: 100%;
+            justify-content: center;
+        }
 
-        .table-wrap { overflow-x: auto; }
+        .table-wrap {
+            overflow-x: auto;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -510,7 +626,9 @@
             border-bottom: 1px solid #eaf1ed;
             vertical-align: middle;
         }
-        table tr:hover td { background: #f8fbf9; }
+        table tr:hover td {
+            background: #f8fbf9;
+        }
         .status-badge {
             display: inline-block;
             padding: 0.05rem 0.5rem;
@@ -519,9 +637,18 @@
             font-weight: 600;
             text-transform: uppercase;
         }
-        .status-badge.pending { background: #fef9e7; color: #b7950b; }
-        .status-badge.approved { background: #d5f5e3; color: #1a7a4a; }
-        .status-badge.rejected { background: #fadbd8; color: #b03a2e; }
+        .status-badge.pending {
+            background: #fef9e7;
+            color: #b7950b;
+        }
+        .status-badge.approved {
+            background: #d5f5e3;
+            color: #1a7a4a;
+        }
+        .status-badge.rejected {
+            background: #fadbd8;
+            color: #b03a2e;
+        }
         .chip {
             display: inline-block;
             background: #eaf1ed;
@@ -551,8 +678,14 @@
             color: var(--text);
             cursor: pointer;
         }
-        .constitution-nav button.active { background: var(--primary); color: #fff; }
-        .constitution-nav button:hover { background: var(--primary-light); color: #fff; }
+        .constitution-nav button.active {
+            background: var(--primary);
+            color: #fff;
+        }
+        .constitution-nav button:hover {
+            background: var(--primary-light);
+            color: #fff;
+        }
         .constitution-content {
             background: #fafcfb;
             border-radius: var(--radius);
@@ -576,7 +709,10 @@
             font-size: 0.8rem;
         }
 
-        .donation-list { max-height: 280px; overflow-y: auto; }
+        .donation-list {
+            max-height: 280px;
+            overflow-y: auto;
+        }
         .donation-item {
             display: flex;
             justify-content: space-between;
@@ -584,11 +720,45 @@
             border-bottom: 1px solid #eaf1ed;
             font-size: 0.78rem;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 0.3rem;
         }
-        .donation-item .amount { font-weight: 700; color: var(--primary); }
-        .donation-item .donor-info { flex: 1; }
-        .donation-item .donor-info .name { font-weight: 600; }
-        .donation-item .donor-info .meta { font-size: 0.6rem; color: #6b7f74; }
+        .donation-item .amount {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .donation-item .donor-info {
+            flex: 1;
+            min-width: 120px;
+        }
+        .donation-item .donor-info .name {
+            font-weight: 600;
+        }
+        .donation-item .donor-info .meta {
+            font-size: 0.6rem;
+            color: #6b7f74;
+        }
+        .donation-item .receipt-link {
+            font-size: 0.65rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        .donation-item .receipt-link:hover {
+            text-decoration: underline;
+        }
+        .donation-item .receipt-status {
+            font-size: 0.55rem;
+            padding: 0.05rem 0.4rem;
+            border-radius: 30px;
+        }
+        .donation-item .receipt-status.pending {
+            background: #fef9e7;
+            color: #b7950b;
+        }
+        .donation-item .receipt-status.verified {
+            background: #d5f5e3;
+            color: #1a7a4a;
+        }
 
         .file-upload-area {
             border: 2px dashed #dde6e1;
@@ -598,7 +768,10 @@
             transition: var(--transition);
             cursor: pointer;
         }
-        .file-upload-area:hover { border-color: var(--primary); background: #f8fbf9; }
+        .file-upload-area:hover {
+            border-color: var(--primary);
+            background: #f8fbf9;
+        }
         .file-upload-area i {
             font-size: 2rem;
             color: var(--primary);
@@ -606,9 +779,13 @@
             display: block;
             margin-bottom: 0.3rem;
         }
-        .file-upload-area p { font-size: 0.78rem; color: #6b7f74; }
+        .file-upload-area p {
+            font-size: 0.78rem;
+            color: #6b7f74;
+        }
 
-        .training-card, .meeting-item {
+        .training-card,
+        .meeting-item {
             padding: 0.5rem 0.8rem;
             background: #fafcfb;
             border-radius: var(--radius);
@@ -616,10 +793,27 @@
             margin-bottom: 0.4rem;
             transition: var(--transition);
         }
-        .training-card:hover, .meeting-item:hover { background: #f5f8f6; }
-        .training-card .title, .meeting-item .title { font-weight: 600; font-size: 0.85rem; }
-        .training-card .meta, .meeting-item .meta { font-size: 0.65rem; color: #6b7f74; }
-        .training-card .actions, .meeting-item .actions { margin-top: 0.2rem; display: flex; gap: 0.3rem; flex-wrap: wrap; }
+        .training-card:hover,
+        .meeting-item:hover {
+            background: #f5f8f6;
+        }
+        .training-card .title,
+        .meeting-item .title {
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .training-card .meta,
+        .meeting-item .meta {
+            font-size: 0.65rem;
+            color: #6b7f74;
+        }
+        .training-card .actions,
+        .meeting-item .actions {
+            margin-top: 0.2rem;
+            display: flex;
+            gap: 0.3rem;
+            flex-wrap: wrap;
+        }
 
         .modal-overlay {
             display: none;
@@ -632,7 +826,9 @@
             justify-content: center;
             padding: 1rem;
         }
-        .modal-overlay.open { display: flex; }
+        .modal-overlay.open {
+            display: flex;
+        }
         .modal {
             background: var(--white);
             border-radius: var(--radius);
@@ -645,8 +841,14 @@
             overflow-y: auto;
         }
         @keyframes modalIn {
-            from { opacity: 0; transform: scale(0.95) translateY(20px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
         .modal .modal-close {
             float: right;
@@ -657,7 +859,10 @@
             transition: var(--transition);
             cursor: pointer;
         }
-        .modal .modal-close:hover { color: var(--dark); transform: rotate(90deg); }
+        .modal .modal-close:hover {
+            color: var(--dark);
+            transform: rotate(90deg);
+        }
         .modal h3 {
             margin-bottom: 1rem;
             font-size: 1.1rem;
@@ -665,7 +870,13 @@
             align-items: center;
             gap: 6px;
         }
-        .modal .modal-footer { margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; flex-wrap: wrap; }
+        .modal .modal-footer {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
 
         .toast-container {
             position: fixed;
@@ -690,12 +901,24 @@
             align-items: center;
             gap: 8px;
         }
-        .toast.success { border-left-color: #2ecc71; }
-        .toast.error { border-left-color: #e74c3c; }
-        .toast.info { border-left-color: #3498db; }
+        .toast.success {
+            border-left-color: #2ecc71;
+        }
+        .toast.error {
+            border-left-color: #e74c3c;
+        }
+        .toast.info {
+            border-left-color: #3498db;
+        }
         @keyframes slideIn {
-            from { opacity: 0; transform: translateX(40px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .search-box {
@@ -738,7 +961,10 @@
             gap: 0.4rem;
             margin-top: 0.4rem;
         }
-        .admin-actions .btn { flex: 1 1 auto; min-width: 90px; }
+        .admin-actions .btn {
+            flex: 1 1 auto;
+            min-width: 90px;
+        }
 
         .mission-grid {
             display: grid;
@@ -756,7 +982,10 @@
             margin-bottom: 0.05rem;
             font-size: 0.85rem;
         }
-        .mission-item p { font-size: 0.7rem; color: #6b7f74; }
+        .mission-item p {
+            font-size: 0.7rem;
+            color: #6b7f74;
+        }
 
         .contact-info {
             display: grid;
@@ -774,9 +1003,17 @@
             margin-top: 2px;
             width: 18px;
         }
-        .contact-info .item .label { font-weight: 600; font-size: 0.75rem; }
-        .contact-info .item .value { font-size: 0.8rem; color: #3d5a4e; }
-        .contact-info .item .value a { color: var(--primary); }
+        .contact-info .item .label {
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+        .contact-info .item .value {
+            font-size: 0.8rem;
+            color: #3d5a4e;
+        }
+        .contact-info .item .value a {
+            color: var(--primary);
+        }
 
         .live-room {
             background: #0a2f1a;
@@ -799,29 +1036,68 @@
             animation: pulse 1.5s ease-in-out infinite;
         }
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
         }
-        .live-room h3 { font-size: 1.3rem; margin: 0.6rem 0 0.3rem; }
-        .live-room p { opacity: 0.8; font-size: 0.85rem; margin-bottom: 0.8rem; }
+        .live-room h3 {
+            font-size: 1.3rem;
+            margin: 0.6rem 0 0.3rem;
+        }
+        .live-room p {
+            opacity: 0.8;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
         .live-room .btn {
             background: #e74c3c;
             color: #fff;
             font-size: 0.9rem;
             padding: 0.6rem 1.8rem;
         }
-        .live-room .btn:hover { background: #c0392b; transform: scale(1.05); }
+        .live-room .btn:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
 
-        .text-gold { color: var(--gold); }
-        .text-primary { color: var(--primary); }
-        .text-muted { color: #6b7f74; font-size: 0.75rem; }
-        .text-center { text-align: center; }
-        .mt-1 { margin-top: 0.4rem; }
-        .mb-1 { margin-bottom: 0.4rem; }
-        .flex { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
-        .gap-1 { gap: 0.4rem; }
-        .w-full { width: 100%; }
-        .hidden { display: none !important; }
+        .text-gold {
+            color: var(--gold);
+        }
+        .text-primary {
+            color: var(--primary);
+        }
+        .text-muted {
+            color: #6b7f74;
+            font-size: 0.75rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .mt-1 {
+            margin-top: 0.4rem;
+        }
+        .mb-1 {
+            margin-bottom: 0.4rem;
+        }
+        .flex {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        .gap-1 {
+            gap: 0.4rem;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .hidden {
+            display: none !important;
+        }
 
         .install-banner {
             background: var(--primary);
@@ -843,7 +1119,9 @@
             font-size: 0.7rem;
             padding: 0.3rem 1rem;
         }
-        .install-banner .btn:hover { background: var(--gold-light); }
+        .install-banner .btn:hover {
+            background: var(--gold-light);
+        }
         .install-banner .close-banner {
             color: rgba(255, 255, 255, 0.6);
             font-size: 1.1rem;
@@ -851,7 +1129,9 @@
             background: none;
             border: none;
         }
-        .install-banner .close-banner:hover { color: #fff; }
+        .install-banner .close-banner:hover {
+            color: #fff;
+        }
 
         /* Calendar styles */
         .calendar-grid {
@@ -916,11 +1196,24 @@
             margin-bottom: 0.5rem;
             transition: var(--transition);
         }
-        .news-card:hover { background: #f0f5f2; }
-        .news-card .title { font-weight: 600; font-size: 0.9rem; }
-        .news-card .meta { font-size: 0.6rem; color: #6b7f74; }
-        .news-card .content { font-size: 0.8rem; margin-top: 0.2rem; }
-        .news-card .status-badge { font-size: 0.5rem; }
+        .news-card:hover {
+            background: #f0f5f2;
+        }
+        .news-card .title {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .news-card .meta {
+            font-size: 0.6rem;
+            color: #6b7f74;
+        }
+        .news-card .content {
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+        }
+        .news-card .status-badge {
+            font-size: 0.5rem;
+        }
 
         .file-preview {
             max-width: 100%;
@@ -928,50 +1221,13 @@
             border-radius: 8px;
             margin-top: 0.3rem;
         }
-        .file-preview audio, .file-preview video {
+        .file-preview audio,
+        .file-preview video {
             width: 100%;
             max-height: 180px;
             border-radius: 8px;
         }
 
-        @media (max-width: 820px) {
-            .sidebar {
-                transform: translateX(-100%);
-                width: 290px;
-            }
-            .sidebar.open { transform: translateX(0); }
-            .main { margin-left: 0; }
-            .topbar { padding: 0.5rem 0.8rem; }
-            .topbar-left .menu-toggle { display: block; }
-            .topbar-left h2 { font-size: 0.85rem; }
-            .content { padding: 0.8rem; }
-            .stats-grid { grid-template-columns: 1fr 1fr; }
-            .hero-slideshow { height: 200px; }
-            .hero-slideshow .slide-content h1 { font-size: 1.3rem; }
-            .hero-slideshow .slide-content p { font-size: 0.8rem; }
-            .contact-info { grid-template-columns: 1fr; }
-            .founding-member-list { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width: 480px) {
-            .stats-grid { grid-template-columns: 1fr; }
-            .topbar-right .admin-badge { display: none; }
-            .card { padding: 0.8rem; }
-            .modal { padding: 1rem; }
-            .hero-slideshow { height: 160px; }
-            .hero-slideshow .slide-content h1 { font-size: 1rem; }
-            .hero-slideshow .slide-content p { font-size: 0.7rem; }
-            .hero-slideshow .slide-content .motto { font-size: 0.6rem; }
-            .form-row { grid-template-columns: 1fr; }
-            .founding-member-list { grid-template-columns: 1fr; }
-            .admin-actions .btn { min-width: 100%; }
-            .contact-info { grid-template-columns: 1fr; }
-        }
-
-        .sidebar::-webkit-scrollbar { width: 3px; }
-        .sidebar::-webkit-scrollbar-track { background: transparent; }
-        .sidebar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 10px; }
-
-        /* Admin password show/hide toggle */
         .password-toggle {
             position: relative;
         }
@@ -988,7 +1244,109 @@
             color: #6b7f74;
             cursor: pointer;
         }
-        .password-toggle .toggle-btn:hover { color: var(--primary); }
+        .password-toggle .toggle-btn:hover {
+            color: var(--primary);
+        }
+
+        .receipt-preview {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            margin-top: 0.3rem;
+            border: 1px solid #eaf1ed;
+        }
+
+        @media (max-width: 820px) {
+            .sidebar {
+                transform: translateX(-100%);
+                width: 290px;
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .main {
+                margin-left: 0;
+            }
+            .topbar {
+                padding: 0.5rem 0.8rem;
+            }
+            .topbar-left .menu-toggle {
+                display: block;
+            }
+            .topbar-left h2 {
+                font-size: 0.85rem;
+            }
+            .content {
+                padding: 0.8rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-slideshow {
+                height: 200px;
+            }
+            .hero-slideshow .slide-content h1 {
+                font-size: 1.3rem;
+            }
+            .hero-slideshow .slide-content p {
+                font-size: 0.8rem;
+            }
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            .founding-member-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .topbar-right .admin-badge {
+                display: none;
+            }
+            .card {
+                padding: 0.8rem;
+            }
+            .modal {
+                padding: 1rem;
+            }
+            .hero-slideshow {
+                height: 160px;
+            }
+            .hero-slideshow .slide-content h1 {
+                font-size: 1rem;
+            }
+            .hero-slideshow .slide-content p {
+                font-size: 0.7rem;
+            }
+            .hero-slideshow .slide-content .motto {
+                font-size: 0.6rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .founding-member-list {
+                grid-template-columns: 1fr;
+            }
+            .admin-actions .btn {
+                min-width: 100%;
+            }
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 3px;
+        }
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -1035,7 +1393,7 @@
             <a data-page="contact"><i class="fas fa-envelope"></i> Contact</a>
             <a data-page="settings"><i class="fas fa-cog"></i> Settings</a>
         </nav>
-        <div class="sidebar-footer">&copy; 2026 BDA &bull; v5.1</div>
+        <div class="sidebar-footer">&copy; 2026 BDA &bull; v5.2</div>
     </aside>
 
     <!-- MAIN -->
@@ -1234,6 +1592,10 @@
                         <div class="form-row">
                             <div class="form-group"><label>Amount (ETB) <span class="required">*</span></label><input type="number" id="donorAmount" placeholder="500" min="1" required/></div>
                             <div class="form-group"><label>Payment Method</label><select id="donorMethod"><option value="Bank Transfer">Bank Transfer</option><option value="TeleBirr">TeleBirr</option><option value="CBE Birr">CBE Birr</option><option value="Chapa">Chapa</option><option value="Credit Card">Credit Card</option><option value="Cash">Cash</option></select></div>
+                        </div>
+                        <div class="form-group"><label>Upload Receipt (optional)</label>
+                            <input type="file" id="donorReceipt" accept="image/*,application/pdf"/>
+                            <span class="text-muted" style="font-size:0.65rem;">Upload payment receipt (image or PDF)</span>
                         </div>
                         <div class="form-group"><label>Message</label><textarea id="donorMessage" placeholder="Your message..."></textarea></div>
                         <button type="submit" class="btn btn-gold"><i class="fas fa-hand-holding-heart"></i> Donate Now</button>
@@ -1559,10 +1921,8 @@
 
     <script>
         // ════════════════════════════════════════════════════════════════
-        // BDA PLATFORM – FULL SINGLE HTML APPLICATION v5.1
-        // All data stored in localStorage with full CRUD operations
-        // Features: 200+ dynamic pages, Admin approval with password toggle,
-        // Ethiopian calendar fixed, names updated, logo updated.
+        // BDA PLATFORM – FULL SINGLE HTML APPLICATION v5.2
+        // Fixed: File upload/download, Admin approval instant, Donation receipt upload
         // ════════════════════════════════════════════════════════════════
 
         (function() {
@@ -1759,7 +2119,7 @@
             let committee = JSON.parse(localStorage.getItem('bda_committee') || '[]');
             let liveSessions = JSON.parse(localStorage.getItem('bda_liveSessions') || '[]');
             let foundingMembers = JSON.parse(localStorage.getItem('bda_founding') || '[]');
-            let isAdmin = false;
+            let adminVerified = false;
 
             let nextId = {
                 member: parseInt(localStorage.getItem('bda_nextMemberId') || '1'),
@@ -1832,6 +2192,8 @@
             function getApprovedCount() { return members.filter(m => m.status === 'approved').length; }
 
             function getTotalDonations() { return donations.reduce((s, d) => s + Number(d.amount || 0), 0); }
+
+            function getPendingReceipts() { return donations.filter(d => d.receipt && d.receiptStatus === 'pending').length; }
 
             function updateStorageInfo() {
                 document.getElementById('storageMembers').textContent = members.length;
@@ -1915,10 +2277,12 @@
             }
 
             function updateNotifBadge() {
-                const count = getPendingCount();
+                const pendingMembers = getPendingCount();
+                const pendingReceipts = getPendingReceipts();
+                const total = pendingMembers + pendingReceipts;
                 const badge = document.getElementById('notifBadge');
-                badge.textContent = count;
-                badge.style.display = count > 0 ? 'flex' : 'none';
+                badge.textContent = total;
+                badge.style.display = total > 0 ? 'flex' : 'none';
             }
 
             // ─── CONSTITUTION ───
@@ -2056,8 +2420,6 @@
             }
 
             // ─── ADMIN APPROVALS ───
-            let adminVerified = false;
-
             function renderAdmin() {
                 const tbody = document.getElementById('adminPendingTable');
                 const empty = document.getElementById('adminEmpty');
@@ -2137,18 +2499,30 @@
                 }
             }
 
-            // ─── DONATIONS ───
+            // ─── DONATIONS with Receipt ───
             function renderDonations() {
                 const list = document.getElementById('donationList');
                 document.getElementById('donationCount').textContent = donations.length;
                 if (donations.length === 0) { list.innerHTML =
                         `<div class="empty-state"><i class="fas fa-coins"></i> No donations yet.</div>`; return; }
-                list.innerHTML = donations.slice().reverse().map(d =>
-                    `<div class="donation-item">
+                list.innerHTML = donations.slice().reverse().map(d => {
+                    let receiptHtml = '';
+                    if (d.receipt) {
+                        const status = d.receiptStatus || 'pending';
+                        receiptHtml =
+                            `<span class="receipt-status ${status}">${status}</span>
+                            <span class="receipt-link" onclick="viewReceipt('${d.id}')"><i class="fas fa-file-invoice"></i> View Receipt</span>`;
+                        if (status === 'pending' && adminVerified) {
+                            receiptHtml +=
+                                ` <button class="btn btn-success btn-xs" onclick="verifyReceipt('${d.id}')"><i class="fas fa-check"></i> Verify</button>`;
+                        }
+                    }
+                    return `<div class="donation-item">
                         <div class="donor-info"><div class="name">${d.donor}</div><div class="meta">${d.method||'N/A'} • ${new Date(d.date).toLocaleDateString()} ${d.message ? '• "'+d.message+'"' : ''}</div></div>
                         <div class="amount">ETB ${Number(d.amount).toLocaleString()}</div>
-                    </div>`
-                    ).join('');
+                        <div style="display:flex;gap:0.3rem;align-items:center;flex-wrap:wrap;">${receiptHtml}</div>
+                    </div>`;
+                }).join('');
             }
 
             document.getElementById('donationForm').addEventListener('submit', function(e) {
@@ -2158,22 +2532,89 @@
                 const amount = document.getElementById('donorAmount').value;
                 const method = document.getElementById('donorMethod').value;
                 const message = document.getElementById('donorMessage').value.trim();
+                const receiptFile = document.getElementById('donorReceipt').files[0];
                 if (!donor || !amount || amount < 1) { toast('Enter valid amount.', 'error'); return; }
-                donations.push({
-                    id: nextId.donation++,
-                    donor,
-                    email,
-                    amount: Number(amount),
-                    method,
-                    message: message || '',
-                    date: new Date().toISOString()
-                });
-                saveAll();
-                renderDonations();
-                updateStats();
-                toast(`Donation of ETB ${Number(amount).toLocaleString()} from ${donor} received!`, 'success');
-                this.reset();
+
+                if (receiptFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(ev) {
+                        donations.push({
+                            id: nextId.donation++,
+                            donor,
+                            email,
+                            amount: Number(amount),
+                            method,
+                            message: message || '',
+                            receipt: ev.target.result,
+                            receiptStatus: 'pending',
+                            date: new Date().toISOString()
+                        });
+                        saveAll();
+                        renderDonations();
+                        updateStats();
+                        toast(`Donation of ETB ${Number(amount).toLocaleString()} with receipt uploaded!`, 'success');
+                        document.getElementById('donationForm').reset();
+                        document.getElementById('donorReceipt').value = '';
+                    };
+                    reader.readAsDataURL(receiptFile);
+                } else {
+                    donations.push({
+                        id: nextId.donation++,
+                        donor,
+                        email,
+                        amount: Number(amount),
+                        method,
+                        message: message || '',
+                        receipt: null,
+                        receiptStatus: null,
+                        date: new Date().toISOString()
+                    });
+                    saveAll();
+                    renderDonations();
+                    updateStats();
+                    toast(`Donation of ETB ${Number(amount).toLocaleString()} from ${donor} received!`, 'success');
+                    document.getElementById('donationForm').reset();
+                    document.getElementById('donorReceipt').value = '';
+                }
             });
+
+            function viewReceipt(id) {
+                const d = donations.find(x => x.id === id);
+                if (d && d.receipt) {
+                    const win = window.open('', '_blank');
+                    win.document.write(
+                        `<html><head><title>Receipt - ${d.donor}</title><style>body{font-family:sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;background:#f5f7f6;}img,object{max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.15);}</style></head><body>`
+                        );
+                    if (d.receipt.startsWith('data:image')) {
+                        win.document.write(`<img src="${d.receipt}" alt="Receipt"/>`);
+                    } else if (d.receipt.startsWith('data:application/pdf')) {
+                        win.document.write(
+                            `<object data="${d.receipt}" type="application/pdf" width="100%" height="100%" style="width:90vw;height:90vh;">PDF preview not available. <a href="${d.receipt}" download>Download PDF</a></object>`
+                            );
+                    } else {
+                        win.document.write(`<p>Receipt file: <a href="${d.receipt}" download>Download</a></p>`);
+                    }
+                    win.document.write(`</body></html>`);
+                    win.document.close();
+                } else {
+                    toast('No receipt uploaded.', 'info');
+                }
+            }
+
+            function verifyReceipt(id) {
+                if (!adminVerified) {
+                    toast('Please verify admin password first.', 'error');
+                    return;
+                }
+                const d = donations.find(x => x.id === id);
+                if (d) {
+                    d.receiptStatus = 'verified';
+                    saveAll();
+                    renderDonations();
+                    updateNotifBadge();
+                    toast('Receipt verified!', 'success');
+                }
+            }
 
             // ─── FILES ───
             function renderFiles() {
@@ -2192,14 +2633,18 @@
                         } else if (type && type.includes('video')) {
                             preview = `<video controls class="file-preview"><source src="${f.data}"/></video>`;
                         } else {
-                            preview = `<div class="file-preview" style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem;background:#eaf1ed;border-radius:8px;"><i class="fas fa-file" style="font-size:1.5rem;"></i> <span>${f.title}</span></div>`;
+                            preview =
+                                `<div class="file-preview" style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem;background:#eaf1ed;border-radius:8px;"><i class="fas fa-file" style="font-size:1.5rem;"></i> <span>${f.title}</span></div>`;
                         }
                     }
+                    const deleteBtn = adminVerified ?
+                        `<button class="btn btn-danger btn-sm" onclick="deleteFile('${f.id}')"><i class="fas fa-trash"></i></button>` :
+                        '';
                     return `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;display:flex;flex-direction:column;gap:0.3rem;">
                         <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
                             <div><strong>${f.title}</strong> <span class="chip">${f.category}</span><br/><span class="text-muted" style="font-size:0.6rem;">${f.description||''}</span></div>
                             <div><span class="text-muted" style="font-size:0.6rem;">${new Date(f.date).toLocaleDateString()}</span>
-                            <button class="btn btn-danger btn-sm" onclick="deleteFile('${f.id}')"><i class="fas fa-trash"></i></button>
+                            ${deleteBtn}
                             ${f.data ? `<button class="btn btn-primary btn-sm" onclick="downloadFile('${f.id}')"><i class="fas fa-download"></i></button>` : ''}</div>
                         </div>
                         ${preview}
@@ -2237,6 +2682,10 @@
             });
 
             function deleteFile(id) {
+                if (!adminVerified) {
+                    toast('Admin verification required to delete files.', 'error');
+                    return;
+                }
                 if (!confirm('Delete this file?')) return;
                 files = files.filter(f => f.id !== id);
                 saveAll();
@@ -2252,9 +2701,12 @@
                     const a = document.createElement('a');
                     a.href = f.data;
                     a.download = f.title || 'download';
+                    document.body.appendChild(a);
                     a.click();
+                    document.body.removeChild(a);
+                    toast('Downloading...', 'info');
                 } else {
-                    toast('File data not available.', 'error');
+                    toast('File data not available. Please re-upload.', 'error');
                 }
             }
 
@@ -2282,7 +2734,7 @@
                         <div class="title">${t.title}</div>
                         <div class="meta">${t.date} • ${t.duration||'N/A'}</div>
                         <div class="text-muted" style="font-size:0.7rem;">${t.description||''}</div>
-                        <div class="actions"><button class="btn btn-danger btn-xs" onclick="deleteTraining('${t.id}')"><i class="fas fa-trash"></i></button></div>
+                        <div class="actions">${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deleteTraining('${t.id}')"><i class="fas fa-trash"></i></button>` : ''}</div>
                     </div>`
                     ).join('');
             }
@@ -2295,6 +2747,7 @@
             }
 
             function deleteTraining(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this training?')) return;
                 trainings = trainings.filter(t => t.id !== id);
                 saveAll();
@@ -2326,7 +2779,7 @@
                         <div class="title">${m.title}</div>
                         <div class="meta">${m.category||'General'}</div>
                         <div class="text-muted" style="font-size:0.7rem;">${m.description||''}</div>
-                        <div class="actions"><button class="btn btn-danger btn-xs" onclick="deleteMaterial('${m.id}')"><i class="fas fa-trash"></i></button></div>
+                        <div class="actions">${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deleteMaterial('${m.id}')"><i class="fas fa-trash"></i></button>` : ''}</div>
                     </div>`
                     ).join('');
             }
@@ -2339,6 +2792,7 @@
             }
 
             function deleteMaterial(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this material?')) return;
                 materials = materials.filter(m => m.id !== id);
                 saveAll();
@@ -2371,7 +2825,7 @@
                         <div class="text-muted" style="font-size:0.7rem;">${m.description||''}</div>
                         <div class="actions">
                             <button class="btn btn-gold btn-xs" onclick="joinMeeting()"><i class="fas fa-video"></i> Join Meeting</button>
-                            <button class="btn btn-danger btn-xs" onclick="deleteMeeting('${m.id}')"><i class="fas fa-trash"></i></button>
+                            ${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deleteMeeting('${m.id}')"><i class="fas fa-trash"></i></button>` : ''}
                         </div>
                     </div>`
                     ).join('');
@@ -2385,6 +2839,7 @@
             }
 
             function deleteMeeting(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this meeting?')) return;
                 meetings = meetings.filter(m => m.id !== id);
                 saveAll();
@@ -2438,7 +2893,7 @@
                     ).join('');
             }
 
-            // ─── NEWS (with admin approval) ───
+            // ─── NEWS ───
             function renderNews() {
                 const list = document.getElementById('newsList');
                 const allNews = newsItems.slice().reverse();
@@ -2451,8 +2906,8 @@
                         <div class="meta">${new Date(n.date).toLocaleString()} • <span class="status-badge ${n.status === 'approved' ? 'approved' : 'pending'}">${n.status||'pending'}</span></div>
                         <div class="content">${n.content||''}</div>
                         <div class="actions" style="margin-top:0.2rem;">
-                            ${n.status === 'pending' ? `<button class="btn btn-success btn-xs" onclick="approveNews('${n.id}')"><i class="fas fa-check"></i> Approve</button>` : ''}
-                            <button class="btn btn-danger btn-xs" onclick="deleteNews('${n.id}')"><i class="fas fa-trash"></i></button>
+                            ${n.status === 'pending' && adminVerified ? `<button class="btn btn-success btn-xs" onclick="approveNews('${n.id}')"><i class="fas fa-check"></i> Approve</button>` : ''}
+                            ${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deleteNews('${n.id}')"><i class="fas fa-trash"></i></button>` : ''}
                         </div>
                     </div>`
                     ).join('');
@@ -2492,10 +2947,7 @@
             });
 
             function approveNews(id) {
-                if (!adminVerified) {
-                    toast('Please verify admin password first.', 'error');
-                    return;
-                }
+                if (!adminVerified) { toast('Admin verification required.', 'error'); return; }
                 const n = newsItems.find(x => x.id === id);
                 if (n) { n.status = 'approved';
                     saveAll();
@@ -2504,6 +2956,7 @@
             }
 
             function deleteNews(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this news?')) return;
                 newsItems = newsItems.filter(n => n.id !== id);
                 saveAll();
@@ -2521,7 +2974,7 @@
                     `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${e.title}</strong> <span class="chip">${e.date}</span>
                         <p class="text-muted">${e.description||''}</p>
-                        <button class="btn btn-danger btn-xs" onclick="deleteEvent('${e.id}')"><i class="fas fa-trash"></i></button>
+                        ${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deleteEvent('${e.id}')"><i class="fas fa-trash"></i></button>` : ''}
                     </div>`
                     ).join('');
             }
@@ -2540,6 +2993,7 @@
             });
 
             function deleteEvent(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this event?')) return;
                 events = events.filter(e => e.id !== id);
                 saveAll();
@@ -2557,7 +3011,7 @@
                     `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${p.title}</strong> <span class="chip">${p.status||'Active'}</span>
                         <p class="text-muted">${p.description||''}</p>
-                        <button class="btn btn-danger btn-xs" onclick="deleteProject('${p.id}')"><i class="fas fa-trash"></i></button>
+                        ${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deleteProject('${p.id}')"><i class="fas fa-trash"></i></button>` : ''}
                     </div>`
                     ).join('');
             }
@@ -2576,6 +3030,7 @@
             });
 
             function deleteProject(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this project?')) return;
                 projects = projects.filter(p => p.id !== id);
                 saveAll();
@@ -2592,7 +3047,7 @@
                 list.innerHTML = partners.map(p =>
                     `<div style="padding:0.3rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${p.name}</strong> <span class="chip">${p.type||'Partner'}</span>
-                        <button class="btn btn-danger btn-xs" onclick="deletePartner('${p.id}')"><i class="fas fa-trash"></i></button>
+                        ${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deletePartner('${p.id}')"><i class="fas fa-trash"></i></button>` : ''}
                     </div>`
                     ).join('');
             }
@@ -2610,6 +3065,7 @@
             });
 
             function deletePartner(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this partner?')) return;
                 partners = partners.filter(p => p.id !== id);
                 saveAll();
@@ -2627,7 +3083,7 @@
                     `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${v.title}</strong> <span class="chip">${v.location||'Remote'}</span>
                         <p class="text-muted">${v.description||''}</p>
-                        <button class="btn btn-danger btn-xs" onclick="deleteVolunteer('${v.id}')"><i class="fas fa-trash"></i></button>
+                        ${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deleteVolunteer('${v.id}')"><i class="fas fa-trash"></i></button>` : ''}
                     </div>`
                     ).join('');
             }
@@ -2647,6 +3103,7 @@
             });
 
             function deleteVolunteer(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this opportunity?')) return;
                 volunteers = volunteers.filter(v => v.id !== id);
                 saveAll();
@@ -2664,7 +3121,7 @@
                 list.innerHTML = reports.map(r =>
                     `<div style="padding:0.3rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${r.title}</strong> <span class="text-muted">${new Date(r.date).toLocaleDateString()}</span>
-                        <button class="btn btn-danger btn-xs" onclick="deleteReport('${r.id}')"><i class="fas fa-trash"></i></button>
+                        ${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deleteReport('${r.id}')"><i class="fas fa-trash"></i></button>` : ''}
                     </div>`
                     ).join('');
             }
@@ -2681,6 +3138,7 @@
             });
 
             function deleteReport(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this report?')) return;
                 reports = reports.filter(r => r.id !== id);
                 saveAll();
@@ -2697,7 +3155,7 @@
                 list.innerHTML = gallery.map(g =>
                     `<div style="display:inline-block;margin:0.2rem;padding:0.3rem 0.8rem;background:#fafcfb;border-radius:8px;border:1px solid #eaf1ed;">
                         <strong>${g.title}</strong> <span class="text-muted">${new Date(g.date).toLocaleDateString()}</span>
-                        <button class="btn btn-danger btn-xs" onclick="deleteGallery('${g.id}')"><i class="fas fa-trash"></i></button>
+                        ${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deleteGallery('${g.id}')"><i class="fas fa-trash"></i></button>` : ''}
                     </div>`
                     ).join('');
             }
@@ -2714,6 +3172,7 @@
             });
 
             function deleteGallery(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this image?')) return;
                 gallery = gallery.filter(g => g.id !== id);
                 saveAll();
@@ -2730,7 +3189,7 @@
                 list.innerHTML = committee.map(c =>
                     `<div style="padding:0.3rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${c.name}</strong> <span class="chip">${c.role||'Member'}</span>
-                        <button class="btn btn-danger btn-xs" onclick="deleteCommittee('${c.id}')"><i class="fas fa-trash"></i></button>
+                        ${adminVerified ? `<button class="btn btn-danger btn-xs" onclick="deleteCommittee('${c.id}')"><i class="fas fa-trash"></i></button>` : ''}
                     </div>`
                     ).join('');
             }
@@ -2748,6 +3207,7 @@
             });
 
             function deleteCommittee(id) {
+                if (!adminVerified) { toast('Admin required.', 'error'); return; }
                 if (!confirm('Delete this committee member?')) return;
                 committee = committee.filter(c => c.id !== id);
                 saveAll();
@@ -2768,7 +3228,7 @@
                 this.reset();
             });
 
-            // ─── CALENDAR (corrected Ethiopian calendar) ───
+            // ─── CALENDAR ───
             function isGregorianLeapYear(year) {
                 return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
             }
@@ -2781,7 +3241,6 @@
                 const gYear = date.getFullYear();
                 const gMonth = date.getMonth();
                 const gDay = date.getDate();
-
                 const newYearDay = isGregorianLeapYear(gYear - 1) ? 12 : 11;
                 let ethYear;
                 if (gMonth < 8 || (gMonth === 8 && gDay < newYearDay)) {
@@ -2789,7 +3248,6 @@
                 } else {
                     ethYear = gYear - 7;
                 }
-
                 const newYear = new Date(gYear, 8, newYearDay);
                 const diff = Math.floor((date - newYear) / (1000 * 60 * 60 * 24));
                 let daysFromNewYear = diff;
@@ -2803,9 +3261,8 @@
                 return { day: ethDay, month: ethMonth, year: ethYear };
             }
 
-            const ethiopianMonths = ["መስከረም", "ጥቅምት", "ኅዳር", "ታኅሣሥ", "ጥር", "የካቲት", "መጋቢት", "ሚያዝያ", "ግንቦት", "ሰኔ", "ሐምሌ", "ነሐሴ", "ጳጉሜ"];
-            const ethiopianMonthsEnglish = ["Meskerem", "Tikimt", "Hidar", "Tahsas", "Tir", "Yekatit", "Megabit", "Miyazya",
-                "Ginbot", "Sene", "Hamle", "Nehasé", "Pagume"
+            const ethiopianMonths = ["መስከረም", "ጥቅምት", "ኅዳር", "ታኅሣሥ", "ጥር", "የካቲት", "መጋቢት", "ሚያዝያ", "ግንቦት", "ሰኔ", "ሐምሌ", "ነሐሴ",
+                "ጳጉሜ"
             ];
 
             function getEthiopianMonthDays(year, month) {
@@ -2853,13 +3310,10 @@
                 }
                 ecal.innerHTML = ehtml;
 
-                // Update Ethiopian title and current date
                 const titleEl = document.getElementById('ethiopianCalendarTitle');
                 if (titleEl) titleEl.textContent = `${ethiopianMonths[ethMonth - 1]} ${ethYear}`;
                 const currentDateEl = document.getElementById('ethiopianCurrentDate');
                 if (currentDateEl) currentDateEl.textContent = `${ethDay} ${ethiopianMonths[ethMonth - 1]} ${ethYear} ዓ.ም.`;
-
-                // Live date/time
                 document.getElementById('liveDateTime').textContent = new Date().toLocaleString();
             }
 
@@ -2872,7 +3326,6 @@
                 toast('Settings saved!', 'success');
             }
 
-            // Load settings
             try {
                 const settings = JSON.parse(localStorage.getItem('bda_settings') || '{}');
                 if (settings.name) document.getElementById('settingName').value = settings.name;
@@ -2956,7 +3409,6 @@
                 gallery = [];
                 committee = [];
                 liveSessions = [];
-                // Keep founding members
                 for (let k in nextId) nextId[k] = 1;
                 saveAll();
                 renderAll();
@@ -2973,10 +3425,11 @@
                     trainings: trainings.length,
                     meetings: meetings.length,
                     volunteers: volunteers.length,
+                    pendingReceipts: getPendingReceipts(),
                     exportedAt: new Date().toISOString()
                 };
                 const subject = 'BDA Platform Data Sync';
-                const body = `BDA Platform Data Sync\n======================\nDate: ${new Date().toLocaleString()}\nApproved Members: ${data.members}\nPending Approvals: ${data.pending}\nTotal Donations (ETB): ${data.donations}\nFiles: ${data.files}\nTrainings: ${data.trainings}\nMeetings: ${data.meetings}\nVolunteers: ${data.volunteers}\n======================\nThis is an automated sync from the BDA Platform.`;
+                const body = `BDA Platform Data Sync\n======================\nDate: ${new Date().toLocaleString()}\nApproved Members: ${data.members}\nPending Approvals: ${data.pending}\nTotal Donations (ETB): ${data.donations}\nFiles: ${data.files}\nTrainings: ${data.trainings}\nMeetings: ${data.meetings}\nVolunteers: ${data.volunteers}\nPending Receipts: ${data.pendingReceipts}\n======================\nThis is an automated sync from the BDA Platform.`;
                 window.location.href =
                     `mailto:${adminEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 toast('Sync email opened!', 'success');
@@ -3021,8 +3474,11 @@
             // ─── NOTIFICATION BELL ───
             document.getElementById('notifBell').addEventListener('click', function() {
                 const pending = getPendingCount();
-                if (pending > 0) {
-                    toast(`You have ${pending} pending approval${pending>1?'s':''}.`, 'info');
+                const receipts = getPendingReceipts();
+                const total = pending + receipts;
+                if (total > 0) {
+                    toast(`You have ${pending} member approval${pending>1?'s':''} and ${receipts} receipt${receipts>1?'s':''} pending.`,
+                        'info');
                     navigateTo('admin');
                 } else {
                     toast('No pending notifications.', 'info');
@@ -3153,6 +3609,8 @@
             window.openMaterialModal = openMaterialModal;
             window.openMeetingModal = openMeetingModal;
             window.openFoundingModal = openFoundingModal;
+            window.viewReceipt = viewReceipt;
+            window.verifyReceipt = verifyReceipt;
             window.toast = toast;
             window.verifyAdminPassword = verifyAdminPassword;
 
@@ -3191,15 +3649,8 @@
                     amount: 5000,
                     method: 'Bank Transfer',
                     message: 'Supporting community development!',
-                    date: new Date().toISOString()
-                });
-                donations.push({
-                    id: nextId.donation++,
-                    donor: 'BDA Supporter',
-                    email: 'support@example.com',
-                    amount: 2500,
-                    method: 'TeleBirr',
-                    message: 'For education programs.',
+                    receipt: null,
+                    receiptStatus: null,
                     date: new Date().toISOString()
                 });
                 trainings.push({ id: nextId.training++, title: 'Leadership Workshop', date: '2026-08-15',
@@ -3230,7 +3681,7 @@
                 toast('🎉 Welcome to BDA Platform! Sample data loaded.', 'success');
             }
 
-            // Auto refresh stats & calendar
+            // Auto refresh
             setInterval(() => {
                 if (document.getElementById('page-home').classList.contains('active')) updateStats();
                 if (document.getElementById('page-calendar').classList.contains('active')) renderCalendar();
@@ -3239,7 +3690,7 @@
                 if (dt) dt.textContent = new Date().toLocaleString();
             }, 10000);
 
-            console.log('🚀 BDA Platform v5.1 loaded successfully!');
+            console.log('🚀 BDA Platform v5.2 loaded successfully!');
             console.log(`📊 ${members.length} members, ${donations.length} donations, ${files.length} files`);
 
         })();
