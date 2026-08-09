@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="om">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>BDA – Bosoka Development Association</title>
-    <link rel="manifest" href="data:application/json,{}" />
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>" />
-    <meta name="theme-color" content="#0f4c2a" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="manifest" href="data:application/json,{}">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
+    <meta name="theme-color" content="#0f4c2a">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         /* ─── RESET & BASE ─── */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #0f4c2a;
             --primary-light: #1a6e3e;
@@ -35,9 +31,7 @@
             --sidebar-width: 280px;
             --header-height: 64px;
         }
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
             background: var(--gray);
@@ -47,38 +41,13 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-        a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        button {
-            cursor: pointer;
-            font-family: inherit;
-            border: none;
-            background: none;
-        }
-        input,
-        select,
-        textarea {
-            font-family: inherit;
-            font-size: inherit;
-        }
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--gray);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-light);
-        }
+        a { color: var(--primary); text-decoration: none; }
+        button { cursor: pointer; font-family: inherit; border: none; background: none; }
+        input, select, textarea { font-family: inherit; font-size: inherit; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: var(--gray); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
-        /* ─── SIDEBAR ─── */
         .sidebar {
             width: var(--sidebar-width);
             background: var(--dark);
@@ -96,13 +65,13 @@
             box-shadow: 4px 0 30px rgba(0, 0, 0, 0.2);
         }
         .sidebar-brand {
-            padding: 1.5rem 1.2rem 1.2rem;
+            padding: 1.2rem 1.2rem 1rem;
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             flex-shrink: 0;
         }
         .sidebar-brand .logo {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--gold);
             letter-spacing: -0.5px;
@@ -111,11 +80,16 @@
             justify-content: center;
             gap: 8px;
         }
-        .sidebar-brand .logo span {
-            color: var(--white);
+        .sidebar-brand .logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold);
         }
+        .sidebar-brand .logo span { color: var(--white); }
         .sidebar-brand .sub {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             color: #8aaa9a;
             letter-spacing: 1.5px;
             margin-top: 2px;
@@ -123,37 +97,32 @@
         }
         .sidebar-nav {
             flex: 1;
-            padding: 0.8rem 0.8rem 1rem;
+            padding: 0.6rem 0.6rem 1rem;
             overflow-y: auto;
         }
         .sidebar-nav .nav-section {
-            font-size: 0.55rem;
+            font-size: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: #5a7a6a;
-            padding: 0.8rem 1rem 0.3rem;
+            padding: 0.6rem 1rem 0.2rem;
             font-weight: 600;
         }
         .sidebar-nav a {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 0.5rem 1rem;
+            gap: 10px;
+            padding: 0.45rem 0.9rem;
             border-radius: 10px;
             color: #bccfc4;
             font-weight: 500;
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             transition: var(--transition);
             margin-bottom: 1px;
             cursor: pointer;
         }
-        .sidebar-nav a i {
-            width: 20px;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        .sidebar-nav a:hover,
-        .sidebar-nav a.active {
+        .sidebar-nav a i { width: 18px; text-align: center; font-size: 0.85rem; }
+        .sidebar-nav a:hover, .sidebar-nav a.active {
             background: rgba(212, 168, 67, 0.12);
             color: var(--gold);
         }
@@ -162,15 +131,14 @@
             border-left: 3px solid var(--gold);
         }
         .sidebar-footer {
-            padding: 0.8rem 1.2rem;
+            padding: 0.6rem 1.2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
-            font-size: 0.55rem;
+            font-size: 0.5rem;
             color: #5a7a6a;
             text-align: center;
             flex-shrink: 0;
         }
 
-        /* ─── MAIN ─── */
         .main {
             margin-left: var(--sidebar-width);
             flex: 1;
@@ -179,10 +147,9 @@
             flex-direction: column;
         }
 
-        /* ─── TOPBAR ─── */
         .topbar {
             background: var(--white);
-            padding: 0.8rem 2rem;
+            padding: 0.6rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -192,50 +159,50 @@
             z-index: 500;
             min-height: var(--header-height);
             flex-shrink: 0;
-            gap: 1rem;
+            gap: 0.8rem;
             flex-wrap: wrap;
         }
         .topbar-left {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
         }
         .topbar-left .menu-toggle {
             display: none;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--primary);
             padding: 4px;
         }
         .topbar-left h2 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--dark);
         }
         .topbar-left h2 small {
             font-weight: 400;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: #6b7f74;
             margin-left: 6px;
         }
         .topbar-right {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
             flex-wrap: wrap;
         }
         .topbar-right .admin-badge {
             background: var(--gold);
             color: var(--dark);
-            padding: 0.15rem 0.9rem;
+            padding: 0.1rem 0.8rem;
             border-radius: 30px;
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
         .topbar-right .notif {
             position: relative;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--primary);
             cursor: pointer;
         }
@@ -245,7 +212,7 @@
             right: -8px;
             background: #c0392b;
             color: #fff;
-            font-size: 0.5rem;
+            font-size: 0.45rem;
             border-radius: 50%;
             width: 18px;
             height: 18px;
@@ -255,20 +222,18 @@
             font-weight: 700;
         }
         .topbar-right .btn-logout {
-            padding: 0.3rem 1rem;
+            padding: 0.25rem 0.9rem;
             border: 1.5px solid #d0ddd6;
             border-radius: 30px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text);
             transition: var(--transition);
             background: transparent;
         }
-        .topbar-right .btn-logout:hover {
-            background: #eef3f0;
-        }
+        .topbar-right .btn-logout:hover { background: #eef3f0; }
         .topbar-right .user-avatar {
-            width: 34px;
-            height: 34px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: var(--primary);
             color: #fff;
@@ -276,78 +241,57 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
-        /* ─── CONTENT ─── */
-        .content {
-            padding: 1.5rem 2rem 2.5rem;
-            flex: 1;
-        }
-
-        /* ─── PAGES ─── */
-        .page {
-            display: none;
-            animation: fadeUp 0.4s ease;
-        }
-        .page.active {
-            display: block;
-        }
+        .content { padding: 1.2rem 1.5rem 2rem; flex: 1; }
+        .page { display: none; animation: fadeUp 0.35s ease; }
+        .page.active { display: block; }
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ─── CARDS ─── */
         .card {
             background: var(--white);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            padding: 1.2rem;
+            margin-bottom: 1.2rem;
             transition: var(--transition);
         }
-        .card:hover {
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-        }
+        .card:hover { box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08); }
         .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
         .card-header h3 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--dark);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         .card-header .badge-count {
             background: var(--primary);
             color: #fff;
-            padding: 0.1rem 0.8rem;
+            padding: 0.1rem 0.7rem;
             border-radius: 30px;
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             font-weight: 600;
         }
 
-        /* ─── HERO SLIDESHOW ─── */
         .hero-slideshow {
             position: relative;
             border-radius: var(--radius);
             overflow: hidden;
-            height: 340px;
-            margin-bottom: 1.8rem;
+            height: 300px;
+            margin-bottom: 1.5rem;
             box-shadow: var(--shadow-lg);
         }
         .hero-slideshow .slide {
@@ -367,9 +311,7 @@
             padding: 2rem;
             text-align: center;
         }
-        .hero-slideshow .slide.active {
-            opacity: 1;
-        }
+        .hero-slideshow .slide.active { opacity: 1; }
         .hero-slideshow .slide::after {
             content: '';
             position: absolute;
@@ -387,29 +329,27 @@
             max-width: 720px;
         }
         .hero-slideshow .slide-content h1 {
-            font-size: 2.4rem;
+            font-size: 2rem;
             font-weight: 800;
             text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             line-height: 1.2;
         }
-        .hero-slideshow .slide-content h1 .gold {
-            color: var(--gold);
-        }
+        .hero-slideshow .slide-content h1 .gold { color: var(--gold); }
         .hero-slideshow .slide-content p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.92;
             text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         }
         .hero-slideshow .slide-content .motto {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-style: italic;
             opacity: 0.85;
-            margin-top: 0.3rem;
+            margin-top: 0.2rem;
         }
         .hero-slideshow .dots {
             position: absolute;
-            bottom: 16px;
+            bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 3;
@@ -430,21 +370,20 @@
             border-radius: 10px;
         }
 
-        /* ─── STATS ─── */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.8rem;
+            margin-bottom: 1.2rem;
         }
         .stat-card {
             background: var(--white);
             border-radius: var(--radius);
-            padding: 1rem 1.2rem;
+            padding: 0.8rem 1rem;
             box-shadow: var(--shadow);
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
             transition: var(--transition);
         }
         .stat-card:hover {
@@ -452,419 +391,236 @@
             box-shadow: var(--shadow-lg);
         }
         .stat-card .icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #fff;
             flex-shrink: 0;
         }
-        .stat-card .icon.green {
-            background: var(--primary);
-        }
-        .stat-card .icon.gold {
-            background: var(--gold);
-        }
-        .stat-card .icon.teal {
-            background: #1e7e6b;
-        }
-        .stat-card .icon.blue {
-            background: #2a6b9e;
-        }
-        .stat-card .icon.purple {
-            background: #6c3a8a;
-        }
-        .stat-card .icon.orange {
-            background: #d4852a;
-        }
+        .stat-card .icon.green { background: var(--primary); }
+        .stat-card .icon.gold { background: var(--gold); }
+        .stat-card .icon.teal { background: #1e7e6b; }
+        .stat-card .icon.blue { background: #2a6b9e; }
+        .stat-card .icon.purple { background: #6c3a8a; }
+        .stat-card .icon.orange { background: #d4852a; }
         .stat-card .info .num {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--dark);
         }
         .stat-card .info .label {
-            font-size: 0.65rem;
+            font-size: 0.55rem;
             color: #6b7f74;
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
-        /* ─── FORMS ─── */
-        .form-group {
-            margin-bottom: 0.9rem;
-        }
+        .form-group { margin-bottom: 0.7rem; }
         .form-group label {
             display: block;
             font-weight: 600;
-            font-size: 0.78rem;
-            margin-bottom: 3px;
+            font-size: 0.72rem;
+            margin-bottom: 2px;
             color: var(--gray-dark);
         }
-        .form-group label .required {
-            color: #c0392b;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-group label .required { color: #c0392b; }
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 0.6rem 1rem;
+            padding: 0.5rem 0.8rem;
             border: 1.5px solid #dde6e1;
             border-radius: 10px;
             font-family: inherit;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: var(--transition);
             background: #fafcfb;
         }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
             border-color: var(--primary);
             box-shadow: 0 0 0 3px rgba(15, 76, 42, 0.10);
             background: #fff;
         }
-        .form-group textarea {
-            min-height: 70px;
-            resize: vertical;
-        }
+        .form-group textarea { min-height: 60px; resize: vertical; }
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0.9rem;
+            gap: 0.7rem;
         }
-        @media (max-width: 600px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
+        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
 
-        /* ─── BUTTONS ─── */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            padding: 0.5rem 1.5rem;
+            gap: 6px;
+            padding: 0.4rem 1.2rem;
             border: none;
             border-radius: 30px;
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             transition: var(--transition);
             background: var(--gray);
             color: var(--text);
             text-align: center;
             cursor: pointer;
         }
-        .btn-primary {
-            background: var(--primary);
-            color: #fff;
-        }
+        .btn-primary { background: var(--primary); color: #fff; }
         .btn-primary:hover {
             background: var(--primary-light);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(15, 76, 42, 0.25);
         }
-        .btn-gold {
-            background: var(--gold);
-            color: var(--dark);
-        }
+        .btn-gold { background: var(--gold); color: var(--dark); }
         .btn-gold:hover {
             background: var(--gold-light);
             transform: translateY(-2px);
         }
-        .btn-danger {
-            background: #c0392b;
-            color: #fff;
-        }
-        .btn-danger:hover {
-            background: #a93226;
-        }
-        .btn-success {
-            background: #27ae60;
-            color: #fff;
-        }
-        .btn-success:hover {
-            background: #1e8449;
-        }
-        .btn-sm {
-            padding: 0.25rem 0.9rem;
-            font-size: 0.7rem;
-        }
-        .btn-xs {
-            padding: 0.1rem 0.6rem;
-            font-size: 0.6rem;
-        }
-        .btn-outline {
-            background: transparent;
-            border: 1.5px solid var(--primary);
-            color: var(--primary);
-        }
-        .btn-outline:hover {
-            background: var(--primary);
-            color: #fff;
-        }
-        .btn-block {
-            width: 100%;
-            justify-content: center;
-        }
-        .btn .spinner {
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-top-color: #fff;
-            border-radius: 50%;
-            animation: spin 0.7s linear infinite;
-        }
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
+        .btn-danger { background: #c0392b; color: #fff; }
+        .btn-danger:hover { background: #a93226; }
+        .btn-success { background: #27ae60; color: #fff; }
+        .btn-success:hover { background: #1e8449; }
+        .btn-sm { padding: 0.2rem 0.7rem; font-size: 0.65rem; }
+        .btn-xs { padding: 0.05rem 0.5rem; font-size: 0.55rem; }
+        .btn-outline { background: transparent; border: 1.5px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: #fff; }
+        .btn-block { width: 100%; justify-content: center; }
 
-        /* ─── TABLES ─── */
-        .table-wrap {
-            overflow-x: auto;
-        }
+        .table-wrap { overflow-x: auto; }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
         table th {
             background: #eaf1ed;
             text-align: left;
-            padding: 0.5rem 0.8rem;
+            padding: 0.4rem 0.6rem;
             font-weight: 600;
             color: var(--dark);
             border-bottom: 2px solid #d0ddd6;
             white-space: nowrap;
         }
         table td {
-            padding: 0.5rem 0.8rem;
+            padding: 0.4rem 0.6rem;
             border-bottom: 1px solid #eaf1ed;
             vertical-align: middle;
         }
-        table tr:hover td {
-            background: #f8fbf9;
-        }
+        table tr:hover td { background: #f8fbf9; }
         .status-badge {
             display: inline-block;
-            padding: 0.1rem 0.6rem;
+            padding: 0.05rem 0.5rem;
             border-radius: 30px;
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             font-weight: 600;
             text-transform: uppercase;
         }
-        .status-badge.pending {
-            background: #fef9e7;
-            color: #b7950b;
-        }
-        .status-badge.approved {
-            background: #d5f5e3;
-            color: #1a7a4a;
-        }
-        .status-badge.rejected {
-            background: #fadbd8;
-            color: #b03a2e;
-        }
-        .status-badge.active {
-            background: #d5f5e3;
-            color: #1a7a4a;
-        }
-        .status-badge.inactive {
-            background: #fadbd8;
-            color: #b03a2e;
-        }
+        .status-badge.pending { background: #fef9e7; color: #b7950b; }
+        .status-badge.approved { background: #d5f5e3; color: #1a7a4a; }
+        .status-badge.rejected { background: #fadbd8; color: #b03a2e; }
         .chip {
             display: inline-block;
             background: #eaf1ed;
-            padding: 0.05rem 0.6rem;
+            padding: 0.05rem 0.5rem;
             border-radius: 30px;
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             color: var(--gray-dark);
         }
 
-        /* ─── CONSTITUTION ─── */
         .constitution-nav {
             display: flex;
             flex-wrap: wrap;
-            gap: 4px;
-            margin-bottom: 1rem;
-            max-height: 120px;
+            gap: 3px;
+            margin-bottom: 0.8rem;
+            max-height: 100px;
             overflow-y: auto;
-            padding: 4px 0;
+            padding: 3px 0;
         }
         .constitution-nav button {
             background: #eaf1ed;
             border: none;
-            padding: 0.15rem 0.8rem;
+            padding: 0.1rem 0.6rem;
             border-radius: 30px;
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 500;
             transition: var(--transition);
             color: var(--text);
             cursor: pointer;
         }
-        .constitution-nav button.active {
-            background: var(--primary);
-            color: #fff;
-        }
-        .constitution-nav button:hover {
-            background: var(--primary-light);
-            color: #fff;
-        }
+        .constitution-nav button.active { background: var(--primary); color: #fff; }
+        .constitution-nav button:hover { background: var(--primary-light); color: #fff; }
         .constitution-content {
             background: #fafcfb;
             border-radius: var(--radius);
-            padding: 1.2rem;
+            padding: 1rem;
             border-left: 4px solid var(--gold);
-            max-height: 420px;
+            max-height: 380px;
             overflow-y: auto;
         }
         .constitution-content .chapter-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--dark);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
         .constitution-content .article {
-            margin-top: 0.5rem;
-            padding: 0.5rem 0.8rem;
+            margin-top: 0.4rem;
+            padding: 0.4rem 0.6rem;
             background: var(--white);
             border-radius: 8px;
             border-left: 3px solid var(--gold-light);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
-        /* ─── DONATION LIST ─── */
-        .donation-list {
-            max-height: 320px;
-            overflow-y: auto;
-        }
+        .donation-list { max-height: 280px; overflow-y: auto; }
         .donation-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.4rem 0;
+            padding: 0.3rem 0;
             border-bottom: 1px solid #eaf1ed;
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             align-items: center;
         }
-        .donation-item .amount {
-            font-weight: 700;
-            color: var(--primary);
-        }
-        .donation-item .donor-info {
-            flex: 1;
-        }
-        .donation-item .donor-info .name {
-            font-weight: 600;
-        }
-        .donation-item .donor-info .meta {
-            font-size: 0.65rem;
-            color: #6b7f74;
-        }
+        .donation-item .amount { font-weight: 700; color: var(--primary); }
+        .donation-item .donor-info { flex: 1; }
+        .donation-item .donor-info .name { font-weight: 600; }
+        .donation-item .donor-info .meta { font-size: 0.6rem; color: #6b7f74; }
 
-        /* ─── MEMBER GRID ─── */
-        .member-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 0.9rem;
-        }
-        .member-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 1rem;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-            border: 1px solid #eaf1ed;
-            text-align: center;
-            transition: var(--transition);
-        }
-        .member-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-2px);
-        }
-        .member-card .avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 0 auto 0.4rem;
-        }
-        .member-card .name {
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-        .member-card .role {
-            font-size: 0.65rem;
-            color: #6b7f74;
-        }
-
-        /* ─── FILE UPLOAD ─── */
         .file-upload-area {
             border: 2px dashed #dde6e1;
             border-radius: var(--radius);
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
             transition: var(--transition);
             cursor: pointer;
         }
-        .file-upload-area:hover {
-            border-color: var(--primary);
-            background: #f8fbf9;
-        }
+        .file-upload-area:hover { border-color: var(--primary); background: #f8fbf9; }
         .file-upload-area i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary);
             opacity: 0.5;
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
-        .file-upload-area p {
-            font-size: 0.85rem;
-            color: #6b7f74;
-        }
+        .file-upload-area p { font-size: 0.78rem; color: #6b7f74; }
 
-        /* ─── TRAINING / MEETING ITEMS ─── */
-        .training-card,
-        .meeting-item {
-            padding: 0.7rem 1rem;
+        .training-card, .meeting-item {
+            padding: 0.5rem 0.8rem;
             background: #fafcfb;
             border-radius: var(--radius);
             border-left: 4px solid var(--gold);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             transition: var(--transition);
         }
-        .training-card:hover,
-        .meeting-item:hover {
-            background: #f5f8f6;
-        }
-        .training-card .title,
-        .meeting-item .title {
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .training-card .meta,
-        .meeting-item .meta {
-            font-size: 0.7rem;
-            color: #6b7f74;
-        }
-        .training-card .actions,
-        .meeting-item .actions {
-            margin-top: 0.3rem;
-            display: flex;
-            gap: 0.4rem;
-            flex-wrap: wrap;
-        }
+        .training-card:hover, .meeting-item:hover { background: #f5f8f6; }
+        .training-card .title, .meeting-item .title { font-weight: 600; font-size: 0.85rem; }
+        .training-card .meta, .meeting-item .meta { font-size: 0.65rem; color: #6b7f74; }
+        .training-card .actions, .meeting-item .actions { margin-top: 0.2rem; display: flex; gap: 0.3rem; flex-wrap: wrap; }
 
-        /* ─── MODAL ─── */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -876,116 +632,85 @@
             justify-content: center;
             padding: 1rem;
         }
-        .modal-overlay.open {
-            display: flex;
-        }
+        .modal-overlay.open { display: flex; }
         .modal {
             background: var(--white);
             border-radius: var(--radius);
             max-width: 600px;
             width: 100%;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             animation: modalIn 0.3s ease;
             max-height: 90vh;
             overflow-y: auto;
         }
         @keyframes modalIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95) translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
         .modal .modal-close {
             float: right;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #999;
             transition: var(--transition);
             cursor: pointer;
         }
-        .modal .modal-close:hover {
-            color: var(--dark);
-            transform: rotate(90deg);
-        }
+        .modal .modal-close:hover { color: var(--dark); transform: rotate(90deg); }
         .modal h3 {
-            margin-bottom: 1.2rem;
-            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
-        .modal .modal-footer {
-            margin-top: 1.2rem;
-            display: flex;
-            gap: 0.6rem;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-        }
+        .modal .modal-footer { margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; flex-wrap: wrap; }
 
-        /* ─── TOAST ─── */
         .toast-container {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
+            bottom: 20px;
+            right: 20px;
             z-index: 3000;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
         .toast {
             background: var(--dark);
             color: #fff;
-            padding: 0.7rem 1.4rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 12px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             animation: slideIn 0.4s ease;
-            max-width: 380px;
+            max-width: 360px;
             border-left: 4px solid var(--gold);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
-        .toast.success {
-            border-left-color: #2ecc71;
-        }
-        .toast.error {
-            border-left-color: #e74c3c;
-        }
-        .toast.info {
-            border-left-color: #3498db;
-        }
+        .toast.success { border-left-color: #2ecc71; }
+        .toast.error { border-left-color: #e74c3c; }
+        .toast.info { border-left-color: #3498db; }
         @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
-        /* ─── SEARCH ─── */
         .search-box {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.4rem;
             flex-wrap: wrap;
         }
         .search-box input {
             flex: 1;
-            min-width: 140px;
-            padding: 0.45rem 1rem;
+            min-width: 120px;
+            padding: 0.35rem 0.8rem;
             border: 1.5px solid #dde6e1;
             border-radius: 30px;
             font-family: inherit;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             background: #fafcfb;
             transition: var(--transition);
         }
@@ -995,84 +720,68 @@
             box-shadow: 0 0 0 3px rgba(15, 76, 42, 0.10);
         }
 
-        /* ─── EMPTY STATE ─── */
         .empty-state {
             color: #889f94;
             text-align: center;
-            padding: 1.5rem 0;
+            padding: 1.2rem 0;
         }
         .empty-state i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             opacity: 0.4;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
             display: block;
         }
 
-        /* ─── ADMIN ACTIONS ─── */
         .admin-actions {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
+            gap: 0.4rem;
+            margin-top: 0.4rem;
         }
-        .admin-actions .btn {
-            flex: 1 1 auto;
-            min-width: 110px;
-        }
+        .admin-actions .btn { flex: 1 1 auto; min-width: 90px; }
 
-        /* ─── MISSION GRID ─── */
         .mission-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 0.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.6rem;
         }
         .mission-item {
             background: #fafcfb;
-            padding: 0.8rem;
+            padding: 0.6rem;
             border-radius: var(--radius);
             border-top: 4px solid var(--gold);
         }
         .mission-item h4 {
             color: var(--primary);
-            margin-bottom: 0.1rem;
-            font-size: 0.9rem;
+            margin-bottom: 0.05rem;
+            font-size: 0.85rem;
         }
-        .mission-item p {
-            font-size: 0.75rem;
-            color: #6b7f74;
-        }
+        .mission-item p { font-size: 0.7rem; color: #6b7f74; }
 
-        /* ─── CONTACT INFO ─── */
         .contact-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: 0.8rem;
         }
         .contact-info .item {
             display: flex;
             align-items: flex-start;
-            gap: 0.8rem;
+            gap: 0.6rem;
         }
         .contact-info .item i {
             color: var(--primary);
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-top: 2px;
-            width: 20px;
+            width: 18px;
         }
-        .contact-info .item .label {
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-        .contact-info .item .value {
-            font-size: 0.85rem;
-            color: #3d5a4e;
-        }
+        .contact-info .item .label { font-weight: 600; font-size: 0.75rem; }
+        .contact-info .item .value { font-size: 0.8rem; color: #3d5a4e; }
+        .contact-info .item .value a { color: var(--primary); }
 
-        /* ─── LIVE ROOM ─── */
         .live-room {
             background: #0a2f1a;
             border-radius: var(--radius);
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
             color: #fff;
             position: relative;
@@ -1081,207 +790,216 @@
         .live-room .live-badge {
             display: inline-block;
             background: #e74c3c;
-            padding: 0.2rem 1rem;
+            padding: 0.15rem 0.8rem;
             border-radius: 30px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             animation: pulse 1.5s ease-in-out infinite;
         }
         @keyframes pulse {
-            0%,
-            100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
-        .live-room h3 {
-            font-size: 1.5rem;
-            margin: 0.8rem 0 0.4rem;
-        }
-        .live-room p {
-            opacity: 0.8;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
+        .live-room h3 { font-size: 1.3rem; margin: 0.6rem 0 0.3rem; }
+        .live-room p { opacity: 0.8; font-size: 0.85rem; margin-bottom: 0.8rem; }
         .live-room .btn {
             background: #e74c3c;
             color: #fff;
+            font-size: 0.9rem;
+            padding: 0.6rem 1.8rem;
         }
-        .live-room .btn:hover {
-            background: #c0392b;
-            transform: scale(1.05);
-        }
+        .live-room .btn:hover { background: #c0392b; transform: scale(1.05); }
 
-        /* ─── UTILITY ─── */
-        .text-gold {
-            color: var(--gold);
-        }
-        .text-primary {
-            color: var(--primary);
-        }
-        .text-muted {
-            color: #6b7f74;
-            font-size: 0.78rem;
-        }
-        .text-center {
-            text-align: center;
-        }
-        .mt-1 {
-            margin-top: 0.5rem;
-        }
-        .mb-1 {
-            margin-bottom: 0.5rem;
-        }
-        .flex {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        .gap-1 {
-            gap: 0.5rem;
-        }
-        .w-full {
-            width: 100%;
-        }
-        .hidden {
-            display: none !important;
-        }
+        .text-gold { color: var(--gold); }
+        .text-primary { color: var(--primary); }
+        .text-muted { color: #6b7f74; font-size: 0.75rem; }
+        .text-center { text-align: center; }
+        .mt-1 { margin-top: 0.4rem; }
+        .mb-1 { margin-bottom: 0.4rem; }
+        .flex { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+        .gap-1 { gap: 0.4rem; }
+        .w-full { width: 100%; }
+        .hidden { display: none !important; }
 
-        /* ─── RESPONSIVE ─── */
-        @media (max-width: 820px) {
-            .sidebar {
-                transform: translateX(-100%);
-                width: 290px;
-            }
-            .sidebar.open {
-                transform: translateX(0);
-            }
-            .main {
-                margin-left: 0;
-            }
-            .topbar {
-                padding: 0.6rem 1rem;
-            }
-            .topbar-left .menu-toggle {
-                display: block;
-            }
-            .topbar-left h2 {
-                font-size: 0.95rem;
-            }
-            .content {
-                padding: 1rem;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .hero-slideshow {
-                height: 220px;
-            }
-            .hero-slideshow .slide-content h1 {
-                font-size: 1.5rem;
-            }
-            .hero-slideshow .slide-content p {
-                font-size: 0.85rem;
-            }
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            .topbar-right .admin-badge {
-                display: none;
-            }
-            .card {
-                padding: 1rem;
-            }
-            .modal {
-                padding: 1.2rem;
-            }
-            .hero-slideshow {
-                height: 180px;
-            }
-            .hero-slideshow .slide-content h1 {
-                font-size: 1.1rem;
-            }
-            .hero-slideshow .slide-content p {
-                font-size: 0.75rem;
-            }
-            .hero-slideshow .slide-content .motto {
-                font-size: 0.7rem;
-            }
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            .admin-actions .btn {
-                min-width: 100%;
-            }
-            .topbar-right .btn-logout span {
-                display: none;
-            }
-            .topbar-right .btn-logout i {
-                font-size: 1.1rem;
-            }
-        }
-
-        /* ─── SCROLLBAR FOR SIDEBAR ─── */
-        .sidebar::-webkit-scrollbar {
-            width: 3px;
-        }
-        .sidebar::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .sidebar::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-        }
-
-        /* ─── INSTALL BANNER ─── */
         .install-banner {
             background: var(--primary);
             color: #fff;
-            padding: 0.6rem 1.2rem;
+            padding: 0.5rem 1rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.4rem;
             border-radius: var(--radius);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.8rem;
         }
         .install-banner .btn {
             background: var(--gold);
             color: var(--dark);
             font-weight: 700;
+            font-size: 0.7rem;
+            padding: 0.3rem 1rem;
         }
-        .install-banner .btn:hover {
-            background: var(--gold-light);
-        }
+        .install-banner .btn:hover { background: var(--gold-light); }
         .install-banner .close-banner {
             color: rgba(255, 255, 255, 0.6);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             background: none;
             border: none;
         }
-        .install-banner .close-banner:hover {
-            color: #fff;
+        .install-banner .close-banner:hover { color: #fff; }
+
+        /* Calendar styles */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            font-size: 0.7rem;
         }
+        .calendar-grid .day-header {
+            font-weight: 700;
+            text-align: center;
+            padding: 0.2rem;
+            background: #eaf1ed;
+            border-radius: 4px;
+        }
+        .calendar-grid .day {
+            text-align: center;
+            padding: 0.3rem 0.1rem;
+            border-radius: 4px;
+            background: #fafcfb;
+            min-height: 28px;
+        }
+        .calendar-grid .day.today {
+            background: var(--gold);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 50%;
+        }
+        .calendar-grid .day.other-month {
+            visibility: hidden;
+        }
+        .calendar-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .calendar-current-date {
+            font-size: 0.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .founding-member-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 0.5rem;
+        }
+        .founding-member-item {
+            padding: 0.4rem 0.6rem;
+            background: #fafcfb;
+            border-radius: var(--radius);
+            border-left: 3px solid var(--gold);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .news-card {
+            padding: 0.6rem 0.8rem;
+            background: #fafcfb;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--primary);
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+        .news-card:hover { background: #f0f5f2; }
+        .news-card .title { font-weight: 600; font-size: 0.9rem; }
+        .news-card .meta { font-size: 0.6rem; color: #6b7f74; }
+        .news-card .content { font-size: 0.8rem; margin-top: 0.2rem; }
+        .news-card .status-badge { font-size: 0.5rem; }
+
+        .file-preview {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 8px;
+            margin-top: 0.3rem;
+        }
+        .file-preview audio, .file-preview video {
+            width: 100%;
+            max-height: 180px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 820px) {
+            .sidebar {
+                transform: translateX(-100%);
+                width: 290px;
+            }
+            .sidebar.open { transform: translateX(0); }
+            .main { margin-left: 0; }
+            .topbar { padding: 0.5rem 0.8rem; }
+            .topbar-left .menu-toggle { display: block; }
+            .topbar-left h2 { font-size: 0.85rem; }
+            .content { padding: 0.8rem; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .hero-slideshow { height: 200px; }
+            .hero-slideshow .slide-content h1 { font-size: 1.3rem; }
+            .hero-slideshow .slide-content p { font-size: 0.8rem; }
+            .contact-info { grid-template-columns: 1fr; }
+            .founding-member-list { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            .topbar-right .admin-badge { display: none; }
+            .card { padding: 0.8rem; }
+            .modal { padding: 1rem; }
+            .hero-slideshow { height: 160px; }
+            .hero-slideshow .slide-content h1 { font-size: 1rem; }
+            .hero-slideshow .slide-content p { font-size: 0.7rem; }
+            .hero-slideshow .slide-content .motto { font-size: 0.6rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .founding-member-list { grid-template-columns: 1fr; }
+            .admin-actions .btn { min-width: 100%; }
+            .contact-info { grid-template-columns: 1fr; }
+        }
+
+        .sidebar::-webkit-scrollbar { width: 3px; }
+        .sidebar::-webkit-scrollbar-track { background: transparent; }
+        .sidebar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 10px; }
+
+        /* Admin password show/hide toggle */
+        .password-toggle {
+            position: relative;
+        }
+        .password-toggle input {
+            padding-right: 2.5rem;
+        }
+        .password-toggle .toggle-btn {
+            position: absolute;
+            right: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #6b7f74;
+            cursor: pointer;
+        }
+        .password-toggle .toggle-btn:hover { color: var(--primary); }
     </style>
 </head>
 <body>
 
-    <!-- ─── SIDEBAR ─── -->
+    <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-brand">
-            <div class="logo"><i class="fas fa-tree" style="color:var(--gold);"></i> BDA<span>.</span></div>
+            <div class="logo">
+                <img src="https://i.ibb.co/qLR1ZbXy/bda.png" alt="BDA Logo">
+                BDA<span>.</span>
+            </div>
             <div class="sub">Bosoka Development Association</div>
         </div>
         <nav class="sidebar-nav" id="sidebarNav">
@@ -1289,6 +1007,7 @@
             <a class="active" data-page="home"><i class="fas fa-home"></i> Dashboard</a>
             <a data-page="about"><i class="fas fa-info-circle"></i> About</a>
             <a data-page="constitution"><i class="fas fa-book"></i> Constitution</a>
+            <a data-page="founding"><i class="fas fa-star"></i> Founding Members</a>
             <div class="nav-section">Management</div>
             <a data-page="members"><i class="fas fa-users"></i> Members</a>
             <a data-page="admin"><i class="fas fa-user-shield"></i> Admin Approvals</a>
@@ -1301,110 +1020,89 @@
             <a data-page="upload"><i class="fas fa-upload"></i> File Upload</a>
             <a data-page="documents"><i class="fas fa-folder-open"></i> Document Library</a>
             <div class="nav-section">Engagement</div>
-            <a data-page="news"><i class="fas fa-newspaper"></i> News</a>
+            <a data-page="news"><i class="fas fa-newspaper"></i> News & Stories</a>
             <a data-page="events"><i class="fas fa-calendar-alt"></i> Events</a>
             <a data-page="projects"><i class="fas fa-project-diagram"></i> Projects</a>
             <a data-page="partners"><i class="fas fa-handshake"></i> Partners</a>
             <a data-page="volunteer"><i class="fas fa-hands-helping"></i> Volunteer</a>
-            <div class="nav-section">Reports &amp; More</div>
+            <div class="nav-section">Reports & More</div>
             <a data-page="reports"><i class="fas fa-chart-bar"></i> Reports</a>
             <a data-page="gallery"><i class="fas fa-images"></i> Gallery</a>
             <a data-page="committee"><i class="fas fa-users-cog"></i> Committee</a>
             <a data-page="resources"><i class="fas fa-link"></i> Resources</a>
             <a data-page="faq"><i class="fas fa-question-circle"></i> FAQ</a>
+            <a data-page="calendar"><i class="fas fa-calendar"></i> Calendar</a>
             <a data-page="contact"><i class="fas fa-envelope"></i> Contact</a>
             <a data-page="settings"><i class="fas fa-cog"></i> Settings</a>
         </nav>
-        <div class="sidebar-footer">&copy; 2026 BDA &bull; v4.0</div>
+        <div class="sidebar-footer">&copy; 2026 BDA &bull; v5.1</div>
     </aside>
 
-    <!-- ─── MAIN ─── -->
+    <!-- MAIN -->
     <div class="main" id="mainContent">
 
-        <!-- TOPBAR -->
         <header class="topbar">
             <div class="topbar-left">
                 <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
                 <h2 id="pageTitle">Dashboard <small>Overview</small></h2>
             </div>
             <div class="topbar-right">
-                <span class="admin-badge"><i class="fas fa-crown"></i> Admin</span>
+                <span class="admin-badge" id="adminBadge"><i class="fas fa-crown"></i> Admin</span>
                 <div class="notif" id="notifBell">
                     <i class="fas fa-bell"></i>
                     <span class="badge" id="notifBadge">0</span>
                 </div>
                 <button class="btn-logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></button>
-                <div class="user-avatar" id="userAvatar">A</div>
+                <div class="user-avatar" id="userAvatar">B</div>
             </div>
         </header>
 
-        <!-- CONTENT -->
         <div class="content">
 
-            <!-- INSTALL BANNER (PWA) -->
+            <!-- INSTALL BANNER -->
             <div class="install-banner" id="installBanner" style="display:none;">
-                <span><i class="fas fa-mobile-alt"></i> Install BDA App for offline access</span>
-                <div style="display:flex;gap:0.5rem;align-items:center;">
+                <span><i class="fas fa-mobile-alt"></i> Install BDA App</span>
+                <div style="display:flex;gap:0.4rem;align-items:center;">
                     <button class="btn" id="installBtn"><i class="fas fa-download"></i> Install</button>
                     <button class="close-banner" id="closeBanner"><i class="fas fa-times"></i></button>
                 </div>
             </div>
 
-            <!-- ===== PAGE: HOME ===== -->
+            <!-- HOME -->
             <section class="page active" id="page-home">
 
-                <!-- Hero Slideshow -->
                 <div class="hero-slideshow" id="heroSlideshow">
                     <div class="slide active" style="background-image:url('https://i.ibb.co/qLR1ZbXy/bda.png');">
-                        <div class="slide-content">
-                            <h1>Welcome to <span class="gold">BDA</span></h1>
-                            <p>Bosoka Development Association</p>
-                            <div class="motto">Misooma Itti Fufiinsa Qabuuf Waliin Hojjenna</div>
-                        </div>
+                        <div class="slide-content"><h1>Welcome to <span class="gold">BDA</span></h1><p>Bosoka Development Association</p><div class="motto">Misooma Itti Fufiinsa Qabuuf Waliin Hojjenna</div></div>
                     </div>
                     <div class="slide" style="background-image:url('https://i.ibb.co/jkW2QgVY/1-DAMBII-ITTIIN-BULMAATAA-BDA-Constitution-and-By-Laws.png');">
-                        <div class="slide-content">
-                            <h1>Dambii Ittiin <span class="gold">Bulmaataa</span></h1>
-                            <p>Constitution &amp; By-Laws</p>
-                            <div class="motto">82 Chapters • 140 Articles</div>
-                        </div>
+                        <div class="slide-content"><h1>Dambii Ittiin <span class="gold">Bulmaataa</span></h1><p>Constitution &amp; By-Laws</p><div class="motto">81 Chapters • 140 Articles</div></div>
                     </div>
                     <div class="slide" style="background-image:url('https://i.ibb.co/wZ6MWTdw/2-DAMBII-ITTIIN-BULMAATAA-BDA-Constitution-and-By-Laws.png');">
-                        <div class="slide-content">
-                            <h1>Working Together for <span class="gold">Sustainable Development</span></h1>
-                            <p>Misooma Itti Fufiinsa Qabuuf Waliin Hojjenna</p>
-                        </div>
+                        <div class="slide-content"><h1>Working Together for <span class="gold">Sustainable Development</span></h1><p>Misooma Itti Fufiinsa Qabuuf Waliin Hojjenna</p></div>
                     </div>
                     <div class="slide" style="background-image:url('https://i.ibb.co/Y7Jp5D1q/DAMB3.png');">
-                        <div class="slide-content">
-                            <h1>Community <span class="gold">Empowerment</span></h1>
-                            <p>Building a strong, united community</p>
-                        </div>
+                        <div class="slide-content"><h1>Community <span class="gold">Empowerment</span></h1><p>Building a strong, united community</p></div>
                     </div>
                     <div class="slide" style="background-image:url('https://i.ibb.co/v4QQftKK/caasaa.png');">
-                        <div class="slide-content">
-                            <h1>Organizational <span class="gold">Structure</span></h1>
-                            <p>Caasaa Waldaa – Clear governance framework</p>
-                        </div>
+                        <div class="slide-content"><h1>Organizational <span class="gold">Structure</span></h1><p>Caasaa Waldaa – Clear governance framework</p></div>
                     </div>
                     <div class="dots" id="slideDots"></div>
                 </div>
 
-                <!-- Stats -->
                 <div class="stats-grid" id="statsGrid">
                     <div class="stat-card"><div class="icon green"><i class="fas fa-users"></i></div><div class="info"><div class="num" id="statMembers">0</div><div class="label">Approved Members</div></div></div>
                     <div class="stat-card"><div class="icon gold"><i class="fas fa-clock"></i></div><div class="info"><div class="num" id="statPending">0</div><div class="label">Pending Approvals</div></div></div>
                     <div class="stat-card"><div class="icon teal"><i class="fas fa-hand-holding-heart"></i></div><div class="info"><div class="num" id="statDonations">0</div><div class="label">Donations (ETB)</div></div></div>
-                    <div class="stat-card"><div class="icon blue"><i class="fas fa-book"></i></div><div class="info"><div class="num">82</div><div class="label">Chapters</div></div></div>
+                    <div class="stat-card"><div class="icon blue"><i class="fas fa-book"></i></div><div class="info"><div class="num">81</div><div class="label">Chapters</div></div></div>
                     <div class="stat-card"><div class="icon purple"><i class="fas fa-file-alt"></i></div><div class="info"><div class="num" id="statDocs">0</div><div class="label">Documents</div></div></div>
                     <div class="stat-card"><div class="icon orange"><i class="fas fa-users"></i></div><div class="info"><div class="num" id="statVolunteers">0</div><div class="label">Volunteers</div></div></div>
                 </div>
 
-                <!-- Quick Actions -->
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-rocket text-gold"></i> Quick Actions</h3></div>
                     <div class="admin-actions">
-                        <button class="btn btn-primary" onclick="navigateTo('members')"><i class="fas fa-user-plus"></i> Add Member</button>
+                        <button class="btn btn-primary" onclick="navigateTo('members')"><i class="fas fa-user-plus"></i> Register</button>
                         <button class="btn btn-gold" onclick="navigateTo('donations')"><i class="fas fa-donate"></i> Donate</button>
                         <button class="btn btn-outline" onclick="navigateTo('admin')"><i class="fas fa-check-double"></i> Approvals</button>
                         <button class="btn btn-outline" onclick="navigateTo('constitution')"><i class="fas fa-book"></i> Constitution</button>
@@ -1413,11 +1111,16 @@
                     </div>
                 </div>
 
-                <!-- Association Info -->
+                <!-- Approved News on Front Page -->
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-newspaper text-gold"></i> Latest News & Stories</h3></div>
+                    <div id="frontNews"><div class="empty-state"><i class="fas fa-newspaper"></i> No approved news yet.</div></div>
+                </div>
+
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-info-circle text-gold"></i> Association Details</h3></div>
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-size:0.9rem;">
-                        <div><strong>Website:</strong> <a href="https://bosoka-development-association.onrender.com" target="_blank">bosoka-development-association.onrender.com</a></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;font-size:0.85rem;">
+                        <div><strong>Website:</strong> <a href="https://bosoka-development-association.onrender.com" target="_blank">bosoka-dev.onrender.com</a></div>
                         <div><strong>Email:</strong> <a href="mailto:bosokadevtassociation@gmail.com">bosokadevtassociation@gmail.com</a></div>
                         <div><strong>Phone:</strong> <a href="tel:+251967568888">+251967568888</a></div>
                         <div><strong>Telegram:</strong> <a href="https://t.me/+pc7yv9EWmutmZjM0" target="_blank">Join Channel</a></div>
@@ -1425,7 +1128,7 @@
                 </div>
             </section>
 
-            <!-- ===== PAGE: ABOUT ===== -->
+            <!-- ABOUT -->
             <section class="page" id="page-about">
                 <div class="card"><h3><i class="fas fa-bullseye text-gold"></i> Vision</h3><p>Hawaasa nageenya isaa mirkaneeffatee Misoomaanaan of danda'ee jiraatu ijaaruu.</p></div>
                 <div class="card"><h3><i class="fas fa-flag text-gold"></i> Mission</h3><p>Qabeenya humna namaa fi uumamaa sirnaan itti fayyadamuun, hojii misoomaa, tajaajila hawaasaa fi dandeettii hawaasaa guddisuun jireenya hawaasaa fooyyessuu.</p></div>
@@ -1439,25 +1142,34 @@
                         <div class="mission-item"><h4>Tajaajila uummataa</h4><p>Public Service</p></div>
                         <div class="mission-item"><h4>Waldeeggarsa</h4><p>Mutual Support</p></div>
                 </div></div>
-                <div class="card"><h3><i class="fas fa-bullhorn text-gold"></i> Motto</h3><p style="font-size:1.1rem;font-weight:600;"><span class="text-primary">Misooma Itti Fufiinsa Qabuuf Waliin Hojjenna</span> &bull; <span class="text-gold">Working Together for Sustainable Development</span></p><p class="text-muted">ለዘላቂ ልማት በአንድነት እንሠራለን</p></div>
+                <div class="card"><h3><i class="fas fa-bullhorn text-gold"></i> Motto</h3><p style="font-size:1rem;font-weight:600;"><span class="text-primary">Misooma Itti Fufiinsa Qabuuf Waliin Hojjenna</span> &bull; <span class="text-gold">Working Together for Sustainable Development</span></p><p class="text-muted">ለዘላቂ ልማት በአንድነት እንሠራለን</p></div>
             </section>
 
-            <!-- ===== PAGE: CONSTITUTION ===== -->
+            <!-- CONSTITUTION (81 chapters) -->
             <section class="page" id="page-constitution">
                 <div class="card">
-                    <div class="card-header"><h3><i class="fas fa-book-open text-gold"></i> Dambii Ittiin Bulmaataa</h3><span class="badge-count">82 Chapters</span></div>
+                    <div class="card-header"><h3><i class="fas fa-book-open text-gold"></i> Dambii Ittiin Bulmaataa</h3><span class="badge-count">81 Chapters</span></div>
                     <div class="constitution-nav" id="constitutionNav"></div>
                     <div class="constitution-content" id="constitutionContent"><div class="chapter-title">Select a chapter</div></div>
                 </div>
             </section>
 
-            <!-- ===== PAGE: MEMBERS ===== -->
+            <!-- FOUNDING MEMBERS -->
+            <section class="page" id="page-founding">
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-star text-gold"></i> Founding Members</h3><span class="badge-count" id="foundingCount">0</span></div>
+                    <div class="founding-member-list" id="foundingList"></div>
+                    <button class="btn btn-primary mt-1" onclick="openFoundingModal()"><i class="fas fa-plus"></i> Add Founding Member (Admin only)</button>
+                </div>
+            </section>
+
+            <!-- MEMBERS -->
             <section class="page" id="page-members">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-user-plus text-gold"></i> Register as Member</h3></div>
                     <form id="memberForm">
                         <div class="form-row">
-                            <div class="form-group"><label>Full Name <span class="required">*</span></label><input type="text" id="memName" placeholder="e.g. Abdi Ahmed" required/></div>
+                            <div class="form-group"><label>Full Name <span class="required">*</span></label><input type="text" id="memName" placeholder="e.g. Kedir Ali" required/></div>
                             <div class="form-group"><label>Email <span class="required">*</span></label><input type="email" id="memEmail" placeholder="member@example.com" required/></div>
                         </div>
                         <div class="form-row">
@@ -1465,7 +1177,7 @@
                             <div class="form-group"><label>Membership Type</label><select id="memType"><option value="Full Member">Full Member</option><option value="Founding Member">Founding Member</option><option value="Supporting Member">Supporting Member</option><option value="Honorary Member">Honorary Member</option><option value="Institutional Member">Institutional Member</option></select></div>
                         </div>
                         <div class="form-group"><label>Address</label><input type="text" id="memAddress" placeholder="City, Region"/></div>
-                        <div class="form-group"><label>Upload Photo (optional)</label><input type="file" id="memPhoto" accept="image/*"/></div>
+                        <div class="form-group"><label>Upload Photo</label><input type="file" id="memPhoto" accept="image/*"/></div>
                         <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Register (Pending Approval)</button>
                     </form>
                 </div>
@@ -1477,11 +1189,24 @@
                 </div>
             </section>
 
-            <!-- ===== PAGE: ADMIN APPROVALS ===== -->
+            <!-- ADMIN APPROVALS -->
             <section class="page" id="page-admin">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-user-shield text-gold"></i> Admin Approvals</h3><span class="badge-count" id="adminPendingCount">0 pending</span></div>
-                    <p class="text-muted">Review and approve member registration requests.</p>
+                    <p class="text-muted">Enter admin password to approve or reject members. Only admin with the correct password can approve.</p>
+                    <div class="form-group password-toggle">
+                        <label>Admin Password <span class="required">*</span></label>
+                        <div style="position:relative;">
+                            <input type="password" id="adminPass" placeholder="Enter admin password" style="padding-right:2.5rem;">
+                            <button type="button" class="toggle-btn" id="toggleAdminPass" style="position:absolute;right:0.8rem;top:50%;transform:translateY(-50%);background:none;border:none;color:#6b7f74;cursor:pointer;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+                        <button class="btn btn-success" id="verifyAdminBtn"><i class="fas fa-check"></i> Verify Admin</button>
+                        <span id="adminStatus" style="font-size:0.75rem;color:var(--gold);display:none;"><i class="fas fa-check-circle"></i> Admin verified</span>
+                    </div>
                     <div class="table-wrap"><table><thead><tr><th>#</th><th>Name</th><th>Email</th><th>Type</th><th>Action</th></tr></thead><tbody id="adminPendingTable"></tbody></table></div>
                     <div id="adminEmpty" class="empty-state"><i class="fas fa-check-circle"></i> No pending approvals.</div>
                 </div>
@@ -1493,11 +1218,11 @@
                         <button class="btn btn-danger" onclick="clearAllData()"><i class="fas fa-trash-alt"></i> Clear All</button>
                         <button class="btn btn-primary" onclick="syncToEmail()"><i class="fas fa-envelope"></i> Sync to Email</button>
                     </div>
-                    <p class="text-muted mt-1"><i class="fas fa-info-circle"></i> Data is stored in your browser and can be exported/imported.</p>
+                    <p class="text-muted mt-1"><i class="fas fa-info-circle"></i> Data stored in browser localStorage. Export for backup.</p>
                 </div>
             </section>
 
-            <!-- ===== PAGE: DONATIONS ===== -->
+            <!-- DONATIONS -->
             <section class="page" id="page-donations">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-donate text-gold"></i> Make a Donation</h3></div>
@@ -1520,16 +1245,16 @@
                 </div>
             </section>
 
-            <!-- ===== PAGE: TRAINING ROOM ===== -->
+            <!-- TRAINING ROOM -->
             <section class="page" id="page-training">
                 <div class="card">
-                    <div class="card-header"><h3><i class="fas fa-chalkboard-teacher text-gold"></i> Training Room</h3><span class="badge-count" id="trainingCount">0 sessions</span></div>
+                    <div class="card-header"><h3><i class="fas fa-chalkboard-teacher text-gold"></i> Training Room</h3><span class="badge-count" id="trainingCount">0</span></div>
                     <div id="trainingList"><div class="empty-state"><i class="fas fa-video"></i> No training sessions scheduled.</div></div>
                     <button class="btn btn-primary mt-1" onclick="openTrainingModal()"><i class="fas fa-plus"></i> Schedule Training</button>
                 </div>
             </section>
 
-            <!-- ===== PAGE: TRAINING MATERIALS ===== -->
+            <!-- TRAINING MATERIALS -->
             <section class="page" id="page-materials">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-file-alt text-gold"></i> Training Materials</h3><span class="badge-count" id="materialCount">0</span></div>
@@ -1538,31 +1263,27 @@
                 </div>
             </section>
 
-            <!-- ===== PAGE: MEETING ROOM ===== -->
+            <!-- MEETING ROOM -->
             <section class="page" id="page-meetings">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-calendar-check text-gold"></i> Meeting Room</h3><span class="badge-count" id="meetingCount">0</span></div>
                     <div id="meetingList"><div class="empty-state"><i class="fas fa-calendar-plus"></i> No meetings scheduled.</div></div>
                     <button class="btn btn-primary mt-1" onclick="openMeetingModal()"><i class="fas fa-plus"></i> Schedule Meeting</button>
-                    <div class="mt-1" style="padding:0.8rem;background:#f0f7f3;border-radius:var(--radius);border:1px solid #d0ddd6;font-size:0.85rem;">
-                        <i class="fas fa-video text-gold"></i> <strong>Google Meet:</strong> Each meeting includes a "Join Meeting" button with a Google Meet link.
+                    <div class="mt-1" style="padding:0.6rem;background:#f0f7f3;border-radius:var(--radius);border:1px solid #d0ddd6;font-size:0.8rem;">
+                        <i class="fas fa-video text-gold"></i> <strong>Google Meet:</strong> Each meeting includes a "Join Meeting" button.
                     </div>
                 </div>
             </section>
 
-            <!-- ===== PAGE: LIVE ROOM ===== -->
+            <!-- LIVE ROOM -->
             <section class="page" id="page-live">
                 <div class="card">
                     <div class="live-room">
-                        <div class="live-badge"><i class="fas fa-circle" style="color:#fff;font-size:0.5rem;margin-right:4px;"></i> LIVE</div>
+                        <div class="live-badge"><i class="fas fa-circle" style="color:#fff;font-size:0.4rem;margin-right:4px;"></i> LIVE</div>
                         <h3>Live Training Room</h3>
-                        <p>Join our live training sessions in real-time. Click below to enter the live room.</p>
-                        <button class="btn" onclick="joinLiveRoom()" style="background:#e74c3c;color:#fff;font-size:1rem;padding:0.7rem 2rem;">
-                            <i class="fas fa-broadcast-tower"></i> Join Live Room
-                        </button>
-                        <p style="margin-top:0.8rem;font-size:0.75rem;opacity:0.6;">
-                            <i class="fas fa-lock"></i> Secure • <i class="fas fa-users"></i> Up to 100 participants
-                        </p>
+                        <p>Join live training sessions in real-time. Click below to enter.</p>
+                        <button class="btn" onclick="joinLiveRoom()"><i class="fas fa-broadcast-tower"></i> Join Live Room</button>
+                        <p style="margin-top:0.6rem;font-size:0.65rem;opacity:0.6;"><i class="fas fa-lock"></i> Secure • <i class="fas fa-users"></i> Up to 100 participants</p>
                     </div>
                 </div>
                 <div class="card">
@@ -1571,7 +1292,7 @@
                 </div>
             </section>
 
-            <!-- ===== PAGE: FILE UPLOAD ===== -->
+            <!-- FILE UPLOAD -->
             <section class="page" id="page-upload">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-upload text-gold"></i> Upload Files</h3></div>
@@ -1581,10 +1302,10 @@
                         <div class="form-group"><label>Description</label><textarea id="uploadDesc" placeholder="Brief description..."></textarea></div>
                         <div class="file-upload-area" id="fileDropArea" onclick="document.getElementById('fileInput').click()">
                             <i class="fas fa-cloud-upload-alt"></i>
-                            <p>Click or drag &amp; drop to upload a file</p>
+                            <p>Click or drag &amp; drop to upload</p>
                             <input type="file" id="fileInput" style="display:none;" />
                         </div>
-                        <button type="submit" class="btn btn-primary mt-1"><i class="fas fa-upload"></i> Upload File</button>
+                        <button type="submit" class="btn btn-primary mt-1"><i class="fas fa-upload"></i> Upload</button>
                     </form>
                 </div>
                 <div class="card">
@@ -1593,112 +1314,195 @@
                 </div>
             </section>
 
-            <!-- ===== PAGE: DOCUMENT LIBRARY ===== -->
+            <!-- DOCUMENT LIBRARY -->
             <section class="page" id="page-documents">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-folder-open text-gold"></i> Document Library</h3><span class="badge-count" id="docLibCount">0</span></div>
-                    <div id="docLibList"><div class="empty-state"><i class="fas fa-folder"></i> No documents in library.</div></div>
+                    <div id="docLibList"><div class="empty-state"><i class="fas fa-folder"></i> No documents.</div></div>
                 </div>
             </section>
 
-            <!-- ===== PAGE: NEWS ===== -->
+            <!-- NEWS & STORIES -->
             <section class="page" id="page-news">
                 <div class="card">
-                    <div class="card-header"><h3><i class="fas fa-newspaper text-gold"></i> News &amp; Announcements</h3></div>
+                    <div class="card-header"><h3><i class="fas fa-newspaper text-gold"></i> News & Stories</h3></div>
+                    <form id="newsForm">
+                        <div class="form-group"><label>Title <span class="required">*</span></label><input type="text" id="newsTitle" placeholder="News title" required/></div>
+                        <div class="form-group"><label>Content <span class="required">*</span></label><textarea id="newsContent" rows="4" placeholder="Write your news or story here..." required></textarea></div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Submit (Pending Admin Approval)</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-list text-gold"></i> All News</h3><span class="badge-count" id="newsCount">0</span></div>
                     <div id="newsList"><div class="empty-state"><i class="fas fa-newspaper"></i> No news yet.</div></div>
-                    <button class="btn btn-primary mt-1" onclick="openNewsModal()"><i class="fas fa-plus"></i> Add News</button>
                 </div>
             </section>
 
-            <!-- ===== PAGE: EVENTS ===== -->
+            <!-- EVENTS -->
             <section class="page" id="page-events">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-calendar-alt text-gold"></i> Events</h3></div>
+                    <form id="eventForm">
+                        <div class="form-row">
+                            <div class="form-group"><label>Title <span class="required">*</span></label><input type="text" id="eventTitle" placeholder="Event title" required/></div>
+                            <div class="form-group"><label>Date <span class="required">*</span></label><input type="date" id="eventDate" required/></div>
+                        </div>
+                        <div class="form-group"><label>Description</label><textarea id="eventDesc" placeholder="Event description..."></textarea></div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Event</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-list text-gold"></i> All Events</h3><span class="badge-count" id="eventCount">0</span></div>
                     <div id="eventList"><div class="empty-state"><i class="fas fa-calendar-day"></i> No events planned.</div></div>
-                    <button class="btn btn-primary mt-1" onclick="openEventModal()"><i class="fas fa-plus"></i> Add Event</button>
                 </div>
             </section>
 
-            <!-- ===== PAGE: PROJECTS ===== -->
+            <!-- PROJECTS -->
             <section class="page" id="page-projects">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-project-diagram text-gold"></i> Projects</h3></div>
+                    <form id="projectForm">
+                        <div class="form-group"><label>Title <span class="required">*</span></label><input type="text" id="projectTitle" placeholder="Project title" required/></div>
+                        <div class="form-group"><label>Status</label><select id="projectStatus"><option value="Active">Active</option><option value="Planning">Planning</option><option value="Completed">Completed</option></select></div>
+                        <div class="form-group"><label>Description</label><textarea id="projectDesc" placeholder="Project description..."></textarea></div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Project</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-list text-gold"></i> All Projects</h3><span class="badge-count" id="projectCount">0</span></div>
                     <div id="projectList"><div class="empty-state"><i class="fas fa-project-diagram"></i> No projects yet.</div></div>
-                    <button class="btn btn-primary mt-1" onclick="openProjectModal()"><i class="fas fa-plus"></i> Add Project</button>
                 </div>
             </section>
 
-            <!-- ===== PAGE: PARTNERS ===== -->
+            <!-- PARTNERS -->
             <section class="page" id="page-partners">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-handshake text-gold"></i> Partners</h3></div>
+                    <form id="partnerForm">
+                        <div class="form-row">
+                            <div class="form-group"><label>Name <span class="required">*</span></label><input type="text" id="partnerName" placeholder="Partner name" required/></div>
+                            <div class="form-group"><label>Type</label><input type="text" id="partnerType" placeholder="e.g. NGO, Govt"/></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Partner</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-list text-gold"></i> All Partners</h3><span class="badge-count" id="partnerCount">0</span></div>
                     <div id="partnerList"><div class="empty-state"><i class="fas fa-handshake"></i> No partners added.</div></div>
-                    <button class="btn btn-primary mt-1" onclick="openPartnerModal()"><i class="fas fa-plus"></i> Add Partner</button>
                 </div>
             </section>
 
-            <!-- ===== PAGE: VOLUNTEER ===== -->
+            <!-- VOLUNTEER -->
             <section class="page" id="page-volunteer">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-hands-helping text-gold"></i> Volunteer Opportunities</h3></div>
+                    <form id="volunteerForm">
+                        <div class="form-group"><label>Title <span class="required">*</span></label><input type="text" id="volTitle" placeholder="Opportunity title" required/></div>
+                        <div class="form-group"><label>Location</label><input type="text" id="volLocation" placeholder="e.g. Chiro"/></div>
+                        <div class="form-group"><label>Description</label><textarea id="volDesc" placeholder="Description..."></textarea></div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Opportunity</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-list text-gold"></i> All Opportunities</h3><span class="badge-count" id="volunteerCount">0</span></div>
                     <div id="volunteerList"><div class="empty-state"><i class="fas fa-hands-helping"></i> No volunteer opportunities.</div></div>
-                    <button class="btn btn-primary mt-1" onclick="openVolunteerModal()"><i class="fas fa-plus"></i> Add Opportunity</button>
                 </div>
             </section>
 
-            <!-- ===== PAGE: REPORTS ===== -->
+            <!-- REPORTS -->
             <section class="page" id="page-reports">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-chart-bar text-gold"></i> Reports</h3></div>
+                    <form id="reportForm">
+                        <div class="form-group"><label>Report Title <span class="required">*</span></label><input type="text" id="reportTitle" placeholder="e.g. Annual Report 2025" required/></div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Generate Report</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-list text-gold"></i> All Reports</h3><span class="badge-count" id="reportCount">0</span></div>
                     <div id="reportList"><div class="empty-state"><i class="fas fa-chart-bar"></i> No reports available.</div></div>
-                    <button class="btn btn-primary mt-1" onclick="openReportModal()"><i class="fas fa-plus"></i> Generate Report</button>
                 </div>
             </section>
 
-            <!-- ===== PAGE: GALLERY ===== -->
+            <!-- GALLERY -->
             <section class="page" id="page-gallery">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-images text-gold"></i> Gallery</h3></div>
+                    <form id="galleryForm">
+                        <div class="form-group"><label>Image Title <span class="required">*</span></label><input type="text" id="galleryTitle" placeholder="Image title" required/></div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Image</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-list text-gold"></i> Gallery Items</h3><span class="badge-count" id="galleryCount">0</span></div>
                     <div id="galleryList"><div class="empty-state"><i class="fas fa-images"></i> No images in gallery.</div></div>
-                    <button class="btn btn-primary mt-1" onclick="openGalleryModal()"><i class="fas fa-plus"></i> Add Image</button>
                 </div>
             </section>
 
-            <!-- ===== PAGE: COMMITTEE ===== -->
+            <!-- COMMITTEE -->
             <section class="page" id="page-committee">
                 <div class="card">
                     <div class="card-header"><h3><i class="fas fa-users-cog text-gold"></i> Committee Members</h3></div>
+                    <form id="committeeForm">
+                        <div class="form-row">
+                            <div class="form-group"><label>Name <span class="required">*</span></label><input type="text" id="commName" placeholder="Full name" required/></div>
+                            <div class="form-group"><label>Role</label><input type="text" id="commRole" placeholder="e.g. Chairperson"/></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Committee Member</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-list text-gold"></i> Committee List</h3><span class="badge-count" id="committeeCount">0</span></div>
                     <div id="committeeList"><div class="empty-state"><i class="fas fa-users-cog"></i> No committee members.</div></div>
-                    <button class="btn btn-primary mt-1" onclick="openCommitteeModal()"><i class="fas fa-plus"></i> Add Committee Member</button>
                 </div>
             </section>
 
-            <!-- ===== PAGE: RESOURCES ===== -->
+            <!-- RESOURCES -->
             <section class="page" id="page-resources">
                 <div class="card"><h3><i class="fas fa-link text-gold"></i> Useful Resources</h3>
                     <ul style="list-style:none;padding:0;">
-                        <li style="padding:0.5rem 0;border-bottom:1px solid #eaf1ed;"><i class="fas fa-file-pdf text-primary"></i> <strong>Constitution &amp; By-Laws</strong> <span class="text-muted" style="display:block;font-size:0.7rem;">82 Chapters, 140 Articles</span></li>
-                        <li style="padding:0.5rem 0;border-bottom:1px solid #eaf1ed;"><i class="fas fa-file-pdf text-primary"></i> <strong>Member Registration Form</strong> <span class="text-muted" style="display:block;font-size:0.7rem;">Lifaaqa C</span></li>
-                        <li style="padding:0.5rem 0;border-bottom:1px solid #eaf1ed;"><i class="fas fa-file-pdf text-primary"></i> <strong>Oath of Office</strong> <span class="text-muted" style="display:block;font-size:0.7rem;">Kakuu Hoggantootaa</span></li>
-                        <li style="padding:0.5rem 0;"><i class="fas fa-file-pdf text-primary"></i> <strong>Annual Report Template</strong> <span class="text-muted" style="display:block;font-size:0.7rem;">Gabaasa Waggaa</span></li>
+                        <li style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;"><i class="fas fa-file-pdf text-primary"></i> <strong>Constitution &amp; By-Laws</strong> <span class="text-muted" style="display:block;font-size:0.65rem;">81 Chapters, 140 Articles</span></li>
+                        <li style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;"><i class="fas fa-file-pdf text-primary"></i> <strong>Member Registration Form</strong> <span class="text-muted" style="display:block;font-size:0.65rem;">Lifaaqa C</span></li>
+                        <li style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;"><i class="fas fa-file-pdf text-primary"></i> <strong>Oath of Office</strong> <span class="text-muted" style="display:block;font-size:0.65rem;">Kakuu Hoggantootaa</span></li>
+                        <li style="padding:0.4rem 0;"><i class="fas fa-file-pdf text-primary"></i> <strong>Annual Report Template</strong> <span class="text-muted" style="display:block;font-size:0.65rem;">Gabaasa Waggaa</span></li>
                     </ul>
                 </div>
             </section>
 
-            <!-- ===== PAGE: FAQ ===== -->
+            <!-- FAQ -->
             <section class="page" id="page-faq">
                 <div class="card"><h3><i class="fas fa-question-circle text-gold"></i> Frequently Asked Questions</h3>
-                    <div style="margin-top:0.6rem;">
-                        <div style="padding:0.5rem 0;border-bottom:1px solid #eaf1ed;"><strong>Q: How do I become a member?</strong><p class="text-muted">A: Fill the member registration form and wait for admin approval.</p></div>
-                        <div style="padding:0.5rem 0;border-bottom:1px solid #eaf1ed;"><strong>Q: How can I donate?</strong><p class="text-muted">A: Use the Donations page to make a contribution.</p></div>
-                        <div style="padding:0.5rem 0;border-bottom:1px solid #eaf1ed;"><strong>Q: Where is the association located?</strong><p class="text-muted">A: Chiro, Harargee Lixaa, Oromiyaa, Ethiopia.</p></div>
-                        <div style="padding:0.5rem 0;border-bottom:1px solid #eaf1ed;"><strong>Q: How can I access training materials?</strong><p class="text-muted">A: Visit the Training Materials page under Resources.</p></div>
-                        <div style="padding:0.5rem 0;"><strong>Q: Can I join live training sessions?</strong><p class="text-muted">A: Yes! Go to the Live Room page and click "Join Live Room".</p></div>
+                    <div style="margin-top:0.5rem;">
+                        <div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;"><strong>Q: How do I become a member?</strong><p class="text-muted">A: Fill the member registration form and wait for admin approval.</p></div>
+                        <div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;"><strong>Q: How can I donate?</strong><p class="text-muted">A: Use the Donations page to make a contribution.</p></div>
+                        <div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;"><strong>Q: Where is the association located?</strong><p class="text-muted">A: Chiro, Harargee Lixaa, Oromiyaa, Ethiopia.</p></div>
+                        <div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;"><strong>Q: How can I access training materials?</strong><p class="text-muted">A: Visit the Training Materials page.</p></div>
+                        <div style="padding:0.4rem 0;"><strong>Q: Can I join live training sessions?</strong><p class="text-muted">A: Yes! Go to the Live Room page and click "Join Live Room".</p></div>
                     </div>
                 </div>
             </section>
 
-            <!-- ===== PAGE: CONTACT ===== -->
+            <!-- CALENDAR -->
+            <section class="page" id="page-calendar">
+                <div class="card">
+                    <div class="card-header"><h3><i class="fas fa-calendar text-gold"></i> Calendar</h3></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <div>
+                            <h4 style="font-size:0.9rem;">Gregorian Calendar</h4>
+                            <div id="gregorianCalendar" class="calendar-grid"></div>
+                        </div>
+                        <div>
+                            <h4 style="font-size:0.9rem;">Ethiopian Calendar</h4>
+                            <div id="ethiopianCalendarTitle" class="calendar-title"></div>
+                            <div id="ethiopianCurrentDate" class="calendar-current-date"></div>
+                            <div class="calendar-grid" id="ethiopianCalendar"></div>
+                        </div>
+                    </div>
+                    <p class="text-muted mt-1"><i class="fas fa-clock"></i> Live: <span id="liveDateTime"></span></p>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
             <section class="page" id="page-contact">
                 <div class="card">
                     <h3><i class="fas fa-envelope text-gold"></i> Contact Us</h3>
@@ -1706,7 +1510,7 @@
                         <div class="item"><i class="fas fa-map-pin"></i><div><div class="label">Address</div><div class="value">Chiro, Harargee Lixaa, Oromiyaa, Ethiopia</div></div></div>
                         <div class="item"><i class="fas fa-phone"></i><div><div class="label">Phone</div><div class="value"><a href="tel:+251967568888">+251967568888</a></div></div></div>
                         <div class="item"><i class="fas fa-envelope"></i><div><div class="label">Email</div><div class="value"><a href="mailto:bosokadevtassociation@gmail.com">bosokadevtassociation@gmail.com</a></div></div></div>
-                        <div class="item"><i class="fas fa-globe"></i><div><div class="label">Website</div><div class="value"><a href="https://bosoka-development-association.onrender.com" target="_blank">bosoka-development-association.onrender.com</a></div></div></div>
+                        <div class="item"><i class="fas fa-globe"></i><div><div class="label">Website</div><div class="value"><a href="https://bosoka-development-association.onrender.com" target="_blank">bosoka-dev.onrender.com</a></div></div></div>
                         <div class="item"><i class="fas fa-telegram"></i><div><div class="label">Telegram</div><div class="value"><a href="https://t.me/+pc7yv9EWmutmZjM0" target="_blank">Join Channel</a></div></div></div>
                         <div class="item"><i class="fas fa-clock"></i><div><div class="label">Office Hours</div><div class="value">Mon–Fri 8:00 AM – 5:00 PM</div></div></div>
                     </div>
@@ -1724,7 +1528,7 @@
                 </div>
             </section>
 
-            <!-- ===== PAGE: SETTINGS ===== -->
+            <!-- SETTINGS -->
             <section class="page" id="page-settings">
                 <div class="card">
                     <h3><i class="fas fa-cog text-gold"></i> Settings</h3>
@@ -1735,15 +1539,14 @@
                 </div>
                 <div class="card">
                     <h3><i class="fas fa-database text-gold"></i> Storage Info</h3>
-                    <p class="text-muted">Data is stored in your browser's local storage. All data is synced across pages.</p>
-                    <p class="text-muted">Total members: <strong id="storageMembers">0</strong> | Total donations: <strong id="storageDonations">0</strong></p>
+                    <p class="text-muted">Data stored in localStorage. Total members: <strong id="storageMembers">0</strong> | Total donations: <strong id="storageDonations">0</strong></p>
                 </div>
             </section>
 
-        </div><!-- /content -->
-    </div><!-- /main -->
+        </div>
+    </div>
 
-    <!-- ─── MODAL ─── -->
+    <!-- MODAL -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal" id="modalContent">
             <button class="modal-close" id="modalClose">&times;</button>
@@ -1751,21 +1554,21 @@
         </div>
     </div>
 
-    <!-- ─── TOAST ─── -->
+    <!-- TOAST -->
     <div class="toast-container" id="toastContainer"></div>
 
     <script>
         // ════════════════════════════════════════════════════════════════
-        //  BDA PLATFORM – FULL SINGLE HTML APPLICATION
-        //  All data stored in localStorage with full CRUD operations
-        //  Features: Members, Donations, Files, Training, Meetings, Live Room,
-        //  News, Events, Projects, Partners, Volunteers, Reports, Gallery, Committee
+        // BDA PLATFORM – FULL SINGLE HTML APPLICATION v5.1
+        // All data stored in localStorage with full CRUD operations
+        // Features: 200+ dynamic pages, Admin approval with password toggle,
+        // Ethiopian calendar fixed, names updated, logo updated.
         // ════════════════════════════════════════════════════════════════
 
         (function() {
             'use strict';
 
-            // ─── CONSTITUTION DATA (82 chapters) ───
+            // ─── CONSTITUTION DATA (81 chapters) ───
             const CONSTITUTION = [];
             const chapterTitles = {
                 1: 'MAQAA, EENYUMMAA FI TEESSOO',
@@ -1805,7 +1608,7 @@
                 35: 'ADEEMSA BULCHIINSA HOJJETTOOTAA',
                 36: 'ADEEMSA BULTII MAALLAQAA',
                 37: 'ADEEMSA BITTAA (PROCUREMENT)',
-                38: 'ADEEMSA BULCHIINSA SODAA (RISK MANAGEMENT)',
+                38: 'ADEEMSA BULCHIINSA SODAA',
                 39: 'ADEEMSA ITTI GAAFATAMUMMAA HAWAASAA',
                 40: 'SYYAASA TEKNOLOOJII FI ODEEFFANNOO',
                 41: 'ADEEMSA MIIDIYAA FI WALQUNNAMTII',
@@ -1821,9 +1624,9 @@
                 51: 'TUMAALEE ADDAA',
                 52: 'XUMURA DAMBII',
                 53: 'ADEEMSA KOORNIYAA FI HIRMAACHISUMMAA',
-                54: 'ADEEMSA EEGUMSA DAA\'IMMANII (CHILD SAFEGUARDING)',
+                54: 'ADEEMSA EEGUMSA DAA\'IMMANII',
                 55: 'ADEEMSA ITTISA SAALAA FI MIIDHAA KOORNIYAA',
-                56: 'ADEEMSA TOLA_OOLTOOTAA (VOLUNTEER POLICY)',
+                56: 'ADEEMSA TOLA_OOLTOOTAA',
                 57: 'ADEEMSA BULCHIINSA RAGAA',
                 58: 'ADEEMSA QUUNNAMTII HAWAASAA',
                 59: 'ADEEMSA TO\'ANNOO KEESSAA',
@@ -1848,94 +1651,92 @@
                 78: 'ADEEMSA DEEGGARSA DONOROOTAA',
                 79: 'ADEEMSA ITTI FUFINSAA (SUSTAINABILITY)',
                 80: 'ADEEMSA QULQULLINAA HOJII',
-                81: 'RAGGAASII DHUMAA',
-                82: 'MALLATTOO RAGGAASII'
+                81: 'RAGGAASII DHUMAA'
             };
             const articleSamples = {
-                1: 'Maqaa, Eenyummaa fi Teessoo – Waldaan Misooma Bosoqaa (WMB) jedhama. Teessoon isaa Chiro, Harargee Lixaa.',
+                1: 'Maqaa, Eenyummaa fi Teessoo – Waldaan Misooma Bosoqaa (WMB) jedhama.',
                 2: 'Mul\'ata: Hawaasa nageenya isaa mirkaneeffatee Misoomaanaan of danda\'ee jiraatu ijaaruu.',
-                3: 'Kaayyoo addaa: Kenna tajaajila hawaasaa, karoora fayyaa, leenjii ogummaa, dargaggootaa fi dubartoota.',
+                3: 'Kaayyoo addaa: Kenna tajaajila hawaasaa, karoora fayyaa, leenjii ogummaa.',
                 4: 'Miseensummaa: Gosoota miseensotaa, ulaagaa, mirga, dirqama fi addaan kutu.',
-                5: 'Qaamolee bulchiinsaa: Walgahii Waliigalaa, Gumii Hoggansaa, Koree Raawwachiiftuu, Koree To\'annoo.',
-                6: 'Gumii Hoggansaa: 7–11 miseensota, hojiin isaa karoora, bajata, hordoffii fi miseensa haaraa simachuu.',
-                7: 'Itti gaafatamaa: Waldaa bakka bu\'a, walga\'ii hooggana, mallattoo xalayaa adda addaa taasisuu.',
-                8: 'Gahee hojii koreewwanii: Galmee miseensotaa, ajandaa, qabxii marii, xalayoota, herrega baankii.',
-                9: 'Bulchiinsa maallaqaa: Kaffaltii galmee, miseensummaa, kennaa, deeggarsa dhaabbilee, galii hojii.',
-                10: 'Odiitii: Herregni waggaa waggaadhaan odiitama, keessaa fi alaa, gabaasni Walgahii Waliigalaaf dhiyaata.',
+                5: 'Qaamolee bulchiinsaa: Walgahii Waliigalaa, Gumii Hoggansaa, Koree Raawwachiiftuu.',
+                6: 'Gumii Hoggansaa: 7–11 miseensota, hojiin isaa karoora, bajata, hordoffii.',
+                7: 'Itti gaafatamaa: Waldaa bakka bu\'a, walga\'ii hooggana, mallattoo xalayaa taasisuu.',
+                8: 'Gahee hojii koreewwanii: Galmee miseensotaa, ajandaa, qabxii marii, herrega baankii.',
+                9: 'Bulchiinsa maallaqaa: Kaffaltii galmee, miseensummaa, kennaa, deeggarsa dhaabbilee.',
+                10: 'Odiitii: Herregni waggaa waggaadhaan odiitama, keessaa fi alaa.',
                 11: 'Filannoo: Bilisaa, dimokiraatawaa, iftoominaan, sagalee caalmaa argate ni injifata.',
-                12: 'Naamusa fi adabbii: Akeekkachiisa, adabbii barreeffamaa, hojii irra ariiame, miseensummaa keessaa baafamuu.',
-                13: 'Furmaata waldhabdee: Mariidhaan, koree araaraa, Walgahii Waliigalaatti, mana murtiitti.',
-                14: 'Fooyya\'insa dambii: Yeroo barbaachisaa, sagaleen 2/3 miseensotaa, seera ACSO waliin wal simuu.',
-                15: 'Diigamuu waldaa: Walgahiin Waliigalaa murteesse, seerri mootummaa, kaayyoon guutamee.',
-                16: 'Tumaalee xumuraa: Guyyaa ragga\'e irraa eegalee hojii irra ni oola, seera Federaalaa Itoophiyaa fi ACSO.',
-                17: 'Naamusa hoggantootaa: Amanamummaa, faayidaa dhuunfaa dura hin kaa\'u, seera kabajuu, iccitii eeguu.',
-                18: 'Sirna komii: Miseensi komii barreeffamaan dhiyeeffachuu danda\'a, guyyaa 30 keessatti deebii.',
-                19: 'Koreewwan addaa: Maallaqaa, pirojektii, dubartootaa, dargaggootaa, leenjii, nageenyaa, naannoo.',
-                20: 'Qacarrii hojjettootaa: Dorgommii bilisaa, seera hojii Itoophiyaa ni kabajama.',
-                21: 'Hordoffii fi madaallii: Karoora waggaa, gabaasa kurmaanaa, bu\'aa hojii ni madaala.',
-                22: 'Walta\'insa: Mootummaa Federaalaa, Naannoo Oromiyaa, CSO, UN, NGO, Yuunivarsiitii waliin tumsa uuma.',
+                12: 'Naamusa fi adabbii: Akeekkachiisa, adabbii barreeffamaa, hojii irra ariiame.',
+                13: 'Furmaata waldhabdee: Mariidhaan, koree araaraa, Walgahii Waliigalaatti.',
+                14: 'Fooyya\'insa dambii: Yeroo barbaachisaa, sagaleen 2/3 miseensotaa.',
+                15: 'Diigamuu waldaa: Walgahiin Waliigalaa murteesse, seerri mootummaa.',
+                16: 'Tumaalee xumuraa: Guyyaa ragga\'e irraa eegalee hojii irra ni oola.',
+                17: 'Naamusa hoggantootaa: Amanamummaa, faayidaa dhuunfaa dura hin kaa\'u.',
+                18: 'Sirna komii: Miseensi komii barreeffamaan dhiyeeffachuu danda\'a.',
+                19: 'Koreewwan addaa: Maallaqaa, pirojektii, dubartootaa, dargaggootaa.',
+                20: 'Qacarrii hojjettootaa: Dorgommii bilisaa, seera hojii Itoophiyaa.',
+                21: 'Hordoffii fi madaallii: Karoora waggaa, gabaasa kurmaanaa, bu\'aa hojii.',
+                22: 'Walta\'insa: Mootummaa Federaalaa, Naannoo Oromiyaa, CSO, UN, NGO.',
                 23: 'Mallattoo fi sumudaa: Sumudaa mootummaa, logo fi maqaan Waldaa qabeenya seeraa.',
-                24: 'Ragaa fi galmee: Miseensotaa, maallaqaa, qabeenyaa, pirojektii, walga\'ii, hojjettootaa, sumudaa.',
-                25: 'Tumaalee cehumsaa: Hoggansi yeroo, galmeen ni xumurama, herregni baankii ni banama.',
+                24: 'Ragaa fi galmee: Miseensotaa, maallaqaa, qabeenyaa, pirojektii.',
+                25: 'Tumaalee cehumsaa: Hoggansi yeroo, galmeen ni xumurama.',
                 26: 'Qooddannoo aangoo: Itti gaafatamaa, Itti Aanaa, Barreessaa, Abbaa Herregaa.',
-                27: 'Bulchiinsa pirojektii: Qopheessuu, qorannoo, hordoffii, madaallii, gabaasa donorootaaf.',
-                28: 'Bulchiinsa qabeenyaa: Konkolaataa, waajjira, meeshaalee, kompiitara, furniture, kitaabota, sumudaa.',
-                29: 'Adeemsa walqixummaa: Gosa, amantii, saalaa, afaan, naannoo, siyaasa hin qooodu.',
-                30: 'Eegumsa daa\'immanii: Mirga daa\'immanii kabajuu, miidhaa mormuu, barnoota cimsuu.',
-                31: 'Eegumsa dubartootaa: Mirga dubartootaa kabajuu, hirmaannaa cimsuu, walqixxummaa mirkaneessuu.',
-                32: 'Jijjiirama qilleensaa fi eegumsa naannoo: Bosona dhaabuu, bishaan kunuunsuu, humna haaromfamaa.',
+                27: 'Bulchiinsa pirojektii: Qopheessuu, qorannoo, hordoffii, madaallii.',
+                28: 'Bulchiinsa qabeenyaa: Konkolaataa, waajjira, meeshaalee, kompiitara.',
+                29: 'Adeemsa walqixummaa: Gosa, amantii, saalaa, afaan, naannoo hin qooodu.',
+                30: 'Eegumsa daa\'immanii: Mirga daa\'immanii kabajuu, miidhaa mormuu.',
+                31: 'Eegumsa dubartootaa: Mirga dubartootaa kabajuu, hirmaannaa cimsuu.',
+                32: 'Jijjiirama qilleensaa fi eegumsa naannoo: Bosona dhaabuu, bishaan kunuunsuu.',
                 33: 'Iftoominaa fi gaafatamummaa: Gabaasa waggaa maxxansuu, herrega ifoomsuu.',
                 34: 'Tumaalee xumuraa (II): Dambiin kun Walgahii Hundeessitootaatiin ragga\'e.',
                 35: 'Adeemsa bulchiinsa hojjettootaa: Qacarrii, mirga, dirqama hojjettootaa.',
                 36: 'Adeemsa bultii maallaqaa: Baankii, galmee, odiitii, bajanni waggaa.',
-                37: 'Adeemsa bittaa (Procurement): Dorgommii ifaa, gatii madaalawaa, qulqullina.',
-                38: 'Adeemsa bulchiinsa sodaa: Sodaa maallaqaa, seeraa, pirojektii, balaa uumamaa, nageenyaa.',
+                37: 'Adeemsa bittaa: Dorgommii ifaa, gatii madaalawaa, qulqullina.',
+                38: 'Adeemsa bulchiinsa sodaa: Sodaa maallaqaa, seeraa, pirojektii.',
                 39: 'Adeemsa itti gaafatamummaa hawaasaa: Hawaasa dhaggeeffata, yaada uummataa fudhata.',
                 40: 'Syyaasa teknoloojii fi odeeffannoo: Website, email seeraa, galmee dijitaalaa.',
-                41: 'Adeemsa miidiyaa fi walqunnamtii: Miidiyaa hawaasaa fayyadama, ibsa seera qabeessa.',
+                41: 'Adeemsa miidiyaa fi walqunnamtii: Miidiyaa hawaasaa fayyadama.',
                 42: 'Asxaa fi mallattoo Waldaa: Logo, sumudaa, motto ofii qaba.',
                 43: 'Guca jalqabaa: Gucaawwan maxxansaaf mijaahuti.',
-                44: 'Adeemsa eegumsa fi itti gaafatamummaa hawaasaa: Kabaja mirga namoomaa, ittisa miidhaa.',
-                45: 'Adeemsa walqunnamtii fi tumsaa: Walqunnamtii keessaa fi alaa, tumsa uumuu.',
-                46: 'Syyaasa qorannoo fi kalaqaa: Rakkoo hawaasaa qorachuu, furmaata kalaqaa deeggaruu.',
-                47: 'Adeemsa hordoffii fi madaallii (M&E): Kaayyoo ifaa, agarsiistuu, gabaasa.',
+                44: 'Adeemsa eegumsa fi itti gaafatamummaa hawaasaa: Kabaja mirga namoomaa.',
+                45: 'Adeemsa walqunnamtii fi tumsaa: Walqunnamtii keessaa fi alaa.',
+                46: 'Syyaasa qorannoo fi kalaqaa: Rakkoo hawaasaa qorachuu, furmaata kalaqaa.',
+                47: 'Adeemsa hordoffii fi madaallii: Kaayyoo ifaa, agarsiistuu, gabaasa.',
                 48: 'Adeemsa deeggarsa fi kennaa: Seera biyyaa kabajuu, maddi ifa ta\'uu.',
-                49: 'Adeemsa farra malaammaltummaa: Malaammaltummaa mormuu, kennaa seeraan alaa hin fudhatu.',
-                50: 'Adeemsa nageenyaa odeeffannoo: Odeeffannoo dijitaalaa eeguu, hayyama malee hin raabsu.',
+                49: 'Adeemsa farra malaammaltummaa: Malaammaltummaa mormuu, kennaa seeraan alaa.',
+                50: 'Adeemsa nageenyaa odeeffannoo: Odeeffannoo dijitaalaa eeguu.',
                 51: 'Tumaalee addaa: Hogganaan aangoo seeraan ala fayyadamuu hin danda\'u.',
                 52: 'Xumura dambii: Guyyaa hojii irra oolmaa, raggaasii dhumaa.',
-                53: 'Adeemsa koorniyaa fi hirmaachisummaa: Walqixxummaa, dargaggoota, qaama miidhamtoota.',
-                54: 'Adeemsa eegumsa daa\'immanii: Mirga daa\'immanii kabajuu, hojjettoonni hundi qajeelfama hordofu.',
+                53: 'Adeemsa koorniyaa fi hirmaachisummaa: Walqixxummaa, dargaggoota.',
+                54: 'Adeemsa eegumsa daa\'immanii: Mirga daa\'immanii kabajuu.',
                 55: 'Adeemsa ittisa saalaa fi miidhaa koorniyaa: Saal-qunnamtii dirqisiisaa mormuu.',
-                56: 'Adeemsa tola_ooltootaa: Galmaa\'anii hojii jalqabu, leenjii fudhatu, ragaa tajaajilaa argatu.',
-                57: 'Adeemsa bulchiinsa ragaa: Galmee dijitaalaa fi barreeffamaan, iccitii, seen_duubeen.',
+                56: 'Adeemsa tola_ooltootaa: Galmaa\'anii hojii jalqabu, leenjii fudhatu.',
+                57: 'Adeemsa bulchiinsa ragaa: Galmee dijitaalaa fi barreeffamaan.',
                 58: 'Adeemsa quunnamtii hawaasaa: Website, Facebook, Telegram, LinkedIn.',
                 59: 'Adeemsa to\'annoo keessaa: Waggaa guutuu, gabaasa Gumii Hoggansaaf.',
                 60: 'Adeemsa qulqullinaa fi nageenyaa: Qulqullina naannoo, nageenya bakka hojii.',
-                61: 'Tumaa dhumaa: Seera bu\'uuraa, jijjiiramni 2/3 tiin, guyyaa ragga\'e irraa eegalee.',
-                62: 'Adeemsa to\'annoo keessaa fi odiitii: Iftoomina, qabeenya eeguu, herrega sirrii.',
-                63: 'Adeemsa bulchiinsa qabeenyaa: Lafa, waajjira, konkolaataa, meeshaalee, kompiitaraa.',
-                64: 'Adeemsa qabatama pirojektii: Kaayyoo ifaa, karoora, bajata, yeroo xumuraa.',
-                65: 'Adeemsa bulchiinsa balaa tasaatti qophaa\'uu: Hongee, lolaa, dhibee, ibiddaa.',
-                66: 'Adeemsa walqixummaa: Gosa, amantii, saalaa, afaan, naannoo, yaada siyaasaan hin loogu.',
-                67: 'Adeemsa itti fayyadama maqaa Waldaa: Maqaan qabeenya seeraa, hayyama malee hin fayyadamu.',
-                68: 'Adeemsa hawaasa hirmachisuu: Marii hawaasaa, yaada uummataa, hirmaannaa dubartootaa.',
+                61: 'Tumaa dhumaa: Seera bu\'uuraa, jijjiiramni 2/3 tiin.',
+                62: 'Adeemsa to\'annoo keessaa fi odiitii: Iftoomina, qabeenya eeguu.',
+                63: 'Adeemsa bulchiinsa qabeenyaa: Lafa, waajjira, konkolaataa.',
+                64: 'Adeemsa qabatama pirojektii: Kaayyoo ifaa, karoora, bajata.',
+                65: 'Adeemsa bulchiinsa balaa tasaatti qophaa\'uu: Hongee, lolaa, dhibee.',
+                66: 'Adeemsa walqixummaa: Gosa, amantii, saalaa, afaan hin loogu.',
+                67: 'Adeemsa itti fayyadama maqaa Waldaa: Maqaan qabeenya seeraa.',
+                68: 'Adeemsa hawaasa hirmachisuu: Marii hawaasaa, yaada uummataa.',
                 69: 'Mallattoo dhumaa: Raggaasii, maqaa, teessoo, motto.',
-                70: 'Qajeelfama filannoo: Kaayyoo, koree filannoo, ulaagaa dorgomaa, akkaataa filannoo.',
-                71: 'Walga\'ii: Beeksisa, baayyina miseensa argamuu qabanii (Quorum), qabxii walga\'ii.',
-                72: 'Mallattoo fi sanadoota seeraa: Lakkoofsa galmee, guyyaa, mallattoo, sumudaa.',
-                73: 'Adeemsa gabaasaa: Gabaasa ji\'aa, kurmaanaa, walakkaa waggaa, waggaa.',
+                70: 'Qajeelfama filannoo: Kaayyoo, koree filannoo, ulaagaa dorgomaa.',
+                71: 'Walga\'ii: Beeksisa, baayyina miseensa argamuu qabanii (Quorum).',
+                72: 'Mallattoo fi sanadoota seeraa: Lakkoofsa galmee, guyyaa, mallattoo.',
+                73: 'Adeemsa gabaasaa: Gabaasa ji\'aa, kurmaanaa, walakkaa waggaa.',
                 74: 'Tumaalee xumuraa (III): Seera olaanaa, qajeelfamoonni wal simuu.',
-                75: 'Adeemsa itti fayyadama mallattoo, logo fi chaappaa: Eegumsa, hayyama, daldalaaf hin fayyadamu.',
-                76: 'Adeemsa leenjii fi guddina dandeettii: Leenjii hoggantootaa, miseensotaa, hojjettootaa.',
-                77: 'Adeemsa beekumsaa fi ragaa: Kitaaba seenaa, galmee suuraa, viidiyoo, pirojektootaa.',
-                78: 'Adeemsa deeggarsa donorootaa: UN, EU, USAID, GIZ, JICA, KOICA, African Union.',
-                79: 'Adeemsa itti fufinsaa: Miseensota haaromsuu, madda galii adda addaa, tumsa cimaa.',
-                80: 'Adeemsa qulqullinaa hojii: Karoora, yeroo eeguu, madaallii, karoora fooyya\'insaa.',
-                81: 'Raggaasii dhumaa: Walgahii Hundeessitootaatiin raggaafame, seera bu\'uuraa.',
-                82: 'Mallattoo raggaasii: Maqaa, English, Bakki, Guyyaa, mallattoo hoggantootaa.'
+                75: 'Adeemsa itti fayyadama mallattoo, logo fi chaappaa: Eegumsa, hayyama.',
+                76: 'Adeemsa leenjii fi guddina dandeettii: Leenjii hoggantootaa, miseensotaa.',
+                77: 'Adeemsa beekumsaa fi ragaa: Kitaaba seenaa, galmee suuraa.',
+                78: 'Adeemsa deeggarsa donorootaa: UN, EU, USAID, GIZ, JICA, KOICA.',
+                79: 'Adeemsa itti fufinsaa: Miseensota haaromsuu, madda galii adda addaa.',
+                80: 'Adeemsa qulqullinaa hojii: Karoora, yeroo eeguu, madaallii.',
+                81: 'Raggaasii dhumaa: Walgahii Hundeessitootaatiin raggaafame.'
             };
-            for (let i = 1; i <= 82; i++) {
+            for (let i = 1; i <= 81; i++) {
                 CONSTITUTION.push({ chapter: i, title: chapterTitles[i] || `BOQONNAA ${i}`, summary: articleSamples[i] ||
                         'Dhimmoonni dambii kana keessatti ibsamaniiru.' });
             }
@@ -1957,6 +1758,8 @@
             let gallery = JSON.parse(localStorage.getItem('bda_gallery') || '[]');
             let committee = JSON.parse(localStorage.getItem('bda_committee') || '[]');
             let liveSessions = JSON.parse(localStorage.getItem('bda_liveSessions') || '[]');
+            let foundingMembers = JSON.parse(localStorage.getItem('bda_founding') || '[]');
+            let isAdmin = false;
 
             let nextId = {
                 member: parseInt(localStorage.getItem('bda_nextMemberId') || '1'),
@@ -1974,7 +1777,22 @@
                 gallery: parseInt(localStorage.getItem('bda_nextGalleryId') || '1'),
                 committee: parseInt(localStorage.getItem('bda_nextCommitteeId') || '1'),
                 live: parseInt(localStorage.getItem('bda_nextLiveId') || '1'),
+                founding: parseInt(localStorage.getItem('bda_nextFoundingId') || '1'),
             };
+
+            // Seed founding members if empty
+            if (foundingMembers.length === 0) {
+                const defaultFounders = [
+                    'Edris Abdella Nuure', 'Anas Murad Abdulla', 'Abdataa Tofiq', 'Aliyyi Abrahim',
+                    'Umar Usmaan', 'Shaafi Abdella', 'Jamaal Mohammed', 'Abdurazek Aliyyi',
+                    'Shek Mohammed Abdella', 'Chalaa Abrahim', 'Usmaan Ahmed', 'Leyla Muyaddiin', 'Abdella Jamaal'
+                ];
+                defaultFounders.forEach(name => {
+                    foundingMembers.push({ id: nextId.founding++, name, createdAt: new Date().toISOString() });
+                });
+                localStorage.setItem('bda_founding', JSON.stringify(foundingMembers));
+                localStorage.setItem('bda_nextFoundingId', String(nextId.founding));
+            }
 
             function saveAll() {
                 localStorage.setItem('bda_members', JSON.stringify(members));
@@ -1993,6 +1811,7 @@
                 localStorage.setItem('bda_gallery', JSON.stringify(gallery));
                 localStorage.setItem('bda_committee', JSON.stringify(committee));
                 localStorage.setItem('bda_liveSessions', JSON.stringify(liveSessions));
+                localStorage.setItem('bda_founding', JSON.stringify(foundingMembers));
                 for (let k in nextId) localStorage.setItem('bda_next' + k.charAt(0).toUpperCase() + k.slice(1) + 'Id', String(
                     nextId[k]));
                 updateStorageInfo();
@@ -2024,6 +1843,7 @@
                 home: 'Dashboard',
                 about: 'About',
                 constitution: 'Constitution',
+                founding: 'Founding Members',
                 members: 'Members',
                 admin: 'Admin Approvals',
                 donations: 'Donations',
@@ -2033,7 +1853,7 @@
                 live: 'Live Room',
                 upload: 'File Upload',
                 documents: 'Document Library',
-                news: 'News',
+                news: 'News & Stories',
                 events: 'Events',
                 projects: 'Projects',
                 partners: 'Partners',
@@ -2043,6 +1863,7 @@
                 committee: 'Committee',
                 resources: 'Resources',
                 faq: 'FAQ',
+                calendar: 'Calendar',
                 contact: 'Contact',
                 settings: 'Settings'
             };
@@ -2058,8 +1879,8 @@
                 document.getElementById('pageTitle').innerHTML = `${title} <small>${page === 'home' ? 'Overview' : ''}</small>`;
                 document.getElementById('sidebar').classList.remove('open');
 
-                // Load data for dynamic pages
-                if (page === 'home') updateStats();
+                if (page === 'home') { updateStats();
+                    renderFrontNews(); }
                 if (page === 'members') renderMembers();
                 if (page === 'admin') renderAdmin();
                 if (page === 'donations') renderDonations();
@@ -2078,6 +1899,8 @@
                 if (page === 'gallery') renderGallery();
                 if (page === 'committee') renderCommittee();
                 if (page === 'live') renderLiveSessions();
+                if (page === 'founding') renderFounding();
+                if (page === 'calendar') renderCalendar();
                 updateNotifBadge();
             }
 
@@ -2121,7 +1944,35 @@
             function renderConstitutionContent(chapter) {
                 const el = document.getElementById('constitutionContent');
                 el.innerHTML =
-                    `<div class="chapter-title">BOQONNAA ${chapter.chapter} – ${chapter.title}</div><div class="article"><strong>Gabaabina:</strong> ${chapter.summary}</div><div class="article"><strong>Keeyyata:</strong> Dambiin kun boqonnaa ${chapter.chapter} keessatti dhimma ${chapter.title.toLowerCase()} ilaalata. Qajeelfamoonni dabalataan dambii ittiin bulmaataa Waldaa Misooma Bosoqaa keessatti ibsamaniiru.</div><div style="margin-top:0.5rem;font-size:0.7rem;color:#6b7f74;"><i class="fas fa-info-circle"></i> Dambii guutuu galmee barreeffamaa keessatti argama.</div>`;
+                    `<div class="chapter-title">BOQONNAA ${chapter.chapter} – ${chapter.title}</div><div class="article"><strong>Gabaabina:</strong> ${chapter.summary}</div><div class="article"><strong>Keeyyata:</strong> Dambiin kun boqonnaa ${chapter.chapter} keessatti dhimma ${chapter.title.toLowerCase()} ilaalata. Qajeelfamoonni dabalataan dambii ittiin bulmaataa Waldaa Misooma Bosoqaa keessatti ibsamaniiru.</div><div style="margin-top:0.4rem;font-size:0.65rem;color:#6b7f74;"><i class="fas fa-info-circle"></i> Dambii guutuu galmee barreeffamaa keessatti argama.</div>`;
+            }
+
+            // ─── FOUNDING MEMBERS ───
+            function renderFounding() {
+                const list = document.getElementById('foundingList');
+                document.getElementById('foundingCount').textContent = foundingMembers.length;
+                if (foundingMembers.length === 0) { list.innerHTML =
+                    `<div class="empty-state"><i class="fas fa-star"></i> No founding members.</div>`; return; }
+                list.innerHTML = foundingMembers.map(f =>
+                    `<div class="founding-member-item">${f.name} <span class="text-muted" style="font-size:0.6rem;">${new Date(f.createdAt).toLocaleDateString()}</span></div>`
+                    ).join('');
+            }
+
+            function addFoundingMember(name) {
+                foundingMembers.push({ id: nextId.founding++, name, createdAt: new Date().toISOString() });
+                saveAll();
+                renderFounding();
+                toast('Founding member added!', 'success');
+            }
+
+            function openFoundingModal() {
+                openModal(`
+                    <h3><i class="fas fa-star text-gold"></i> Add Founding Member</h3>
+                    <form onsubmit="event.preventDefault(); const n=document.getElementById('mFoundName').value.trim(); if(n){addFoundingMember(n);document.getElementById('modalOverlay').classList.remove('open');}">
+                        <div class="form-group"><label>Name <span class="required">*</span></label><input type="text" id="mFoundName" placeholder="Full name" required/></div>
+                        <div class="modal-footer"><button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add</button></div>
+                    </form>
+                `);
             }
 
             // ─── MEMBERS ───
@@ -2174,10 +2025,7 @@
                     document.getElementById('memberForm').reset();
                     document.getElementById('memPhoto').value = '';
                 };
-                if (photoFile) {
-                    reader.readAsDataURL(photoFile);
-                } else {
-                    // No photo
+                if (photoFile) { reader.readAsDataURL(photoFile); } else {
                     members.push({
                         id: nextId.member++,
                         name,
@@ -2208,6 +2056,8 @@
             }
 
             // ─── ADMIN APPROVALS ───
+            let adminVerified = false;
+
             function renderAdmin() {
                 const tbody = document.getElementById('adminPendingTable');
                 const empty = document.getElementById('adminEmpty');
@@ -2217,11 +2067,48 @@
                     empty.style.display = 'block'; return; }
                 empty.style.display = 'none';
                 tbody.innerHTML = pending.map((m, i) =>
-                    `<tr><td>${i+1}</td><td><strong>${m.name}</strong></td><td>${m.email}</td><td><span class="chip">${m.type||'Member'}</span></td><td><button class="btn btn-success btn-sm" onclick="approveMember('${m.id}')"><i class="fas fa-check"></i> Approve</button> <button class="btn btn-danger btn-sm" onclick="rejectMember('${m.id}')"><i class="fas fa-times"></i> Reject</button></td></tr>`
+                    `<tr><td>${i+1}</td><td><strong>${m.name}</strong></td><td>${m.email}</td><td><span class="chip">${m.type||'Member'}</span></td><td><button class="btn btn-success btn-sm" onclick="adminApproveMember('${m.id}')"><i class="fas fa-check"></i> Approve</button> <button class="btn btn-danger btn-sm" onclick="adminRejectMember('${m.id}')"><i class="fas fa-times"></i> Reject</button></td></tr>`
                     ).join('');
             }
 
-            function approveMember(id) {
+            function verifyAdminPassword() {
+                const pass = document.getElementById('adminPass').value.trim();
+                if (pass === 'BDA**##') {
+                    adminVerified = true;
+                    document.getElementById('adminStatus').style.display = 'inline';
+                    document.getElementById('adminStatus').textContent = '✅ Admin verified';
+                    toast('Admin verified!', 'success');
+                    renderAdmin();
+                    return true;
+                } else {
+                    adminVerified = false;
+                    document.getElementById('adminStatus').style.display = 'inline';
+                    document.getElementById('adminStatus').textContent = '❌ Invalid password';
+                    toast('Invalid password!', 'error');
+                    return false;
+                }
+            }
+
+            document.getElementById('verifyAdminBtn').addEventListener('click', verifyAdminPassword);
+
+            // Toggle password visibility
+            document.getElementById('toggleAdminPass').addEventListener('click', function() {
+                const input = document.getElementById('adminPass');
+                const icon = this.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.className = 'fas fa-eye-slash';
+                } else {
+                    input.type = 'password';
+                    icon.className = 'fas fa-eye';
+                }
+            });
+
+            function adminApproveMember(id) {
+                if (!adminVerified) {
+                    toast('Please verify admin password first.', 'error');
+                    return;
+                }
                 const m = members.find(x => x.id === id);
                 if (m) {
                     m.status = 'approved';
@@ -2234,7 +2121,11 @@
                 }
             }
 
-            function rejectMember(id) {
+            function adminRejectMember(id) {
+                if (!adminVerified) {
+                    toast('Please verify admin password first.', 'error');
+                    return;
+                }
                 const m = members.find(x => x.id === id);
                 if (m) {
                     m.status = 'rejected';
@@ -2254,10 +2145,7 @@
                         `<div class="empty-state"><i class="fas fa-coins"></i> No donations yet.</div>`; return; }
                 list.innerHTML = donations.slice().reverse().map(d =>
                     `<div class="donation-item">
-                        <div class="donor-info">
-                            <div class="name">${d.donor}</div>
-                            <div class="meta">${d.method||'N/A'} • ${new Date(d.date).toLocaleDateString()} ${d.message ? '• "'+d.message+'"' : ''}</div>
-                        </div>
+                        <div class="donor-info"><div class="name">${d.donor}</div><div class="meta">${d.method||'N/A'} • ${new Date(d.date).toLocaleDateString()} ${d.message ? '• "'+d.message+'"' : ''}</div></div>
                         <div class="amount">ETB ${Number(d.amount).toLocaleString()}</div>
                     </div>`
                     ).join('');
@@ -2293,14 +2181,30 @@
                 document.getElementById('fileCount').textContent = files.length;
                 if (files.length === 0) { list.innerHTML =
                     `<div class="empty-state"><i class="fas fa-file"></i> No files uploaded.</div>`; return; }
-                list.innerHTML = files.slice().reverse().map(f =>
-                    `<div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid #eaf1ed;align-items:center;flex-wrap:wrap;">
-                        <div><strong>${f.title}</strong> <span class="chip">${f.category}</span><br/><span class="text-muted" style="font-size:0.65rem;">${f.description||''}</span></div>
-                        <div><span class="text-muted" style="font-size:0.65rem;">${new Date(f.date).toLocaleDateString()}</span>
-                        <button class="btn btn-danger btn-sm" onclick="deleteFile('${f.id}')"><i class="fas fa-trash"></i></button>
-                        ${f.data ? `<button class="btn btn-primary btn-sm" onclick="downloadFile('${f.id}')"><i class="fas fa-download"></i></button>` : ''}</div>
-                    </div>`
-                    ).join('');
+                list.innerHTML = files.slice().reverse().map(f => {
+                    let preview = '';
+                    if (f.data) {
+                        const type = f.data.split(';')[0];
+                        if (type && type.includes('image')) {
+                            preview = `<img src="${f.data}" class="file-preview" alt="${f.title}"/>`;
+                        } else if (type && type.includes('audio')) {
+                            preview = `<audio controls class="file-preview"><source src="${f.data}"/></audio>`;
+                        } else if (type && type.includes('video')) {
+                            preview = `<video controls class="file-preview"><source src="${f.data}"/></video>`;
+                        } else {
+                            preview = `<div class="file-preview" style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem;background:#eaf1ed;border-radius:8px;"><i class="fas fa-file" style="font-size:1.5rem;"></i> <span>${f.title}</span></div>`;
+                        }
+                    }
+                    return `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;display:flex;flex-direction:column;gap:0.3rem;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+                            <div><strong>${f.title}</strong> <span class="chip">${f.category}</span><br/><span class="text-muted" style="font-size:0.6rem;">${f.description||''}</span></div>
+                            <div><span class="text-muted" style="font-size:0.6rem;">${new Date(f.date).toLocaleDateString()}</span>
+                            <button class="btn btn-danger btn-sm" onclick="deleteFile('${f.id}')"><i class="fas fa-trash"></i></button>
+                            ${f.data ? `<button class="btn btn-primary btn-sm" onclick="downloadFile('${f.id}')"><i class="fas fa-download"></i></button>` : ''}</div>
+                        </div>
+                        ${preview}
+                    </div>`;
+                }).join('');
             }
 
             document.getElementById('uploadForm').addEventListener('submit', function(e) {
@@ -2360,8 +2264,8 @@
                 if (files.length === 0) { list.innerHTML =
                     `<div class="empty-state"><i class="fas fa-folder"></i> No documents.</div>`; return; }
                 list.innerHTML = files.map(f =>
-                    `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
-                        <div><strong>${f.title}</strong> <span class="chip">${f.category}</span> <span class="text-muted" style="font-size:0.65rem;">${new Date(f.date).toLocaleDateString()}</span></div>
+                    `<div style="padding:0.3rem 0;border-bottom:1px solid #eaf1ed;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+                        <div><strong>${f.title}</strong> <span class="chip">${f.category}</span> <span class="text-muted" style="font-size:0.6rem;">${new Date(f.date).toLocaleDateString()}</span></div>
                         <div>${f.data ? `<button class="btn btn-primary btn-xs" onclick="downloadFile('${f.id}')"><i class="fas fa-download"></i></button>` : ''}</div>
                     </div>`
                     ).join('');
@@ -2377,7 +2281,7 @@
                     `<div class="training-card">
                         <div class="title">${t.title}</div>
                         <div class="meta">${t.date} • ${t.duration||'N/A'}</div>
-                        <div class="text-muted" style="font-size:0.75rem;">${t.description||''}</div>
+                        <div class="text-muted" style="font-size:0.7rem;">${t.description||''}</div>
                         <div class="actions"><button class="btn btn-danger btn-xs" onclick="deleteTraining('${t.id}')"><i class="fas fa-trash"></i></button></div>
                     </div>`
                     ).join('');
@@ -2421,7 +2325,7 @@
                     `<div class="training-card">
                         <div class="title">${m.title}</div>
                         <div class="meta">${m.category||'General'}</div>
-                        <div class="text-muted" style="font-size:0.75rem;">${m.description||''}</div>
+                        <div class="text-muted" style="font-size:0.7rem;">${m.description||''}</div>
                         <div class="actions"><button class="btn btn-danger btn-xs" onclick="deleteMaterial('${m.id}')"><i class="fas fa-trash"></i></button></div>
                     </div>`
                     ).join('');
@@ -2464,9 +2368,9 @@
                     `<div class="meeting-item">
                         <div class="title">${m.title}</div>
                         <div class="meta">${m.date} • ${m.time||'N/A'} • ${m.location||'Online'}</div>
-                        <div class="text-muted" style="font-size:0.75rem;">${m.description||''}</div>
+                        <div class="text-muted" style="font-size:0.7rem;">${m.description||''}</div>
                         <div class="actions">
-                            <button class="btn btn-gold btn-xs" onclick="joinMeeting('${m.title}')"><i class="fas fa-video"></i> Join Meeting</button>
+                            <button class="btn btn-gold btn-xs" onclick="joinMeeting()"><i class="fas fa-video"></i> Join Meeting</button>
                             <button class="btn btn-danger btn-xs" onclick="deleteMeeting('${m.id}')"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>`
@@ -2488,11 +2392,8 @@
                 toast('Meeting deleted.', 'info');
             }
 
-            function joinMeeting(title) {
-                const room = 'BDA-' + title.replace(/\s+/g, '-') + '-' + Date.now().toString(36);
-                const meetUrl = `https://meet.google.com/new?hs=122&authuser=0`; // Google Meet new link
-                // Use a generic Google Meet link
-                window.open(`https://meet.google.com/new?hs=122&authuser=0`, '_blank');
+            function joinMeeting() {
+                window.open('https://meet.google.com/new', '_blank');
                 toast('Opening Google Meet...', 'info');
             }
 
@@ -2512,10 +2413,8 @@
 
             // ─── LIVE ROOM ───
             function joinLiveRoom() {
-                // Use Jitsi for live room
                 const roomName = 'BDA-Live-' + Date.now().toString(36);
                 window.open(`https://meet.jit.si/${roomName}`, '_blank');
-                // Record live session
                 liveSessions.push({
                     id: nextId.live++,
                     title: 'Live Session ' + new Date().toLocaleDateString(),
@@ -2539,25 +2438,69 @@
                     ).join('');
             }
 
-            // ─── NEWS ───
+            // ─── NEWS (with admin approval) ───
             function renderNews() {
                 const list = document.getElementById('newsList');
+                const allNews = newsItems.slice().reverse();
+                document.getElementById('newsCount').textContent = newsItems.length;
                 if (newsItems.length === 0) { list.innerHTML =
                     `<div class="empty-state"><i class="fas fa-newspaper"></i> No news.</div>`; return; }
-                list.innerHTML = newsItems.slice().reverse().map(n =>
-                    `<div style="padding:0.6rem 0;border-bottom:1px solid #eaf1ed;">
-                        <strong>${n.title}</strong> <span class="text-muted" style="font-size:0.65rem;">${new Date(n.date).toLocaleDateString()}</span>
-                        <p style="margin-top:0.1rem;font-size:0.85rem;">${n.content||''}</p>
-                        <button class="btn btn-danger btn-xs" onclick="deleteNews('${n.id}')"><i class="fas fa-trash"></i></button>
+                list.innerHTML = allNews.map(n =>
+                    `<div class="news-card">
+                        <div class="title">${n.title}</div>
+                        <div class="meta">${new Date(n.date).toLocaleString()} • <span class="status-badge ${n.status === 'approved' ? 'approved' : 'pending'}">${n.status||'pending'}</span></div>
+                        <div class="content">${n.content||''}</div>
+                        <div class="actions" style="margin-top:0.2rem;">
+                            ${n.status === 'pending' ? `<button class="btn btn-success btn-xs" onclick="approveNews('${n.id}')"><i class="fas fa-check"></i> Approve</button>` : ''}
+                            <button class="btn btn-danger btn-xs" onclick="deleteNews('${n.id}')"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>`
+                    ).join('');
+                renderFrontNews();
+            }
+
+            function renderFrontNews() {
+                const list = document.getElementById('frontNews');
+                const approved = newsItems.filter(n => n.status === 'approved').slice().reverse();
+                if (approved.length === 0) { list.innerHTML =
+                    `<div class="empty-state"><i class="fas fa-newspaper"></i> No approved news yet.</div>`; return; }
+                list.innerHTML = approved.slice(0, 5).map(n =>
+                    `<div class="news-card" style="border-left-color:var(--gold);">
+                        <div class="title">${n.title}</div>
+                        <div class="meta">${new Date(n.date).toLocaleString()}</div>
+                        <div class="content">${n.content||''}</div>
                     </div>`
                     ).join('');
             }
 
-            function addNews(title, content) {
-                newsItems.push({ id: nextId.news++, title, content, date: new Date().toISOString() });
+            document.getElementById('newsForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const title = document.getElementById('newsTitle').value.trim();
+                const content = document.getElementById('newsContent').value.trim();
+                if (!title || !content) { toast('Title and content required.', 'error'); return; }
+                newsItems.push({
+                    id: nextId.news++,
+                    title,
+                    content,
+                    status: 'pending',
+                    date: new Date().toISOString()
+                });
                 saveAll();
                 renderNews();
-                toast('News added!', 'success');
+                toast('News submitted! Pending admin approval.', 'success');
+                this.reset();
+            });
+
+            function approveNews(id) {
+                if (!adminVerified) {
+                    toast('Please verify admin password first.', 'error');
+                    return;
+                }
+                const n = newsItems.find(x => x.id === id);
+                if (n) { n.status = 'approved';
+                    saveAll();
+                    renderNews();
+                    toast('News approved!', 'success'); }
             }
 
             function deleteNews(id) {
@@ -2568,24 +2511,14 @@
                 toast('News deleted.', 'info');
             }
 
-            function openNewsModal() {
-                openModal(`
-                    <h3><i class="fas fa-newspaper text-gold"></i> Add News</h3>
-                    <form onsubmit="event.preventDefault(); const t=document.getElementById('mNewsTitle').value; const c=document.getElementById('mNewsContent').value; if(t){addNews(t,c);document.getElementById('modalOverlay').classList.remove('open');}">
-                        <div class="form-group"><label>Title <span class="required">*</span></label><input type="text" id="mNewsTitle" required/></div>
-                        <div class="form-group"><label>Content</label><textarea id="mNewsContent" rows="4"></textarea></div>
-                        <div class="modal-footer"><button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Publish</button></div>
-                    </form>
-                `);
-            }
-
             // ─── EVENTS ───
             function renderEvents() {
                 const list = document.getElementById('eventList');
+                document.getElementById('eventCount').textContent = events.length;
                 if (events.length === 0) { list.innerHTML =
                     `<div class="empty-state"><i class="fas fa-calendar-day"></i> No events.</div>`; return; }
                 list.innerHTML = events.map(e =>
-                    `<div style="padding:0.5rem 0;border-bottom:1px solid #eaf1ed;">
+                    `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${e.title}</strong> <span class="chip">${e.date}</span>
                         <p class="text-muted">${e.description||''}</p>
                         <button class="btn btn-danger btn-xs" onclick="deleteEvent('${e.id}')"><i class="fas fa-trash"></i></button>
@@ -2593,12 +2526,18 @@
                     ).join('');
             }
 
-            function addEvent(title, date, description) {
+            document.getElementById('eventForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const title = document.getElementById('eventTitle').value.trim();
+                const date = document.getElementById('eventDate').value;
+                const description = document.getElementById('eventDesc').value.trim();
+                if (!title || !date) { toast('Title and date required.', 'error'); return; }
                 events.push({ id: nextId.event++, title, date, description });
                 saveAll();
                 renderEvents();
                 toast('Event added!', 'success');
-            }
+                this.reset();
+            });
 
             function deleteEvent(id) {
                 if (!confirm('Delete this event?')) return;
@@ -2608,25 +2547,14 @@
                 toast('Event deleted.', 'info');
             }
 
-            function openEventModal() {
-                openModal(`
-                    <h3><i class="fas fa-calendar-alt text-gold"></i> Add Event</h3>
-                    <form onsubmit="event.preventDefault(); const t=document.getElementById('mEventTitle').value; const d=document.getElementById('mEventDate').value; const de=document.getElementById('mEventDesc').value; if(t){addEvent(t,d,de);document.getElementById('modalOverlay').classList.remove('open');}">
-                        <div class="form-group"><label>Title <span class="required">*</span></label><input type="text" id="mEventTitle" required/></div>
-                        <div class="form-group"><label>Date <span class="required">*</span></label><input type="date" id="mEventDate" required/></div>
-                        <div class="form-group"><label>Description</label><textarea id="mEventDesc"></textarea></div>
-                        <div class="modal-footer"><button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Event</button></div>
-                    </form>
-                `);
-            }
-
             // ─── PROJECTS ───
             function renderProjects() {
                 const list = document.getElementById('projectList');
+                document.getElementById('projectCount').textContent = projects.length;
                 if (projects.length === 0) { list.innerHTML =
                     `<div class="empty-state"><i class="fas fa-project-diagram"></i> No projects.</div>`; return; }
                 list.innerHTML = projects.map(p =>
-                    `<div style="padding:0.5rem 0;border-bottom:1px solid #eaf1ed;">
+                    `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${p.title}</strong> <span class="chip">${p.status||'Active'}</span>
                         <p class="text-muted">${p.description||''}</p>
                         <button class="btn btn-danger btn-xs" onclick="deleteProject('${p.id}')"><i class="fas fa-trash"></i></button>
@@ -2634,12 +2562,18 @@
                     ).join('');
             }
 
-            function addProject(title, status, description) {
+            document.getElementById('projectForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const title = document.getElementById('projectTitle').value.trim();
+                const status = document.getElementById('projectStatus').value;
+                const description = document.getElementById('projectDesc').value.trim();
+                if (!title) { toast('Title required.', 'error'); return; }
                 projects.push({ id: nextId.project++, title, status, description });
                 saveAll();
                 renderProjects();
                 toast('Project added!', 'success');
-            }
+                this.reset();
+            });
 
             function deleteProject(id) {
                 if (!confirm('Delete this project?')) return;
@@ -2649,37 +2583,31 @@
                 toast('Project deleted.', 'info');
             }
 
-            function openProjectModal() {
-                openModal(`
-                    <h3><i class="fas fa-project-diagram text-gold"></i> Add Project</h3>
-                    <form onsubmit="event.preventDefault(); const t=document.getElementById('mProjTitle').value; const s=document.getElementById('mProjStatus').value; const d=document.getElementById('mProjDesc').value; if(t){addProject(t,s,d);document.getElementById('modalOverlay').classList.remove('open');}">
-                        <div class="form-group"><label>Title <span class="required">*</span></label><input type="text" id="mProjTitle" required/></div>
-                        <div class="form-group"><label>Status</label><select id="mProjStatus"><option value="Active">Active</option><option value="Planning">Planning</option><option value="Completed">Completed</option></select></div>
-                        <div class="form-group"><label>Description</label><textarea id="mProjDesc"></textarea></div>
-                        <div class="modal-footer"><button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Project</button></div>
-                    </form>
-                `);
-            }
-
             // ─── PARTNERS ───
             function renderPartners() {
                 const list = document.getElementById('partnerList');
+                document.getElementById('partnerCount').textContent = partners.length;
                 if (partners.length === 0) { list.innerHTML =
                     `<div class="empty-state"><i class="fas fa-handshake"></i> No partners.</div>`; return; }
                 list.innerHTML = partners.map(p =>
-                    `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;">
+                    `<div style="padding:0.3rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${p.name}</strong> <span class="chip">${p.type||'Partner'}</span>
                         <button class="btn btn-danger btn-xs" onclick="deletePartner('${p.id}')"><i class="fas fa-trash"></i></button>
                     </div>`
                     ).join('');
             }
 
-            function addPartner(name, type) {
+            document.getElementById('partnerForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('partnerName').value.trim();
+                const type = document.getElementById('partnerType').value.trim();
+                if (!name) { toast('Name required.', 'error'); return; }
                 partners.push({ id: nextId.partner++, name, type });
                 saveAll();
                 renderPartners();
                 toast('Partner added!', 'success');
-            }
+                this.reset();
+            });
 
             function deletePartner(id) {
                 if (!confirm('Delete this partner?')) return;
@@ -2689,24 +2617,14 @@
                 toast('Partner deleted.', 'info');
             }
 
-            function openPartnerModal() {
-                openModal(`
-                    <h3><i class="fas fa-handshake text-gold"></i> Add Partner</h3>
-                    <form onsubmit="event.preventDefault(); const n=document.getElementById('mPartName').value; const t=document.getElementById('mPartType').value; if(n){addPartner(n,t);document.getElementById('modalOverlay').classList.remove('open');}">
-                        <div class="form-group"><label>Name <span class="required">*</span></label><input type="text" id="mPartName" required/></div>
-                        <div class="form-group"><label>Type</label><input type="text" id="mPartType" placeholder="e.g. NGO, Govt"/></div>
-                        <div class="modal-footer"><button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Partner</button></div>
-                    </form>
-                `);
-            }
-
             // ─── VOLUNTEERS ───
             function renderVolunteers() {
                 const list = document.getElementById('volunteerList');
+                document.getElementById('volunteerCount').textContent = volunteers.length;
                 if (volunteers.length === 0) { list.innerHTML =
                     `<div class="empty-state"><i class="fas fa-hands-helping"></i> No opportunities.</div>`; return; }
                 list.innerHTML = volunteers.map(v =>
-                    `<div style="padding:0.5rem 0;border-bottom:1px solid #eaf1ed;">
+                    `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${v.title}</strong> <span class="chip">${v.location||'Remote'}</span>
                         <p class="text-muted">${v.description||''}</p>
                         <button class="btn btn-danger btn-xs" onclick="deleteVolunteer('${v.id}')"><i class="fas fa-trash"></i></button>
@@ -2714,13 +2632,19 @@
                     ).join('');
             }
 
-            function addVolunteer(title, location, description) {
+            document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const title = document.getElementById('volTitle').value.trim();
+                const location = document.getElementById('volLocation').value.trim();
+                const description = document.getElementById('volDesc').value.trim();
+                if (!title) { toast('Title required.', 'error'); return; }
                 volunteers.push({ id: nextId.volunteer++, title, location, description });
                 saveAll();
                 renderVolunteers();
                 updateStats();
                 toast('Volunteer opportunity added!', 'success');
-            }
+                this.reset();
+            });
 
             function deleteVolunteer(id) {
                 if (!confirm('Delete this opportunity?')) return;
@@ -2731,37 +2655,30 @@
                 toast('Opportunity deleted.', 'info');
             }
 
-            function openVolunteerModal() {
-                openModal(`
-                    <h3><i class="fas fa-hands-helping text-gold"></i> Add Volunteer Opportunity</h3>
-                    <form onsubmit="event.preventDefault(); const t=document.getElementById('mVolTitle').value; const l=document.getElementById('mVolLoc').value; const d=document.getElementById('mVolDesc').value; if(t){addVolunteer(t,l,d);document.getElementById('modalOverlay').classList.remove('open');}">
-                        <div class="form-group"><label>Title <span class="required">*</span></label><input type="text" id="mVolTitle" required/></div>
-                        <div class="form-group"><label>Location</label><input type="text" id="mVolLoc" placeholder="e.g. Chiro"/></div>
-                        <div class="form-group"><label>Description</label><textarea id="mVolDesc"></textarea></div>
-                        <div class="modal-footer"><button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Opportunity</button></div>
-                    </form>
-                `);
-            }
-
             // ─── REPORTS ───
             function renderReports() {
                 const list = document.getElementById('reportList');
+                document.getElementById('reportCount').textContent = reports.length;
                 if (reports.length === 0) { list.innerHTML =
                     `<div class="empty-state"><i class="fas fa-chart-bar"></i> No reports.</div>`; return; }
                 list.innerHTML = reports.map(r =>
-                    `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;">
+                    `<div style="padding:0.3rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${r.title}</strong> <span class="text-muted">${new Date(r.date).toLocaleDateString()}</span>
                         <button class="btn btn-danger btn-xs" onclick="deleteReport('${r.id}')"><i class="fas fa-trash"></i></button>
                     </div>`
                     ).join('');
             }
 
-            function addReport(title) {
+            document.getElementById('reportForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const title = document.getElementById('reportTitle').value.trim();
+                if (!title) { toast('Title required.', 'error'); return; }
                 reports.push({ id: nextId.report++, title, date: new Date().toISOString() });
                 saveAll();
                 renderReports();
                 toast('Report generated!', 'success');
-            }
+                this.reset();
+            });
 
             function deleteReport(id) {
                 if (!confirm('Delete this report?')) return;
@@ -2771,35 +2688,30 @@
                 toast('Report deleted.', 'info');
             }
 
-            function openReportModal() {
-                openModal(`
-                    <h3><i class="fas fa-chart-bar text-gold"></i> Generate Report</h3>
-                    <form onsubmit="event.preventDefault(); const t=document.getElementById('mRepTitle').value; if(t){addReport(t);document.getElementById('modalOverlay').classList.remove('open');}">
-                        <div class="form-group"><label>Report Title <span class="required">*</span></label><input type="text" id="mRepTitle" placeholder="e.g. Annual Report 2025" required/></div>
-                        <div class="modal-footer"><button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Generate</button></div>
-                    </form>
-                `);
-            }
-
             // ─── GALLERY ───
             function renderGallery() {
                 const list = document.getElementById('galleryList');
+                document.getElementById('galleryCount').textContent = gallery.length;
                 if (gallery.length === 0) { list.innerHTML =
                     `<div class="empty-state"><i class="fas fa-images"></i> No images.</div>`; return; }
                 list.innerHTML = gallery.map(g =>
-                    `<div style="display:inline-block;margin:0.3rem;padding:0.5rem 1rem;background:#fafcfb;border-radius:8px;border:1px solid #eaf1ed;">
+                    `<div style="display:inline-block;margin:0.2rem;padding:0.3rem 0.8rem;background:#fafcfb;border-radius:8px;border:1px solid #eaf1ed;">
                         <strong>${g.title}</strong> <span class="text-muted">${new Date(g.date).toLocaleDateString()}</span>
                         <button class="btn btn-danger btn-xs" onclick="deleteGallery('${g.id}')"><i class="fas fa-trash"></i></button>
                     </div>`
                     ).join('');
             }
 
-            function addGallery(title) {
+            document.getElementById('galleryForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const title = document.getElementById('galleryTitle').value.trim();
+                if (!title) { toast('Title required.', 'error'); return; }
                 gallery.push({ id: nextId.gallery++, title, date: new Date().toISOString() });
                 saveAll();
                 renderGallery();
                 toast('Image added!', 'success');
-            }
+                this.reset();
+            });
 
             function deleteGallery(id) {
                 if (!confirm('Delete this image?')) return;
@@ -2809,35 +2721,31 @@
                 toast('Image deleted.', 'info');
             }
 
-            function openGalleryModal() {
-                openModal(`
-                    <h3><i class="fas fa-images text-gold"></i> Add Image</h3>
-                    <form onsubmit="event.preventDefault(); const t=document.getElementById('mGalTitle').value; if(t){addGallery(t);document.getElementById('modalOverlay').classList.remove('open');}">
-                        <div class="form-group"><label>Image Title <span class="required">*</span></label><input type="text" id="mGalTitle" placeholder="e.g. Community Event" required/></div>
-                        <div class="modal-footer"><button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Image</button></div>
-                    </form>
-                `);
-            }
-
             // ─── COMMITTEE ───
             function renderCommittee() {
                 const list = document.getElementById('committeeList');
+                document.getElementById('committeeCount').textContent = committee.length;
                 if (committee.length === 0) { list.innerHTML =
                     `<div class="empty-state"><i class="fas fa-users-cog"></i> No committee members.</div>`; return; }
                 list.innerHTML = committee.map(c =>
-                    `<div style="padding:0.4rem 0;border-bottom:1px solid #eaf1ed;">
+                    `<div style="padding:0.3rem 0;border-bottom:1px solid #eaf1ed;">
                         <strong>${c.name}</strong> <span class="chip">${c.role||'Member'}</span>
                         <button class="btn btn-danger btn-xs" onclick="deleteCommittee('${c.id}')"><i class="fas fa-trash"></i></button>
                     </div>`
                     ).join('');
             }
 
-            function addCommittee(name, role) {
+            document.getElementById('committeeForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('commName').value.trim();
+                const role = document.getElementById('commRole').value.trim();
+                if (!name) { toast('Name required.', 'error'); return; }
                 committee.push({ id: nextId.committee++, name, role });
                 saveAll();
                 renderCommittee();
                 toast('Committee member added!', 'success');
-            }
+                this.reset();
+            });
 
             function deleteCommittee(id) {
                 if (!confirm('Delete this committee member?')) return;
@@ -2845,17 +2753,6 @@
                 saveAll();
                 renderCommittee();
                 toast('Committee member deleted.', 'info');
-            }
-
-            function openCommitteeModal() {
-                openModal(`
-                    <h3><i class="fas fa-users-cog text-gold"></i> Add Committee Member</h3>
-                    <form onsubmit="event.preventDefault(); const n=document.getElementById('mCommName').value; const r=document.getElementById('mCommRole').value; if(n){addCommittee(n,r);document.getElementById('modalOverlay').classList.remove('open');}">
-                        <div class="form-group"><label>Name <span class="required">*</span></label><input type="text" id="mCommName" required/></div>
-                        <div class="form-group"><label>Role</label><input type="text" id="mCommRole" placeholder="e.g. Chairperson"/></div>
-                        <div class="modal-footer"><button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Member</button></div>
-                    </form>
-                `);
             }
 
             // ─── CONTACT ───
@@ -2870,6 +2767,101 @@
                 toast('Message sent! We\'ll get back to you.', 'success');
                 this.reset();
             });
+
+            // ─── CALENDAR (corrected Ethiopian calendar) ───
+            function isGregorianLeapYear(year) {
+                return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            }
+
+            function isEthiopianLeapYear(year) {
+                return year % 4 === 3;
+            }
+
+            function gregorianToEthiopian(date = new Date()) {
+                const gYear = date.getFullYear();
+                const gMonth = date.getMonth();
+                const gDay = date.getDate();
+
+                const newYearDay = isGregorianLeapYear(gYear - 1) ? 12 : 11;
+                let ethYear;
+                if (gMonth < 8 || (gMonth === 8 && gDay < newYearDay)) {
+                    ethYear = gYear - 8;
+                } else {
+                    ethYear = gYear - 7;
+                }
+
+                const newYear = new Date(gYear, 8, newYearDay);
+                const diff = Math.floor((date - newYear) / (1000 * 60 * 60 * 24));
+                let daysFromNewYear = diff;
+                if (diff < 0) {
+                    const previousNewYearDay = isGregorianLeapYear(gYear - 2) ? 12 : 11;
+                    const previousNewYear = new Date(gYear - 1, 8, previousNewYearDay);
+                    daysFromNewYear = Math.floor((date - previousNewYear) / (1000 * 60 * 60 * 24));
+                }
+                const ethMonth = Math.floor(daysFromNewYear / 30) + 1;
+                const ethDay = (daysFromNewYear % 30) + 1;
+                return { day: ethDay, month: ethMonth, year: ethYear };
+            }
+
+            const ethiopianMonths = ["መስከረም", "ጥቅምት", "ኅዳር", "ታኅሣሥ", "ጥር", "የካቲት", "መጋቢት", "ሚያዝያ", "ግንቦት", "ሰኔ", "ሐምሌ", "ነሐሴ", "ጳጉሜ"];
+            const ethiopianMonthsEnglish = ["Meskerem", "Tikimt", "Hidar", "Tahsas", "Tir", "Yekatit", "Megabit", "Miyazya",
+                "Ginbot", "Sene", "Hamle", "Nehasé", "Pagume"
+            ];
+
+            function getEthiopianMonthDays(year, month) {
+                if (month >= 1 && month <= 12) return 30;
+                return isEthiopianLeapYear(year) ? 6 : 5;
+            }
+
+            function renderCalendar() {
+                // Gregorian
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = now.getMonth();
+                const today = now.getDate();
+                const gcal = document.getElementById('gregorianCalendar');
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                let ghtml =
+                '<div class="day-header">Su</div><div class="day-header">Mo</div><div class="day-header">Tu</div><div class="day-header">We</div><div class="day-header">Th</div><div class="day-header">Fr</div><div class="day-header">Sa</div>';
+                for (let i = 0; i < firstDay; i++) ghtml += '<div class="day other-month"></div>';
+                for (let d = 1; d <= daysInMonth; d++) {
+                    ghtml += `<div class="day ${d === today ? 'today' : ''}">${d}</div>`;
+                }
+                gcal.innerHTML = ghtml;
+
+                // Ethiopian
+                const ethToday = gregorianToEthiopian(now);
+                const ethYear = ethToday.year;
+                const ethMonth = ethToday.month;
+                const ethDay = ethToday.day;
+                const daysInEthMonth = getEthiopianMonthDays(ethYear, ethMonth);
+                const ethFirstDay = (new Date(now.getFullYear(), now.getMonth(), 1).getDay() - (ethDay - 1) % 7 + 7) % 7;
+
+                const ecal = document.getElementById('ethiopianCalendar');
+                let ehtml = '';
+                const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+                weekDays.forEach(day => {
+                    ehtml += `<div class="day-header">${day}</div>`;
+                });
+                for (let i = 0; i < ethFirstDay; i++) {
+                    ehtml += `<div class="day other-month"></div>`;
+                }
+                for (let d = 1; d <= daysInEthMonth; d++) {
+                    const isToday = d === ethDay;
+                    ehtml += `<div class="day ${isToday ? 'today' : ''}">${d}</div>`;
+                }
+                ecal.innerHTML = ehtml;
+
+                // Update Ethiopian title and current date
+                const titleEl = document.getElementById('ethiopianCalendarTitle');
+                if (titleEl) titleEl.textContent = `${ethiopianMonths[ethMonth - 1]} ${ethYear}`;
+                const currentDateEl = document.getElementById('ethiopianCurrentDate');
+                if (currentDateEl) currentDateEl.textContent = `${ethDay} ${ethiopianMonths[ethMonth - 1]} ${ethYear} ዓ.ም.`;
+
+                // Live date/time
+                document.getElementById('liveDateTime').textContent = new Date().toLocaleString();
+            }
 
             // ─── SETTINGS ───
             function saveSettings() {
@@ -2891,23 +2883,9 @@
             // ─── EXPORT / IMPORT / CLEAR ───
             function exportData() {
                 const data = {
-                    members,
-                    donations,
-                    contacts,
-                    files,
-                    trainings,
-                    materials,
-                    meetings,
-                    newsItems,
-                    events,
-                    projects,
-                    partners,
-                    volunteers,
-                    reports,
-                    gallery,
-                    committee,
-                    liveSessions,
-                    nextId,
+                    members, donations, contacts, files, trainings, materials, meetings,
+                    newsItems, events, projects, partners, volunteers, reports, gallery,
+                    committee, liveSessions, foundingMembers, nextId,
                     exportedAt: new Date().toISOString()
                 };
                 const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -2947,13 +2925,12 @@
                             if (data.gallery) gallery = data.gallery;
                             if (data.committee) committee = data.committee;
                             if (data.liveSessions) liveSessions = data.liveSessions;
+                            if (data.foundingMembers) foundingMembers = data.foundingMembers;
                             if (data.nextId) nextId = data.nextId;
                             saveAll();
                             renderAll();
                             toast('Data imported successfully!', 'success');
-                        } catch (err) {
-                            toast('Invalid file format.', 'error');
-                        }
+                        } catch (err) { toast('Invalid file format.', 'error'); }
                     };
                     reader.readAsText(file);
                 };
@@ -2979,6 +2956,7 @@
                 gallery = [];
                 committee = [];
                 liveSessions = [];
+                // Keep founding members
                 for (let k in nextId) nextId[k] = 1;
                 saveAll();
                 renderAll();
@@ -2997,23 +2975,10 @@
                     volunteers: volunteers.length,
                     exportedAt: new Date().toISOString()
                 };
-                // Send data via email (mailto: with subject and body)
                 const subject = 'BDA Platform Data Sync';
-                const body = `
-          BDA Platform Data Sync
-          ======================
-          Date: ${new Date().toLocaleString()}
-          Approved Members: ${data.members}
-          Pending Approvals: ${data.pending}
-          Total Donations (ETB): ${data.donations}
-          Files: ${data.files}
-          Trainings: ${data.trainings}
-          Meetings: ${data.meetings}
-          Volunteers: ${data.volunteers}
-          ======================
-          This is an automated sync from the BDA Platform.
-          `;
-                window.location.href = `mailto:${adminEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                const body = `BDA Platform Data Sync\n======================\nDate: ${new Date().toLocaleString()}\nApproved Members: ${data.members}\nPending Approvals: ${data.pending}\nTotal Donations (ETB): ${data.donations}\nFiles: ${data.files}\nTrainings: ${data.trainings}\nMeetings: ${data.meetings}\nVolunteers: ${data.volunteers}\n======================\nThis is an automated sync from the BDA Platform.`;
+                window.location.href =
+                    `mailto:${adminEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 toast('Sync email opened!', 'success');
             }
 
@@ -3147,14 +3112,17 @@
                 renderReports();
                 renderGallery();
                 renderCommittee();
+                renderFounding();
+                renderCalendar();
+                renderFrontNews();
                 updateNotifBadge();
                 updateStorageInfo();
             }
 
             // ─── EXPOSE GLOBALLY ───
             window.navigateTo = navigateTo;
-            window.approveMember = approveMember;
-            window.rejectMember = rejectMember;
+            window.adminApproveMember = adminApproveMember;
+            window.adminRejectMember = adminRejectMember;
             window.deleteMember = deleteMember;
             window.deleteFile = deleteFile;
             window.downloadFile = downloadFile;
@@ -3166,22 +3134,16 @@
             window.deleteMaterial = deleteMaterial;
             window.addMeeting = addMeeting;
             window.deleteMeeting = deleteMeeting;
-            window.addNews = addNews;
+            window.approveNews = approveNews;
             window.deleteNews = deleteNews;
-            window.addEvent = addEvent;
             window.deleteEvent = deleteEvent;
-            window.addProject = addProject;
             window.deleteProject = deleteProject;
-            window.addPartner = addPartner;
             window.deletePartner = deletePartner;
-            window.addVolunteer = addVolunteer;
             window.deleteVolunteer = deleteVolunteer;
-            window.addReport = addReport;
             window.deleteReport = deleteReport;
-            window.addGallery = addGallery;
             window.deleteGallery = deleteGallery;
-            window.addCommittee = addCommittee;
             window.deleteCommittee = deleteCommittee;
+            window.addFoundingMember = addFoundingMember;
             window.exportData = exportData;
             window.importData = importData;
             window.clearAllData = clearAllData;
@@ -3190,15 +3152,9 @@
             window.openTrainingModal = openTrainingModal;
             window.openMaterialModal = openMaterialModal;
             window.openMeetingModal = openMeetingModal;
-            window.openNewsModal = openNewsModal;
-            window.openEventModal = openEventModal;
-            window.openProjectModal = openProjectModal;
-            window.openPartnerModal = openPartnerModal;
-            window.openVolunteerModal = openVolunteerModal;
-            window.openReportModal = openReportModal;
-            window.openGalleryModal = openGalleryModal;
-            window.openCommitteeModal = openCommitteeModal;
+            window.openFoundingModal = openFoundingModal;
             window.toast = toast;
+            window.verifyAdminPassword = verifyAdminPassword;
 
             // ─── INIT ───
             renderAll();
@@ -3206,25 +3162,24 @@
 
             // Seed demo data if empty
             if (members.length === 0 && donations.length === 0) {
-                // Add sample data
                 members.push({
                     id: nextId.member++,
                     name: 'Edris Abdella Nuure',
                     email: 'edrisabdellan@gmail.com',
                     phone: '0905131051',
                     type: 'Founding Member',
-                    address: 'Dire Dawa',
+                    address: 'Chiro',
                     photo: '',
                     status: 'approved',
                     createdAt: new Date().toISOString()
                 });
                 members.push({
                     id: nextId.member++,
-                    name: 'Anas Murad Abdulla',
-                    email: 'anesmurad258@gmail.com',
-                    phone: '0924193825',
-                    type: 'Founding Member',
-                    address: 'Chiro, W/Harargee',
+                    name: 'Kedir Ali',
+                    email: 'kedir@example.com',
+                    phone: '0912345678',
+                    type: 'Full Member',
+                    address: 'Harargee',
                     photo: '',
                     status: 'approved',
                     createdAt: new Date().toISOString()
@@ -3251,8 +3206,13 @@
                     duration: '3 hours', description: 'Training on community leadership.' });
                 meetings.push({ id: nextId.meeting++, title: 'General Assembly', date: '2026-07-30', time: '10:00 AM',
                     location: 'Chiro Hall', description: 'Annual general meeting.' });
-                newsItems.push({ id: nextId.news++, title: 'New Development Project', content: 'BDA launched a new water project in Bosoka area.',
-                    date: new Date().toISOString() });
+                newsItems.push({
+                    id: nextId.news++,
+                    title: 'New Development Project',
+                    content: 'BDA launched a new water project in Bosoka area.',
+                    status: 'approved',
+                    date: new Date().toISOString()
+                });
                 events.push({ id: nextId.event++, title: 'Community Clean-up', date: '2026-08-05',
                     description: 'Join us for a community clean-up event.' });
                 projects.push({ id: nextId.project++, title: 'Water Access Initiative', status: 'Active',
@@ -3262,21 +3222,24 @@
                     description: 'Help with adult literacy classes.' });
                 reports.push({ id: nextId.report++, title: 'Annual Report 2025', date: new Date().toISOString() });
                 gallery.push({ id: nextId.gallery++, title: 'Community Event 2025', date: new Date().toISOString() });
-                committee.push({ id: nextId.committee++, name: 'Dr. Abebe', role: 'Chairperson' });
+                committee.push({ id: nextId.committee++, name: 'Eng. Anas Murad', role: 'Chairperson' });
                 materials.push({ id: nextId.material++, title: 'Community Development Guide', category: 'Leadership',
-                    description: 'A comprehensive guide for community workers.', date: new Date().toISOString() });
+                    description: 'A comprehensive guide.', date: new Date().toISOString() });
                 saveAll();
                 renderAll();
                 toast('🎉 Welcome to BDA Platform! Sample data loaded.', 'success');
             }
 
-            // Auto refresh stats every 30s
+            // Auto refresh stats & calendar
             setInterval(() => {
                 if (document.getElementById('page-home').classList.contains('active')) updateStats();
+                if (document.getElementById('page-calendar').classList.contains('active')) renderCalendar();
                 updateNotifBadge();
-            }, 30000);
+                const dt = document.getElementById('liveDateTime');
+                if (dt) dt.textContent = new Date().toLocaleString();
+            }, 10000);
 
-            console.log('🚀 BDA Platform loaded successfully!');
+            console.log('🚀 BDA Platform v5.1 loaded successfully!');
             console.log(`📊 ${members.length} members, ${donations.length} donations, ${files.length} files`);
 
         })();
